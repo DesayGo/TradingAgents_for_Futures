@@ -86,40 +86,17 @@ class RealDataPositioningSystem:
         # 读取多头持仓排名
         long_file = os.path.join(symbol_path, "long_position_ranking.csv")
         long_df = pd.read_csv(long_file, encoding='utf-8')
-<<<<<<< HEAD
         long_df = self._fix_column_names(long_df)
-=======
->>>>>>> 354a84f5e735adfcb2d1f87cea9a90d5f1264cc2
         
         # 读取空头持仓排名
         short_file = os.path.join(symbol_path, "short_position_ranking.csv")
         short_df = pd.read_csv(short_file, encoding='utf-8')
-<<<<<<< HEAD
         short_df = self._fix_column_names(short_df)
-=======
->>>>>>> 354a84f5e735adfcb2d1f87cea9a90d5f1264cc2
         
         # 读取成交量排名
         volume_file = os.path.join(symbol_path, "volume_ranking.csv")
         volume_df = pd.read_csv(volume_file, encoding='utf-8')
-<<<<<<< HEAD
         volume_df = self._fix_column_names(volume_df)
-=======
-        
-        # 确保列名正确（处理可能的编码问题）
-        def fix_column_names(df):
-            """修复可能的列名编码问题"""
-            # 常见的中文列名映射
-            try:
-                df.columns = df.columns.str.strip()
-            except:
-                pass
-            return df
-        
-        long_df = fix_column_names(long_df)
-        short_df = fix_column_names(short_df)
-        volume_df = fix_column_names(volume_df)
->>>>>>> 354a84f5e735adfcb2d1f87cea9a90d5f1264cc2
         
         return {
             'summary': summary,

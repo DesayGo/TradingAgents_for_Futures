@@ -443,11 +443,7 @@ class StreamlitDataManager:
                 "data_file": "long_position_ranking.csv",  # 使用CSV文件而非JSON
                 "date_column": "date",
                 "date_format": "%Y-%m-%d",  # CSV文件中的日期格式是YYYY-MM-DD
-<<<<<<< HEAD
-                "update_script": "unified_futures_data_updater.py",
-=======
                 "update_script": "modules/positioning_updater.py",
->>>>>>> 354a84f5e735adfcb2d1f87cea9a90d5f1264cc2
                 "structure_type": "by_commodity"  # 按品种分文件夹
             },
             "term_structure": {
@@ -509,6 +505,7 @@ class StreamlitDataManager:
                 "status": "checking",
                 "path": str(config["path"]),
                 "last_update": "未知",
+                "last_file_update": "未知",
                 "commodities_count": 0,
                 "total_records": 0,
                 "latest_date": "未知",
@@ -528,6 +525,7 @@ class StreamlitDataManager:
                         commodity_folders = []
                         total_records = 0
                         latest_dates = []
+                        file_update_times = []
                         
                         for item in data_path.iterdir():
                             if item.is_dir():
@@ -536,6 +534,7 @@ class StreamlitDataManager:
                                 
                                 if data_file.exists():
                                     try:
+                                        file_update_times.append(datetime.fromtimestamp(data_file.stat().st_mtime))
                                         # 支持CSV和JSON格式
                                         if data_file.suffix == '.json':
                                             import json
@@ -590,6 +589,8 @@ class StreamlitDataManager:
                                 latest_date = max(latest_dates)
                                 module_status["latest_date"] = latest_date.strftime("%Y-%m-%d")
                                 module_status["last_update"] = latest_date.strftime("%Y-%m-%d")
+                            if file_update_times:
+                                module_status["last_file_update"] = max(file_update_times).strftime("%Y-%m-%d %H:%M:%S")
                         else:
                             module_status["status"] = "warning"
                             module_status["error_message"] = "未找到有效的品种数据"
@@ -603,6 +604,7 @@ class StreamlitDataManager:
                             module_status["error_message"] = "数据文件不存在"
                         else:
                             try:
+                                module_status["last_file_update"] = datetime.fromtimestamp(data_file.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
                                 df = pd.read_csv(data_file, encoding='utf-8')
                                 
                                 if not df.empty:
@@ -861,11 +863,39 @@ class StreamlitDataManager:
             import subprocess
             import sys
             
-            # 构建命令
-            cmd = f'start cmd /k "cd /d {Path.cwd()} && python {script_path} && pause"'
+            working_dir = Path.cwd().resolve()
+            venv_python = working_dir / ".venv" / "Scripts" / "python.exe"
+            python_executable = venv_python.resolve() if venv_python.exists() else Path(sys.executable).resolve()
+            script_path = script_path.resolve()
             
-            # 使用shell=True在新窗口中执行
-            result = subprocess.run(cmd, shell=True, cwd=Path.cwd())
+            if os.name == "nt":
+                launcher_dir = working_dir / "qihuo" / "cache" / "update_launchers"
+                launcher_dir.mkdir(parents=True, exist_ok=True)
+                launcher_path = launcher_dir / f"run_{module_name}_update.bat"
+                launcher_path.write_text(
+                    "\n".join([
+                        "@echo off",
+                        "chcp 65001 > nul",
+                        "set PYTHONUTF8=1",
+                        "set PYTHONIOENCODING=utf-8",
+                        f'cd /d "{working_dir}"',
+                        f'"{python_executable}" "{script_path}"',
+                        "echo.",
+                        "pause",
+                        "",
+                    ]),
+                    encoding="utf-8",
+                )
+                subprocess.Popen(
+                    ["cmd.exe", "/c", str(launcher_path)],
+                    cwd=working_dir,
+                    creationflags=subprocess.CREATE_NEW_CONSOLE,
+                )
+            else:
+                env = os.environ.copy()
+                env["PYTHONUTF8"] = "1"
+                env["PYTHONIOENCODING"] = "utf-8"
+                subprocess.Popen([str(python_executable), str(script_path)], cwd=working_dir, env=env)
             
             return {
                 "status": "success",
@@ -875,6 +905,138 @@ class StreamlitDataManager:
             
         except Exception as e:
             return {"status": "error", "message": f"启动更新脚本失败: {e}"}
+
+    def run_all_data_updates_direct(self) -> Dict:
+        """一次性启动全部数据更新脚本，自动更新所有品种到今天"""
+        import subprocess
+        import sys
+        
+        target_date = datetime.now().strftime("%Y-%m-%d")
+        preferred_order = ["basis", "positioning", "inventory", "term_structure", "technical_analysis", "receipt"]
+        module_names = [
+            module_name
+            for module_name in preferred_order
+            if module_name in self.modules_config
+        ]
+        module_names.extend(
+            module_name
+            for module_name in self.modules_config.keys()
+            if module_name not in module_names
+        )
+        working_dir = Path.cwd().resolve()
+        venv_python = working_dir / ".venv" / "Scripts" / "python.exe"
+        python_executable = venv_python.resolve() if venv_python.exists() else Path(sys.executable).resolve()
+        launcher_dir = working_dir / "qihuo" / "cache" / "update_launchers"
+        launcher_dir.mkdir(parents=True, exist_ok=True)
+        
+        started_modules = []
+        errors = []
+        update_steps = []
+        
+        for module_name in module_names:
+            config = self.modules_config.get(module_name)
+            if not config or not config.get("update_script"):
+                errors.append(f"{module_name}: 无更新脚本")
+                continue
+            
+            script_path = Path(config["update_script"])
+            if not script_path.exists():
+                errors.append(f"{config['name']}: 更新脚本不存在: {script_path}")
+                continue
+            
+            try:
+                script_path = script_path.resolve()
+                input_path = launcher_dir / f"run_{module_name}_bulk_update.input.txt"
+                input_path.write_text(f"{target_date}\n\ny\n", encoding="utf-8")
+                update_steps.append((module_name, config["name"], script_path, input_path.resolve()))
+                started_modules.append(module_name)
+            except Exception as e:
+                errors.append(f"{config['name']}: {e}")
+        
+        if errors:
+            return {
+                "status": "error",
+                "message": "部分数据更新启动失败",
+                "target_date": target_date,
+                "modules": started_modules,
+                "errors": errors,
+            }
+
+        if not update_steps:
+            return {
+                "status": "error",
+                "message": "没有可启动的数据更新模块",
+                "target_date": target_date,
+                "modules": [],
+                "errors": ["未找到有效更新脚本"],
+            }
+
+        try:
+            if os.name == "nt":
+                launcher_path = launcher_dir / "run_all_data_updates.bat"
+                launcher_lines = [
+                    "@echo off",
+                    "chcp 65001 > nul",
+                    "setlocal",
+                    "set PYTHONUTF8=1",
+                    "set PYTHONIOENCODING=utf-8",
+                    f'cd /d "{working_dir}"',
+                    "",
+                    f"echo 目标日期: {target_date}",
+                    "echo 将按顺序更新全部数据模块，完成后窗口会自动关闭。",
+                    "",
+                ]
+
+                total_steps = len(update_steps)
+                for index, (_, display_name, script_path, input_path) in enumerate(update_steps, start=1):
+                    launcher_lines.extend([
+                        f"echo [{index}/{total_steps}] 更新{display_name}...",
+                        f'"{python_executable}" "{script_path}" < "{input_path}"',
+                        "if errorlevel 1 (",
+                        f"    echo {display_name}更新失败，停止后续更新。",
+                        "    exit /b %ERRORLEVEL%",
+                        ")",
+                        "echo.",
+                    ])
+
+                launcher_lines.extend([
+                    "echo 全部数据更新完成。",
+                    "endlocal",
+                    "",
+                ])
+                launcher_path.write_text("\n".join(launcher_lines), encoding="utf-8")
+                subprocess.Popen(
+                    ["cmd.exe", "/c", str(launcher_path)],
+                    cwd=working_dir,
+                    creationflags=subprocess.CREATE_NEW_CONSOLE,
+                )
+            else:
+                launcher_path = launcher_dir / "run_all_data_updates.sh"
+                launcher_lines = [
+                    "#!/usr/bin/env bash",
+                    "set -e",
+                    f'cd "{working_dir}"',
+                    f'export PYTHONUTF8="1"',
+                    f'export PYTHONIOENCODING="utf-8"',
+                    "",
+                ]
+                for _, display_name, script_path, input_path in update_steps:
+                    launcher_lines.extend([
+                        f'echo "更新{display_name}..."',
+                        f'"{python_executable}" "{script_path}" < "{input_path}"',
+                    ])
+                launcher_path.write_text("\n".join(launcher_lines), encoding="utf-8")
+                subprocess.Popen(["sh", str(launcher_path)], cwd=working_dir)
+        except Exception as e:
+            return {"status": "error", "message": f"启动顺序更新脚本失败: {e}"}
+        
+        return {
+            "status": "success",
+            "message": "已启动顺序数据更新窗口",
+            "target_date": target_date,
+            "modules": started_modules,
+            "details": "全部模块将自动使用今天作为目标日期、按顺序更新所有品种并确认执行；窗口完成后会自动关闭",
+        }
 
 # ============================================================================
 # 完整分析管理器
@@ -4554,72 +4716,76 @@ def main():
     with tab2:
         st.header("🔄 数据更新")
         
-        st.info("💡 选择需要更新的数据模块，系统将启动对应的更新程序")
+        st.info("💡 选择需要更新的数据模块，系统将启动对应的更新程序；部分数据源会回溯拉取后自动合并去重")
+
+        def get_module_latest_date(module_key: str) -> str:
+            module_info = data_status.get("modules", {}).get(module_key, {})
+            return module_info.get("latest_date") or module_info.get("last_update") or "未知"
+
+        def get_module_file_update_time(module_key: str) -> str:
+            module_info = data_status.get("modules", {}).get(module_key, {})
+            return module_info.get("last_file_update") or "未知"
+
+        def render_update_button(module_key: str, label: str, spinner_text: str):
+            if st.button(label, use_container_width=True):
+                with st.spinner(spinner_text):
+                    result = st.session_state.data_manager.run_data_update_direct(module_key)
+                    if result["status"] == "success":
+                        st.success(result["message"])
+                        st.info(result["details"])
+                    else:
+                        st.error(result["message"])
+            st.caption(
+                f"当前最新数据：{get_module_latest_date(module_key)} ｜ "
+                f"文件更新时间：{get_module_file_update_time(module_key)}"
+            )
+        
+        if st.button("🚀 一键增量补齐全部数据到今天", type="primary", use_container_width=True):
+            with st.spinner("正在启动全部数据更新窗口..."):
+                result = st.session_state.data_manager.run_all_data_updates_direct()
+                if result["status"] == "success":
+                    st.success(result["message"])
+                    st.info(f"目标日期: {result['target_date']}；将按顺序执行6个模块并更新全部品种，部分数据源会回溯拉取后自动合并去重，窗口完成后自动关闭。")
+                    st.write("更新顺序:", " → ".join(result["modules"]))
+                else:
+                    st.error(result["message"])
+                    if result.get("modules"):
+                        st.warning("已启动模块: " + "、".join(result["modules"]))
+                    for error in result.get("errors", []):
+                        st.error(error)
+        all_latest_dates = [
+            get_module_latest_date(module_key)
+            for module_key in st.session_state.data_manager.modules_config.keys()
+            if get_module_latest_date(module_key) != "未知"
+        ]
+        if all_latest_dates:
+            st.caption(f"各模块当前最新数据范围：{min(all_latest_dates)} 至 {max(all_latest_dates)}")
+        else:
+            st.caption("各模块当前最新数据：未知")
+        all_file_update_times = [
+            get_module_file_update_time(module_key)
+            for module_key in st.session_state.data_manager.modules_config.keys()
+            if get_module_file_update_time(module_key) != "未知"
+        ]
+        if all_file_update_times:
+            st.caption(f"各模块文件更新时间范围：{min(all_file_update_times)} 至 {max(all_file_update_times)}")
+        else:
+            st.caption("各模块文件更新时间：未知")
+        
+        st.markdown("---")
         
         # 数据更新选项
         col1, col2 = st.columns(2)
         
         with col1:
-            # 库存数据更新
-            if st.button("📦 更新库存数据", use_container_width=True):
-                with st.spinner("启动库存数据更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("inventory")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
-            
-            # 持仓数据更新
-            if st.button("🎯 更新持仓席位数据", use_container_width=True):
-                with st.spinner("启动持仓数据更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("positioning")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
-            
-            # 期限结构更新
-            if st.button("📈 更新期限结构数据", use_container_width=True):
-                with st.spinner("启动期限结构更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("term_structure")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
+            render_update_button("inventory", "📦 更新库存数据", "启动库存数据更新...")
+            render_update_button("positioning", "🎯 更新持仓席位数据", "启动持仓数据更新...")
+            render_update_button("term_structure", "📈 更新期限结构数据", "启动期限结构更新...")
         
         with col2:
-            # 技术分析数据更新
-            if st.button("📊 更新技术分析数据", use_container_width=True):
-                with st.spinner("启动技术数据更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("technical_analysis")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
-            
-            # 基差数据更新
-            if st.button("💰 更新基差分析数据", use_container_width=True):
-                with st.spinner("启动基差数据更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("basis")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
-            
-            # 仓单数据更新
-            if st.button("📜 更新仓单数据", use_container_width=True):
-                with st.spinner("启动仓单数据更新..."):
-                    result = st.session_state.data_manager.run_data_update_direct("receipt")
-                    if result["status"] == "success":
-                        st.success(result["message"])
-                        st.info(result["details"])
-                    else:
-                        st.error(result["message"])
+            render_update_button("technical_analysis", "📊 更新技术分析数据", "启动技术数据更新...")
+            render_update_button("basis", "💰 更新基差分析数据", "启动基差数据更新...")
+            render_update_button("receipt", "📜 更新仓单数据", "启动仓单数据更新...")
         
         st.markdown("---")
         st.warning("⚠️ 数据更新将在新的命令行窗口中运行，请按照提示完成操作")
