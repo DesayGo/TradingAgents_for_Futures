@@ -67,10 +67,10 @@ streamlit run streamlit_app.py
 def fetch_position_data(self, trade_date: str) -> bool:
     """
     获取持仓数据
-    
+
     Args:
         trade_date: 交易日期，格式为YYYYMMDD
-        
+
     Returns:
         bool: 获取成功返回True，失败返回False
     """
@@ -171,7 +171,6 @@ coverage report
 ### 沟通渠道
 - GitHub Issues：Bug报告和功能请求
 - GitHub Discussions：一般讨论和问答
-- Email：953534947@qq.com（紧急问题）
 
 ## 🎯 贡献重点
 
@@ -208,7 +207,6 @@ coverage report
 
 1. 查看现有的Issues和Discussions
 2. 阅读项目文档
-3. 联系维护者：953534947@qq.com
 
 ## 🙏 感谢
 
@@ -216,4 +214,4 @@ coverage report
 
 ---
 
-**让我们一起构建更好的期货分析工具！** 🚀 
+**让我们一起构建更好的期货分析工具！** 🚀

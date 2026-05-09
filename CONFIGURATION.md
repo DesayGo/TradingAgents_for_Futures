@@ -217,7 +217,7 @@ python -c "import json; config = json.load(open('期货TradingAgents系统_配�
 
 1. **不要提交API密钥到Git仓库**
    - 配置文件已在 `.gitignore` 中排除
-   
+
 2. **定期更换API密钥**
    - 建议每3个月更换一次
 
@@ -351,4 +351,3 @@ REDIS_PORT = 6379
 ---
 
 更多帮助请参考 [README.md](README.md) 或提交Issue。
-

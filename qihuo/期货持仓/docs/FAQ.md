@@ -63,13 +63,13 @@
 ## 技术问题
 
 ### Q9: 支持哪些Python版本？
-**A:** 
+**A:**
 - **推荐**：Python 3.11
 - **支持**：Python 3.8-3.11
 - **不支持**：Python 3.12+（依赖包兼容性问题）
 
 ### Q10: 如何本地运行？
-**A:** 
+**A:**
 ```bash
 # 克隆项目
 git clone <repository-url>
@@ -83,12 +83,12 @@ streamlit run streamlit_app.py
 ```
 
 ### Q11: 如何更新到最新版本？
-**A:** 
+**A:**
 - **Streamlit Cloud**：推送代码到GitHub会自动更新
 - **本地环境**：`git pull` 获取最新代码
 
 ### Q12: 数据来源是什么？
-**A:** 
+**A:**
 - 使用akshare库获取期货持仓数据
 - 数据来源于各大期货交易所官方
 - 数据更新频率：交易日每日更新
@@ -96,7 +96,7 @@ streamlit run streamlit_app.py
 ## 错误处理
 
 ### Q13: 遇到"ModuleNotFoundError"怎么办？
-**A:** 
+**A:**
 ```bash
 # 重新安装依赖
 pip install -r requirements.txt
@@ -106,14 +106,14 @@ pip install streamlit pandas akshare
 ```
 
 ### Q14: 遇到"网络超时"错误怎么办？
-**A:** 
+**A:**
 - 检查网络连接
 - 使用VPN（如果在海外）
 - 稍后重试
 - 系统会自动重试3次
 
 ### Q15: 缓存文件过大怎么办？
-**A:** 
+**A:**
 - 使用侧边栏的"清理缓存"功能
 - 或手动删除`cache/`目录
 - 缓存会自动过期清理
@@ -121,14 +121,14 @@ pip install streamlit pandas akshare
 ## 性能优化
 
 ### Q16: 如何提高运行速度？
-**A:** 
+**A:**
 - **首次运行**：耐心等待1-3分钟
 - **重复运行**：利用缓存，10-30秒完成
 - **定期清理**：清理过期缓存文件
 - **网络优化**：使用稳定的网络连接
 
 ### Q17: 内存使用过高怎么办？
-**A:** 
+**A:**
 - 重启应用
 - 清理缓存
 - 减少同时分析的交易所数量
@@ -137,7 +137,7 @@ pip install streamlit pandas akshare
 ## 开发相关
 
 ### Q18: 如何贡献代码？
-**A:** 
+**A:**
 1. Fork项目
 2. 创建功能分支
 3. 提交代码
@@ -145,28 +145,15 @@ pip install streamlit pandas akshare
 5. 详见[CONTRIBUTING.md](../CONTRIBUTING.md)
 
 ### Q19: 如何报告Bug？
-**A:** 
+**A:**
 - 在GitHub Issues中报告
 - 提供详细的错误信息
 - 包含复现步骤
 - 附上系统环境信息
 
 ### Q20: 如何请求新功能？
-**A:** 
+**A:**
 - 在GitHub Issues中提出
 - 详细描述功能需求
 - 说明使用场景
 - 提供设计建议（如有）
-
-## 联系支持
-
-如果以上FAQ没有解决您的问题，可以通过以下方式获取帮助：
-
-- **GitHub Issues**: 报告Bug或请求功能
-- **邮件支持**: [您的邮箱]
-- **文档**: 查看完整的技术文档
-
----
-
-**最后更新**: 2024年12月
-**版本**: v2.1 

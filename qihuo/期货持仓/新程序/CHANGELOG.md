@@ -115,7 +115,7 @@
 本项目遵循 [语义化版本控制](https://semver.org/lang/zh-CN/)：
 
 - **主版本号**：不兼容的API修改
-- **次版本号**：向下兼容的功能性新增  
+- **次版本号**：向下兼容的功能性新增
 - **修订号**：向下兼容的问题修正
 
 ### 发布周期
@@ -134,7 +134,6 @@
 
 感谢所有为本项目做出贡献的开发者：
 
-- **7haoge** - 项目创建者和主要维护者
 
 ---
 
@@ -142,10 +141,9 @@
 
 如果您发现任何问题或有改进建议：
 
-- 📧 **邮箱**：953534947@qq.com
 - 🐛 **Bug报告**：[GitHub Issues](https://github.com/yourusername/futures-analysis/issues)
 - 💡 **功能请求**：[GitHub Discussions](https://github.com/yourusername/futures-analysis/discussions)
 
 ---
 
-**🚀 期货持仓分析系统 - 持续改进，永不止步！** 
+**🚀 期货持仓分析系统 - 持续改进，永不止步！**

@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 
 > 🎯 **智能期货持仓分析系统，助您洞察市场先机**
-> 
+>
 > 基于多维度数据分析的期货持仓策略系统，支持云端部署，具备智能容错和性能优化功能。
 
 ## ✨ 核心特性
@@ -97,7 +97,7 @@ requests>=2.28.0
 STRATEGY_CONFIG = {
     "家人席位反向操作策略": {
         "default_retail_seats": [
-            "永安期货", "国泰君安", "海通期货", 
+            "永安期货", "国泰君安", "海通期货",
             "申银万国", "华泰期货", "中信期货"
         ]
     }
@@ -144,7 +144,7 @@ price_exchanges = [
 def analyze_power_change(data):
     long_chg = data['total_long_chg']
     short_chg = data['total_short_chg']
-    
+
     if long_chg > 0 and short_chg < 0:
         return "看多"
     elif long_chg < 0 and short_chg > 0:
@@ -158,11 +158,11 @@ def analyze_power_change(data):
 def analyze_retail_reverse(data, retail_seats):
     # 看多信号：所有家人席位的空单持仓量变化为正，且多单持仓量变化为负或0
     # 看空信号：所有家人席位的多单持仓量变化为正，且空单持仓量变化为负或0
-    
+
     for seat in active_seats:
         long_chg = seat['long_chg']
         short_chg = seat['short_chg']
-        
+
         # 判断信号条件
         long_condition = short_chg > 0 and long_chg <= 0
         short_condition = long_chg > 0 and short_chg <= 0
@@ -172,24 +172,24 @@ def analyze_retail_reverse(data, retail_seats):
 ```python
 def fetch_with_timeout(exchange, timeout=15):
     import threading, queue
-    
+
     result_queue = queue.Queue()
-    
+
     def fetch_data():
         try:
             result = api_call(exchange)
             result_queue.put(('success', result))
         except Exception as e:
             result_queue.put(('error', str(e)))
-    
+
     thread = threading.Thread(target=fetch_data)
     thread.daemon = True
     thread.start()
     thread.join(timeout=timeout)
-    
+
     if thread.is_alive():
         return None  # 超时，自动跳过
-    
+
     return result_queue.get_nowait()
 ```
 
@@ -222,7 +222,6 @@ def fetch_with_timeout(exchange, timeout=15):
 如遇到问题，请：
 1. 查看 [故障排除文档](docs/TROUBLESHOOTING.md)
 2. 提交 [GitHub Issue](https://github.com/yourusername/futures-analysis/issues)
-3. 联系开发者：953534947@qq.com
 
 ## 📈 性能指标
 
@@ -272,13 +271,6 @@ git push origin feature/your-feature
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
 
-## 👨‍💻 作者信息
-
-**7haoge**
-- 📧 邮箱：953534947@qq.com
-- 🐙 GitHub：[@yourusername](https://github.com/yourusername)
-- 💼 专业：量化交易系统开发
-
 ## 🙏 致谢
 
 感谢以下开源项目的支持：
@@ -302,4 +294,4 @@ git push origin feature/your-feature
 
 [⭐ Star](https://github.com/yourusername/futures-analysis) | [🍴 Fork](https://github.com/yourusername/futures-analysis/fork) | [📝 Issues](https://github.com/yourusername/futures-analysis/issues) | [📖 Docs](docs/)
 
-</div> 
+</div>

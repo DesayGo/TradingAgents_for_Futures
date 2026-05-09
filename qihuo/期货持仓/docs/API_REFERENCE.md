@@ -242,4 +242,4 @@ textColor = "#262730"
 
 ## 贡献指南
 
-详见 [CONTRIBUTING.md](../CONTRIBUTING.md) 
+详见 [CONTRIBUTING.md](../CONTRIBUTING.md)

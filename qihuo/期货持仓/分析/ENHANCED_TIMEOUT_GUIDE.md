@@ -34,13 +34,13 @@ price_exchanges = [
 ```python
 if exchange['name'] == '广期所':
     st.info("⚠️ 广期所数据获取中，如遇问题将自动跳过...")
-    
+
     try:
         import threading
         import queue
-        
+
         result_queue = queue.Queue()
-        
+
         def fetch_gfex_data():
             try:
                 result = self.safe_akshare_call(
@@ -52,20 +52,20 @@ if exchange['name'] == '广期所':
                 result_queue.put(('success', result))
             except Exception as e:
                 result_queue.put(('error', str(e)))
-        
+
         # 启动获取线程
         fetch_thread = threading.Thread(target=fetch_gfex_data)
         fetch_thread.daemon = True
         fetch_thread.start()
-        
+
         # 等待结果，使用配置的超时时间
         fetch_thread.join(timeout=exchange.get('timeout', 15))
-        
+
         if fetch_thread.is_alive():
             # 超时了，自动跳过
             st.warning(f"⚠️ {exchange['name']} 数据获取超时({exchange.get('timeout', 15)}秒)，自动跳过")
             continue
-        
+
         # 获取结果
         try:
             status, df = result_queue.get_nowait()
@@ -74,7 +74,7 @@ if exchange['name'] == '广期所':
         except queue.Empty:
             st.warning(f"⚠️ {exchange['name']} 数据获取无响应，自动跳过")
             continue
-            
+
     except Exception as e:
         st.warning(f"⚠️ {exchange['name']} 数据获取失败，自动跳过: {str(e)}")
         continue
@@ -178,15 +178,15 @@ except queue.Empty:
 def test_enhanced_timeout():
     """测试增强超时机制"""
     fetcher = CloudDataFetcher()
-    
+
     # 模拟超时场景
     start_time = time.time()
     result = fetcher.fetch_price_data_with_fallback("20241201")
     end_time = time.time()
-    
+
     # 验证总时间不超过预期
     assert end_time - start_time < 120  # 总时间不超过2分钟
-    
+
     # 验证结果不为空（至少获取到其他交易所数据）
     assert not result.empty
 ```
@@ -219,7 +219,7 @@ def monitor_performance():
         'total_time': end_time - start_time,
         'timeout_count': timeout_count
     }
-    
+
     st.sidebar.json(metrics)
 ```
 
@@ -266,4 +266,4 @@ def smart_cache_strategy(exchange_name, trade_date):
 3. **用户友好**：详细的状态提示和进度显示
 4. **可维护性**：清晰的代码结构和错误处理逻辑
 
-这是一个平衡了性能、稳定性和用户体验的最优解决方案。 
+这是一个平衡了性能、稳定性和用户体验的最优解决方案。

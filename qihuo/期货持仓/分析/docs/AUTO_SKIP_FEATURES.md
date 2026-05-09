@@ -22,15 +22,15 @@ import queue
 
 def fetch_data_with_timeout():
     result_queue = queue.Queue()
-    
+
     # 启动数据获取线程
     fetch_thread = threading.Thread(target=fetch_data)
     fetch_thread.daemon = True
     fetch_thread.start()
-    
+
     # 等待结果，最多20秒
     fetch_thread.join(timeout=20)
-    
+
     if fetch_thread.is_alive():
         # 超时，自动跳过
         auto_skip_and_continue()
@@ -190,22 +190,22 @@ class CloudDataFetcher:
         if exchange['name'] == '广期所':
             # 使用线程和队列实现超时控制
             result_queue = queue.Queue()
-            
+
             def fetch_data():
                 try:
                     result = self.safe_akshare_call(...)
                     result_queue.put(('success', result))
                 except Exception as e:
                     result_queue.put(('error', str(e)))
-            
+
             # 启动获取线程
             fetch_thread = threading.Thread(target=fetch_data)
             fetch_thread.daemon = True
             fetch_thread.start()
-            
+
             # 等待结果，最多等待20秒
             fetch_thread.join(timeout=20)
-            
+
             if fetch_thread.is_alive():
                 # 超时处理
                 self.handle_timeout()
@@ -252,5 +252,3 @@ def create_empty_gfex_file():
 ---
 
 **🚀 期货持仓分析系统 v2.1 - 让分析更智能、更流畅！**
-
-**作者：7haoge | 邮箱：953534947@qq.com** 

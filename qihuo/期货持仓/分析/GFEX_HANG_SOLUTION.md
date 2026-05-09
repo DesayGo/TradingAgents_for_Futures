@@ -45,23 +45,23 @@ price_exchanges = [
 # 广期所特殊处理逻辑
 if exchange['name'] == '广期所':
     st.info("⚠️ 广期所数据获取中，如遇问题将自动跳过...")
-    
+
     # 使用线程和严格超时控制
     import threading, queue
     result_queue = queue.Queue()
-    
+
     def fetch_gfex_data():
         try:
             result = self.safe_akshare_call(...)
             result_queue.put(('success', result))
         except Exception as e:
             result_queue.put(('error', str(e)))
-    
+
     fetch_thread = threading.Thread(target=fetch_gfex_data)
     fetch_thread.daemon = True
     fetch_thread.start()
     fetch_thread.join(timeout=15)  # 15秒超时
-    
+
     if fetch_thread.is_alive():
         st.warning("⚠️ 广期所数据获取超时(15秒)，自动跳过")
         continue
@@ -83,7 +83,7 @@ self.price_exchanges = [
 ```python
 price_exchanges = [
     {"market": "DCE", "name": "大商所", "timeout": 30},
-    {"market": "CFFEX", "name": "中金所", "timeout": 30}, 
+    {"market": "CFFEX", "name": "中金所", "timeout": 30},
     {"market": "CZCE", "name": "郑商所", "timeout": 30},
     {"market": "SHFE", "name": "上期所", "timeout": 30},
     {"market": "GFEX", "name": "广期所", "timeout": 15},  # 更短超时
@@ -171,6 +171,6 @@ v2.0增强超时处理机制实现了：
 
 ---
 
-**修复版本**: v2.1.1 (广期所行情卡顿修复版)  
-**修复状态**: ✅ 已完成并验证通过  
-**部署状态**: 🚀 准备部署 
+**修复版本**: v2.1.1 (广期所行情卡顿修复版)
+**修复状态**: ✅ 已完成并验证通过
+**部署状态**: 🚀 准备部署

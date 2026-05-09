@@ -500,11 +500,6 @@ except Exception as e:
     traceback.print_exc()
 ```
 
-### 联系方式
-- 📧 **邮箱**: 953534947@qq.com
-- 🐛 **GitHub Issues**: [提交问题](https://github.com/yourusername/futures-analysis/issues)
-- 💬 **讨论**: [GitHub Discussions](https://github.com/yourusername/futures-analysis/discussions)
-
 ### 问题模板
 ```markdown
 ## 问题描述
@@ -522,10 +517,10 @@ except Exception as e:
 描述实际发生的情况
 
 ## 环境信息
-- 操作系统: 
-- Python版本: 
-- Streamlit版本: 
-- 其他相关信息: 
+- 操作系统:
+- Python版本:
+- Streamlit版本:
+- 其他相关信息:
 
 ## 错误信息
 ```
@@ -538,8 +533,5 @@ except Exception as e:
 
 ---
 
-**🔧 故障排除指南 v2.1**  
-**更新日期**: 2024-12-01  
-**维护者**: 7haoge
-
-记住：大多数问题都有解决方案，不要放弃！如果以上方法都无法解决问题，请联系我们获取帮助。 
+**🔧 故障排除指南 v2.1**
+**更新日期**: 2024-12-01

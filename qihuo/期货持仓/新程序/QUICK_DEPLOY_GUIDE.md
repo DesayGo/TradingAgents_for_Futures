@@ -131,7 +131,6 @@ git push origin main
 3. 确认requirements.txt没有版本号
 4. 查看Streamlit Cloud部署日志
 5. 查看性能监控指标
-6. 联系作者：953534947@qq.com
 
 ## 📚 相关文档
 
@@ -141,4 +140,4 @@ git push origin main
 
 ---
 
-**现在就可以成功部署高性能版本了！** 🚀🎊 
+**现在就可以成功部署高性能版本了！** 🚀🎊

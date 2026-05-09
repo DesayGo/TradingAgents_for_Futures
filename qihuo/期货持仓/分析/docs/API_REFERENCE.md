@@ -29,11 +29,11 @@ engine = FuturesAnalysisEngine(
 def full_analysis(trade_date: str, progress_callback=None) -> Dict[str, Any]:
     """
     完整分析流程
-    
+
     Args:
         trade_date: 交易日期，格式YYYYMMDD
         progress_callback: 进度回调函数，接收(message, progress)参数
-    
+
     Returns:
         Dict: 分析结果字典
         {
@@ -60,7 +60,7 @@ results = engine.full_analysis("20241201", progress_callback)
 def update_retail_seats(retail_seats: List[str]):
     """
     更新家人席位配置
-    
+
     Args:
         retail_seats: 家人席位名称列表
     """
@@ -86,11 +86,11 @@ fetcher = CloudDataFetcher()
 def fetch_position_data_with_auto_skip(trade_date: str, progress_callback=None) -> bool:
     """
     获取持仓数据，自动跳过超时的交易所
-    
+
     Args:
         trade_date: 交易日期，格式YYYYMMDD
         progress_callback: 进度回调函数
-    
+
     Returns:
         bool: 是否成功获取数据
     """
@@ -103,11 +103,11 @@ def fetch_position_data_with_auto_skip(trade_date: str, progress_callback=None) 
 def fetch_price_data_with_fallback(trade_date: str, progress_callback=None) -> pd.DataFrame:
     """
     获取期货行情数据，包含智能自动跳过功能
-    
+
     Args:
         trade_date: 交易日期，格式YYYYMMDD
         progress_callback: 进度回调函数
-    
+
     Returns:
         pd.DataFrame: 合并后的价格数据
     """
@@ -133,10 +133,10 @@ analyzer = StrategyAnalyzer(retail_seats=None)
 def analyze_power_change(data: Dict[str, Any]) -> Tuple[str, str, float]:
     """
     多空力量变化策略
-    
+
     Args:
         data: 处理后的持仓数据
-    
+
     Returns:
         Tuple[str, str, float]: (信号, 原因, 强度)
     """
@@ -149,10 +149,10 @@ def analyze_power_change(data: Dict[str, Any]) -> Tuple[str, str, float]:
 def analyze_spider_web(data: Dict[str, Any]) -> Tuple[str, str, float]:
     """
     蜘蛛网策略
-    
+
     Args:
         data: 处理后的持仓数据
-    
+
     Returns:
         Tuple[str, str, float]: (信号, 原因, 强度)
     """
@@ -165,10 +165,10 @@ def analyze_spider_web(data: Dict[str, Any]) -> Tuple[str, str, float]:
 def analyze_retail_reverse(data: Dict[str, Any]) -> Tuple[str, str, float, List[Dict]]:
     """
     家人席位反向操作策略
-    
+
     Args:
         data: 处理后的持仓数据
-    
+
     Returns:
         Tuple[str, str, float, List[Dict]]: (信号, 原因, 强度, 席位详情)
     """
@@ -229,7 +229,7 @@ show_performance_metrics()
                 '蜘蛛网策略': {...},
                 '家人席位反向操作策略': {
                     'signal': 'str',
-                    'reason': 'str', 
+                    'reason': 'str',
                     'strength': 'float',
                     'seat_details': 'List[Dict]'  # 席位详情
                 }
@@ -366,7 +366,7 @@ except Exception as e:
 def progress_callback(message, progress):
     """标准进度回调函数"""
     print(f"[{progress*100:.1f}%] {message}")
-    
+
     # 在Streamlit中使用
     if 'streamlit' in sys.modules:
         import streamlit as st
@@ -410,15 +410,15 @@ def process_large_dataset(data):
     # 分块处理
     chunk_size = 1000
     results = []
-    
+
     for i in range(0, len(data), chunk_size):
         chunk = data[i:i+chunk_size]
         result = process_chunk(chunk)
         results.append(result)
-        
+
         # 清理中间变量
         del chunk
-        
+
     return pd.concat(results, ignore_index=True)
 ```
 
@@ -429,14 +429,14 @@ def process_large_dataset(data):
 ```python
 class CustomStrategy:
     """自定义策略示例"""
-    
+
     def analyze_custom_strategy(self, data: Dict[str, Any]) -> Tuple[str, str, float]:
         """
         自定义策略分析
-        
+
         Args:
             data: 处理后的持仓数据
-            
+
         Returns:
             Tuple[str, str, float]: (信号, 原因, 强度)
         """
@@ -444,7 +444,7 @@ class CustomStrategy:
         signal = "看多"  # 或 "看空", "中性"
         reason = "自定义分析原因"
         strength = 0.8
-        
+
         return signal, reason, strength
 
 # 集成到分析器
@@ -459,7 +459,7 @@ def extend_analyzer():
 ```python
 class CustomDataSource:
     """自定义数据源"""
-    
+
     def fetch_data(self, trade_date: str) -> pd.DataFrame:
         """获取自定义数据源数据"""
         # 实现数据获取逻辑
@@ -527,6 +527,5 @@ def parallel_analysis(dates):
 
 ---
 
-**📚 API参考文档 v2.1**  
-**更新日期**: 2024-12-01  
-**维护者**: 7haoge 
+**📚 API参考文档 v2.1**
+**更新日期**: 2024-12-01

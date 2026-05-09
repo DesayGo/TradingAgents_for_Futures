@@ -23,13 +23,13 @@
 class StreamlitApp:
     def __init__(self):
         """初始化Streamlit应用"""
-        
+
     def run(self):
         """运行应用"""
-        
+
     def render_sidebar(self):
         """渲染侧边栏"""
-        
+
     def render_main_content(self):
         """渲染主要内容"""
 ```
@@ -59,10 +59,10 @@ app.run()
 class CloudDataFetcher:
     def __init__(self):
         """初始化云端数据获取器"""
-        
+
     def fetch_position_data_with_auto_skip(self, trade_date: str, progress_callback=None) -> bool:
         """获取持仓数据，自动跳过超时的交易所"""
-        
+
     def safe_akshare_call(self, func, *args, **kwargs):
         """安全的akshare调用，包含重试机制和超时控制"""
 ```
@@ -115,10 +115,10 @@ data = fetcher.safe_akshare_call(ak.futures_dce_position_rank, date="20240530")
 class FuturesAnalysisEngine:
     def __init__(self, data_dir: str, retail_seats: List[str]):
         """初始化分析引擎"""
-        
+
     def full_analysis(self, trade_date: str, progress_callback=None) -> Dict:
         """执行完整分析"""
-        
+
     def update_retail_seats(self, retail_seats: List[str]):
         """更新家人席位配置"""
 ```
@@ -171,13 +171,13 @@ print(f"分析了 {results['summary']['statistics']['total_contracts']} 个合�
 class StrategyAnalyzer:
     def __init__(self, retail_seats: List[str]):
         """初始化策略分析器"""
-        
+
     def analyze_power_change(self, df: pd.DataFrame) -> Dict:
         """多空力量变化策略"""
-        
+
     def analyze_spider_web(self, df: pd.DataFrame) -> Dict:
         """蜘蛛网策略"""
-        
+
     def analyze_retail_reverse(self, df: pd.DataFrame) -> Dict:
         """家人席位反向操作策略"""
 ```
@@ -229,9 +229,7 @@ class StrategyAnalyzer:
 # 系统配置
 SYSTEM_CONFIG = {
     "app_name": str,
-    "version": str,
-    "author": str,
-    "email": str
+    "version": str
 }
 
 # 策略配置
@@ -257,7 +255,7 @@ DISPLAY_CONFIG = {
 ```python
 def validate_trade_date(date_str: str) -> bool:
     """验证交易日期格式"""
-    
+
 def get_recent_trade_date() -> str:
     """获取最近的交易日期"""
 ```
@@ -267,7 +265,7 @@ def get_recent_trade_date() -> str:
 ```python
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """清理数据"""
-    
+
 def calculate_position_changes(df: pd.DataFrame) -> pd.DataFrame:
     """计算持仓变化"""
 ```
@@ -290,7 +288,7 @@ if success:
     # 2. 分析数据
     engine = FuturesAnalysisEngine("data", ["东方财富", "平安期货"])
     results = engine.full_analysis("20240530")
-    
+
     # 3. 查看结果
     print(f"总合约数: {results['summary']['statistics']['total_contracts']}")
     print(f"看多信号: {results['summary']['statistics']['total_long_signals']}")
@@ -429,5 +427,3 @@ analysis_result = {
 - [贡献指南](../CONTRIBUTING.md)
 
 ---
-
-**📧 技术支持：953534947@qq.com** 

@@ -27,4 +27,3 @@ python qihuo/scripts/run_daily.py --symbol RB --date 2025-08-12
 
 说明
 - 当前仅输出报告骨架，后续会逐步接入 AkShare 数据与大模型智能体。
-

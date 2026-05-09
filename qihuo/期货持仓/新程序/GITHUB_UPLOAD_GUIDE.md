@@ -273,8 +273,7 @@ mkdir -p .github/ISSUE_TEMPLATE
 
 1. 检查GitHub官方文档
 2. 查看Git命令帮助
-3. 联系作者：953534947@qq.com
 
 ---
 
-**🚀 祝您的项目在GitHub上获得成功！** 
+**🚀 祝您的项目在GitHub上获得成功！**

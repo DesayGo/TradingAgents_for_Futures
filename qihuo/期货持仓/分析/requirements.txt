@@ -8,4 +8,4 @@ xlsxwriter
 requests
 python-dateutil
 pytz
-urllib3 
+urllib3

@@ -118,10 +118,7 @@ git push -u origin main
 2. 确认.python-version内容为"3.11"
 3. 验证requirements.txt没有版本限制
 4. 查看Streamlit Cloud部署日志
-5. 联系作者：953534947@qq.com
 
 ---
 
 **期货持仓分析系统 v2.0 - 部署问题完全解决！** 🎊
-
-**作者：7haoge | 邮箱：953534947@qq.com** 

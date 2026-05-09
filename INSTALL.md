@@ -13,7 +13,7 @@
 
 ### 软件要求
 
-- **操作系统**: 
+- **操作系统**:
   - Windows 10/11
   - macOS 10.14+
   - Linux (Ubuntu 18.04+, CentOS 7+)
@@ -391,4 +391,3 @@ sudo systemctl start futures-ai
 ---
 
 安装完成后，请阅读 [README.md](README.md) 了解系统使用方法。
-

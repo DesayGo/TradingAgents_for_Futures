@@ -4,7 +4,7 @@
 
 ### 📁 必需文件
 - [ ] `streamlit_app.py` - 主应用文件
-- [ ] `futures_analyzer.py` - 核心分析模块  
+- [ ] `futures_analyzer.py` - 核心分析模块
 - [ ] `config.py` - 配置文件
 - [ ] `utils.py` - 工具函数
 - [ ] `requirements.txt` - 依赖包列表（固定版本号）
@@ -118,12 +118,3 @@ git push origin v2.0
    - 检查网络连接
    - 确认API可用性
    - 查看错误日志
-
-### 联系支持
-- 作者邮箱：953534947@qq.com
-- GitHub Issues：在仓库中创建Issue
-- Streamlit社区：https://discuss.streamlit.io
-
----
-
-**完成所有检查项后，您的应用就可以成功部署到Streamlit Cloud了！** 🎉 

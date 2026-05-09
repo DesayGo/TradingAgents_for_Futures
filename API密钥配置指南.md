@@ -40,13 +40,13 @@ DeepSeek是本系统的核心AI引擎，用于所有智能分析功能。
    # 方法1：编辑JSON配置文件
    复制 期货TradingAgents系统_配置文件.example.json
    为   期货TradingAgents系统_配置文件.json
-   
+
    # 找到这一行并填入密钥：
    "api_key": "sk-你复制的密钥粘贴在这里"
-   
+
    # 方法2：编辑Python配置文件
    复制 config.example.py 为 config.py
-   
+
    # 找到这一行并填入密钥：
    DEEPSEEK_API_KEY = "sk-你复制的密钥粘贴在这里"
    ```
@@ -142,9 +142,9 @@ config_file = Path("期货TradingAgents系统_配置文件.json")
 if config_file.exists():
     with open(config_file, 'r', encoding='utf-8') as f:
         config = json.load(f)
-    
+
     api_key = config['api_settings']['deepseek']['api_key']
-    
+
     if api_key.startswith('sk-') and len(api_key) > 20:
         print("✓ DeepSeek API密钥格式正确")
     else:
@@ -307,4 +307,3 @@ cp 期货TradingAgents系统_配置文件.example.json 期货TradingAgents系统
 ---
 
 **下一步**：配置完成后，请阅读 [本地数据配置指南](本地数据配置指南.md)
-

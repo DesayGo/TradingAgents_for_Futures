@@ -81,4 +81,4 @@ streamlit run app_streamlit.py
 
 ## 许可证
 
-MIT License 
+MIT License

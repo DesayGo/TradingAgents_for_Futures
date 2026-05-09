@@ -9,7 +9,6 @@
 
 一个基于Python和Streamlit的智能期货持仓分析系统，集成多种分析策略，具备智能超时处理功能，确保分析流畅进行。
 
-**作者：7haoge | 邮箱：953534947@qq.com**
 
 ---
 
@@ -144,22 +143,22 @@ futures-analysis/
 def fetch_data_with_auto_skip(self, trade_date):
     # 使用线程和队列实现精确超时控制
     result_queue = queue.Queue()
-    
+
     def fetch_data():
         try:
             result = self.safe_akshare_call(exchange_func, **args)
             result_queue.put(('success', result))
         except Exception as e:
             result_queue.put(('error', str(e)))
-    
+
     # 启动获取线程
     fetch_thread = threading.Thread(target=fetch_data)
     fetch_thread.daemon = True
     fetch_thread.start()
-    
+
     # 等待结果，广期所最多等待20秒
     fetch_thread.join(timeout=20)
-    
+
     if fetch_thread.is_alive():
         # 超时自动跳过
         self.auto_skip_and_continue()
@@ -279,14 +278,6 @@ python -m pytest tests/
 
 ---
 
-## 📞 联系方式
-
-**作者**：7haoge  
-**邮箱**：953534947@qq.com  
-**项目链接**：https://github.com/yourusername/futures-analysis
-
----
-
 ## 🙏 致谢
 
 - [Streamlit](https://streamlit.io/) - 优秀的Web应用框架
@@ -304,4 +295,4 @@ python -m pytest tests/
 
 ---
 
-**🚀 期货持仓分析系统 v2.1 - 让期货分析更智能、更流畅！** 
+**🚀 期货持仓分析系统 v2.1 - 让期货分析更智能、更流畅！**

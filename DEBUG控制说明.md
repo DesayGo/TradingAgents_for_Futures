@@ -90,7 +90,7 @@ from 优化版辩论风控决策系统 import OptimizedTradingAgentsSystem
 ### 关闭DEBUG后（默认状态）
 系统运行时**不会**输出以下内容：
 - ✅ 所有 `🐛 DEBUG:` 开头的信息
-- ✅ 所有 `DEBUG:` 开头的清理过程信息  
+- ✅ 所有 `DEBUG:` 开头的清理过程信息
 - ✅ 所有 `🔍` 开头的内容预览信息
 - ✅ 所有 `==========` 分隔线
 
@@ -142,4 +142,3 @@ def debug_print(*args, **kwargs):
 ```
 
 所有调试输出均通过 `debug_print()` 函数，而非直接使用 `print()`。
-
