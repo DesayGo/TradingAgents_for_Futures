@@ -35,6 +35,7 @@ import subprocess
 import sys
 import threading
 import os
+import requests
 
 # Word文档生成相关
 try:
@@ -86,6 +87,143 @@ def check_commodity_local_data(commodity: str, data_status: Dict) -> Dict[str, b
         result[module_key] = has_data
     
     return result
+
+PLACEHOLDER_API_KEYS = {
+    "",
+    "YOUR_DEEPSEEK_API_KEY_HERE",
+    "YOUR_SERPER_API_KEY_HERE",
+    "YOUR_API_KEY_HERE",
+    "sk-your-api-key-here",
+    "your_deepseek_api_key_here",
+}
+
+
+def _is_real_api_key(api_key: Optional[str]) -> bool:
+    """判断API Key是否看起来是真实配置，而不是空值或模板占位符"""
+    if not api_key:
+        return False
+    return api_key.strip() not in PLACEHOLDER_API_KEYS
+
+
+def _response_error_text(response) -> str:
+    text = getattr(response, "text", "") or ""
+    if len(text) > 160:
+        text = text[:157] + "..."
+    return text
+
+
+def _deepseek_chat_url(base_url: str) -> str:
+    base = (base_url or "https://api.deepseek.com/v1").rstrip("/")
+    if base.endswith("/chat/completions"):
+        return base
+    if base in {"https://api.deepseek.com", "https://api.deepseek.com/"}:
+        return "https://api.deepseek.com/v1/chat/completions"
+    return f"{base}/chat/completions"
+
+
+def validate_deepseek_api_key(
+    api_key: Optional[str],
+    base_url: str = "https://api.deepseek.com/v1",
+    model: str = "deepseek-chat",
+    timeout: int = 8,
+    http_post=None,
+) -> Dict[str, str]:
+    """通过真实接口请求验证DeepSeek API Key是否可用"""
+    if not _is_real_api_key(api_key):
+        return {"status": "missing", "message": "未配置DeepSeek API密钥"}
+
+    post = http_post or requests.post
+    try:
+        response = post(
+            _deepseek_chat_url(base_url),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": model or "deepseek-chat",
+                "messages": [{"role": "user", "content": "ping"}],
+                "max_tokens": 1,
+                "temperature": 0,
+                "stream": False,
+            },
+            timeout=timeout,
+        )
+    except Exception as e:
+        return {"status": "unknown", "message": f"DeepSeek API验证失败: {e}"}
+
+    if getattr(response, "status_code", None) == 200:
+        return {"status": "valid", "message": "DeepSeek API验证通过"}
+    if getattr(response, "status_code", None) in {400, 401, 402, 403, 429}:
+        return {
+            "status": "invalid",
+            "message": f"DeepSeek API不可用，状态码 {response.status_code}: {_response_error_text(response)}",
+        }
+    return {
+        "status": "invalid",
+        "message": f"DeepSeek API不可用，状态码 {getattr(response, 'status_code', '未知')}: {_response_error_text(response)}",
+    }
+
+
+def validate_serper_api_key(
+    api_key: Optional[str],
+    base_url: str = "https://google.serper.dev/search",
+    timeout: int = 8,
+    http_post=None,
+) -> Dict[str, str]:
+    """通过真实接口请求验证Serper API Key是否可用"""
+    if not _is_real_api_key(api_key):
+        return {"status": "missing", "message": "未配置Serper API密钥"}
+
+    post = http_post or requests.post
+    try:
+        response = post(
+            base_url or "https://google.serper.dev/search",
+            headers={
+                "X-API-KEY": api_key,
+                "Content-Type": "application/json",
+            },
+            json={"q": "test", "num": 1},
+            timeout=timeout,
+        )
+    except Exception as e:
+        return {"status": "unknown", "message": f"Serper API验证失败: {e}"}
+
+    if getattr(response, "status_code", None) == 200:
+        return {"status": "valid", "message": "Serper API验证通过"}
+    if getattr(response, "status_code", None) in {400, 401, 402, 403, 429}:
+        return {
+            "status": "invalid",
+            "message": f"Serper API不可用，状态码 {response.status_code}: {_response_error_text(response)}",
+        }
+    return {
+        "status": "invalid",
+        "message": f"Serper API不可用，状态码 {getattr(response, 'status_code', '未知')}: {_response_error_text(response)}",
+    }
+
+
+@st.cache_data(ttl=60, show_spinner=False)
+def cached_validate_api_key(provider: str, api_key: str, base_url: str, model: str = "") -> Dict[str, str]:
+    """缓存API验证结果，避免Streamlit每次刷新都请求外部接口"""
+    if provider == "deepseek":
+        return validate_deepseek_api_key(api_key, base_url, model or "deepseek-chat")
+    if provider == "serper":
+        return validate_serper_api_key(api_key, base_url)
+    return {"status": "unknown", "message": f"未知API类型: {provider}"}
+
+
+def render_api_status(label: str, result: Dict[str, str], config_hint: str) -> None:
+    status = result.get("status")
+    message = result.get("message", "")
+    if status == "valid":
+        st.success(f"✅ {label}验证通过")
+    elif status == "missing":
+        st.error(f"❌ {message}")
+        st.info(config_hint)
+    elif status == "invalid":
+        st.error(f"❌ {message}")
+    else:
+        st.warning(f"⚠️ {message}")
 
 def check_specific_commodity_data(commodity: str, module_key: str) -> bool:
     """检查特定品种在指定模块中是否有数据"""
@@ -4579,26 +4717,41 @@ def main():
         
         # 系统状态
         st.subheader("📊 系统状态")
+        if st.button("🔄 重新检测API状态", use_container_width=True):
+            cached_validate_api_key.clear()
         
         # 检查API密钥配置
         try:
             config = FuturesTradingAgentsConfig("期货TradingAgents系统_配置文件.json")
             
             # DeepSeek API状态
-            deepseek_api_key = config.get("api_settings", {}).get("deepseek", {}).get("api_key")
-            if deepseek_api_key:
-                st.success("✅ DeepSeek API已配置")
-            else:
-                st.error("❌ 未配置DeepSeek API密钥")
-                st.info("请在配置文件中设置 api_settings.deepseek.api_key")
+            deepseek_config = config.get("api_settings", {}).get("deepseek", {})
+            deepseek_api_key = deepseek_config.get("api_key")
+            deepseek_status = cached_validate_api_key(
+                "deepseek",
+                deepseek_api_key or "",
+                deepseek_config.get("base_url", "https://api.deepseek.com/v1"),
+                deepseek_config.get("model", "deepseek-chat"),
+            )
+            render_api_status(
+                "DeepSeek API",
+                deepseek_status,
+                "请在配置文件中设置 api_settings.deepseek.api_key",
+            )
             
             # Serper API状态
-            serper_api_key = config.get("api_settings", {}).get("serper", {}).get("api_key")
-            if serper_api_key:
-                st.success("✅ Serper API已配置")
-            else:
-                st.error("❌ 未配置Serper API密钥")
-                st.info("请在配置文件中设置 api_settings.serper.api_key")
+            serper_config = config.get("api_settings", {}).get("serper", {})
+            serper_api_key = serper_config.get("api_key")
+            serper_status = cached_validate_api_key(
+                "serper",
+                serper_api_key or "",
+                serper_config.get("base_url", "https://google.serper.dev/search"),
+            )
+            render_api_status(
+                "Serper API",
+                serper_status,
+                "请在配置文件中设置 api_settings.serper.api_key",
+            )
                 
         except Exception as e:
             st.error(f"❌ 配置文件错误: {e}")
