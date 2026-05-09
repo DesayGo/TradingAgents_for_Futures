@@ -1,11 +1,11 @@
 {
   "symbol": "NI",
-  "record_count": 48,
+  "record_count": 183,
   "date_range": {
-    "start": "2025-09-02T00:00:00",
-    "end": "2025-11-14T00:00:00"
+    "start": "2025-06-16T00:00:00",
+    "end": "2026-05-08T00:00:00"
   },
-  "last_updated": "2025-11-15T17:15:35.755583",
+  "last_updated": "2026-05-09T16:15:42.755328",
   "columns": [
     "date",
     "symbol",
