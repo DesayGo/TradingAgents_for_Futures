@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 期货持仓分析系统 - 工具函数模块
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import os
@@ -491,4 +489,4 @@ __all__ = [
 ]
 
 # 初始化日志
-logger = setup_logging() 
+logger = setup_logging()

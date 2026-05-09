@@ -3,8 +3,6 @@
 """
 期货持仓分析系统 - 核心分析模块
 整合所有分析策略和数据获取功能
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import akshare as ak
@@ -752,4 +750,4 @@ if __name__ == "__main__":
         print(f"看多信号: {results['summary']['statistics']['total_long_signals']} 个")
         print(f"看空信号: {results['summary']['statistics']['total_short_signals']} 个")
     else:
-        print("分析失败！") 
+        print("分析失败！")

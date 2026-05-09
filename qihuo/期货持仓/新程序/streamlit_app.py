@@ -3,8 +3,6 @@
 """
 期货持仓分析系统 - Streamlit Web应用
 全新改进版本，整合所有功能，包含性能优化
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import streamlit as st
@@ -1223,4 +1221,4 @@ class StreamlitApp:
 # 主程序入口
 if __name__ == "__main__":
     app = StreamlitApp()
-    app.run() 
+    app.run()

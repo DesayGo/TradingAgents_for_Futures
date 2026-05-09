@@ -3,8 +3,6 @@
 """
 期货持仓分析系统 - 快速版本
 专门优化云端部署性能
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import streamlit as st
@@ -49,4 +47,4 @@ except ImportError as e:
     st.info("请确保所有依赖包已正确安装")
 except Exception as e:
     st.error(f"应用启动失败: {str(e)}")
-    st.info("请检查系统配置或联系技术支持") 
+    st.info("请检查系统配置或联系技术支持")

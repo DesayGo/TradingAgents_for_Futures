@@ -3,8 +3,6 @@
 """
 期货持仓分析系统 - 云端数据获取模块
 专门解决Streamlit Cloud环境下的数据获取问题
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import streamlit as st
@@ -645,4 +643,4 @@ class CloudDataFetcher:
             return False
 
 # 全局实例
-cloud_fetcher = CloudDataFetcher() 
+cloud_fetcher = CloudDataFetcher()

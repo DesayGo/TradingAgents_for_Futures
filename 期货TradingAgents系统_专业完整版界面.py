@@ -11,10 +11,8 @@
 4. Word报告生成和导出
 5. 所有原有的专业功能
 
-作者: 7haoge  
 版本: 完整可用版V1
 创建时间: 2025-01-19
-联系方式: 953534947@qq.com
 """
 
 import streamlit as st
@@ -4695,9 +4693,6 @@ def main():
         </p>
         <p style="color: #888;">
             完整的期货投资决策流程，从数据分析到最终拍板
-        </p>
-        <p style="font-size: 1rem; color: #999; margin-top: 1rem;">
-            制作人：7haoge &nbsp;&nbsp;&nbsp;&nbsp; 联系方式：953534947@qq.com
         </p>
     </div>
     """, unsafe_allow_html=True)

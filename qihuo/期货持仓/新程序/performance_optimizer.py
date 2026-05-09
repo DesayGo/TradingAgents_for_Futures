@@ -3,8 +3,6 @@
 """
 期货持仓分析系统 - 性能优化模块
 专门用于提升云端部署性能
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 import streamlit as st
@@ -349,4 +347,4 @@ def show_performance_metrics():
         if st.button("🗑️ 清理缓存"):
             optimizer.clear_old_cache(max_age_days=0)  # 清理所有缓存
             st.success("缓存已清理")
-            st.rerun() 
+            st.rerun()

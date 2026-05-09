@@ -2,16 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 期货持仓分析系统 - 配置文件
-作者：7haoge
-邮箱：953534947@qq.com
 """
 
 # 系统配置
 SYSTEM_CONFIG = {
     "app_name": "期货持仓分析系统",
     "version": "2.1",
-    "author": "7haoge",
-    "email": "953534947@qq.com",
     "description": "基于期货持仓数据的多策略分析系统 - 智能自动跳过版"
 }
 
@@ -125,4 +121,4 @@ LOG_CONFIG = {
     "file": "futures_analysis.log",
     "max_size": 10 * 1024 * 1024,  # 10MB
     "backup_count": 5
-} 
+}
