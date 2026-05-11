@@ -193,6 +193,13 @@ class FuturesTradingAgentsConfig:
                     "base_url": "https://api.deepseek.com/v1",
                     "timeout": 120
                 },
+                "search": {
+                    "provider": "bocha"
+                },
+                "bocha": {
+                    "api_key": "YOUR_BOCHA_API_KEY_HERE",  # 可选，用于联网搜索
+                    "base_url": "https://api.bochaai.com/v1/web-search"
+                },
                 "serper": {
                     "api_key": "YOUR_SERPER_API_KEY_HERE",  # 可选，用于新闻搜索
                     "base_url": "https://google.serper.dev/search"
@@ -700,12 +707,18 @@ class FuturesAnalysisIntegrator:
                 user_config["api_settings"] = {}
             if "deepseek" not in user_config["api_settings"]:
                 user_config["api_settings"]["deepseek"] = {}
+            if "search" not in user_config["api_settings"]:
+                user_config["api_settings"]["search"] = {}
+            if "bocha" not in user_config["api_settings"]:
+                user_config["api_settings"]["bocha"] = {}
             if "serper" not in user_config["api_settings"]:
                 user_config["api_settings"]["serper"] = {}
             
             # 设置默认值（仅在用户未配置时）
             user_config["api_settings"]["deepseek"].setdefault("base_url", "https://api.deepseek.com/v1")
             user_config["api_settings"]["deepseek"].setdefault("timeout", 120)
+            user_config["api_settings"]["search"].setdefault("provider", "bocha")
+            user_config["api_settings"]["bocha"].setdefault("base_url", "https://api.bochaai.com/v1/web-search")
             user_config["api_settings"]["serper"].setdefault("base_url", "https://google.serper.dev/search")
             
             # 兼容旧版配置：如果有单独的deepseek_api_key，也使用它

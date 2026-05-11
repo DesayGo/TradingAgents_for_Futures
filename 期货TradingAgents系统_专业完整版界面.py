@@ -90,6 +90,7 @@ PLACEHOLDER_API_KEYS = {
     "",
     "YOUR_DEEPSEEK_API_KEY_HERE",
     "YOUR_SERPER_API_KEY_HERE",
+    "YOUR_BOCHA_API_KEY_HERE",
     "YOUR_API_KEY_HERE",
     "sk-your-api-key-here",
     "your_deepseek_api_key_here",
@@ -200,6 +201,48 @@ def validate_serper_api_key(
     }
 
 
+def validate_bocha_api_key(
+    api_key: Optional[str],
+    base_url: str = "https://api.bochaai.com/v1/web-search",
+    timeout: int = 8,
+    http_post=None,
+) -> Dict[str, str]:
+    """通过真实接口请求验证博查 Web Search API Key是否可用"""
+    if not _is_real_api_key(api_key):
+        return {"status": "missing", "message": "未配置博查 API密钥"}
+
+    post = http_post or requests.post
+    try:
+        response = post(
+            base_url or "https://api.bochaai.com/v1/web-search",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "query": "期货 市场 新闻",
+                "freshness": "oneWeek",
+                "summary": True,
+                "count": 1,
+            },
+            timeout=timeout,
+        )
+    except Exception as e:
+        return {"status": "unknown", "message": f"博查 API验证失败: {e}"}
+
+    if getattr(response, "status_code", None) == 200:
+        return {"status": "valid", "message": "博查 API验证通过"}
+    if getattr(response, "status_code", None) in {400, 401, 402, 403, 429}:
+        return {
+            "status": "invalid",
+            "message": f"博查 API不可用，状态码 {response.status_code}: {_response_error_text(response)}",
+        }
+    return {
+        "status": "invalid",
+        "message": f"博查 API不可用，状态码 {getattr(response, 'status_code', '未知')}: {_response_error_text(response)}",
+    }
+
+
 @st.cache_data(ttl=60, show_spinner=False)
 def cached_validate_api_key(provider: str, api_key: str, base_url: str, model: str = "") -> Dict[str, str]:
     """缓存API验证结果，避免Streamlit每次刷新都请求外部接口"""
@@ -207,6 +250,8 @@ def cached_validate_api_key(provider: str, api_key: str, base_url: str, model: s
         return validate_deepseek_api_key(api_key, base_url, model or "deepseek-chat")
     if provider == "serper":
         return validate_serper_api_key(api_key, base_url)
+    if provider == "bocha":
+        return validate_bocha_api_key(api_key, base_url)
     return {"status": "unknown", "message": f"未知API类型: {provider}"}
 
 
@@ -4734,18 +4779,35 @@ def main():
                 "请在配置文件中设置 api_settings.deepseek.api_key",
             )
             
-            # Serper API状态
-            serper_config = config.get("api_settings", {}).get("serper", {})
-            serper_api_key = serper_config.get("api_key")
-            serper_status = cached_validate_api_key(
-                "serper",
-                serper_api_key or "",
-                serper_config.get("base_url", "https://google.serper.dev/search"),
+            # 联网搜索API状态
+            api_settings = config.get("api_settings", {})
+            search_config = api_settings.get("search", {})
+            search_provider = (search_config.get("provider") or "serper").strip().lower()
+            search_defaults = {
+                "bocha": {
+                    "label": "博查 API",
+                    "base_url": "https://api.bochaai.com/v1/web-search",
+                    "hint": "请在配置文件中设置 api_settings.bocha.api_key",
+                },
+                "serper": {
+                    "label": "Serper API",
+                    "base_url": "https://google.serper.dev/search",
+                    "hint": "请在配置文件中设置 api_settings.serper.api_key",
+                },
+            }
+            if search_provider not in search_defaults:
+                search_provider = "serper"
+
+            search_api_config = api_settings.get(search_provider, {})
+            search_status = cached_validate_api_key(
+                search_provider,
+                search_api_config.get("api_key") or "",
+                search_api_config.get("base_url", search_defaults[search_provider]["base_url"]),
             )
             render_api_status(
-                "Serper API",
-                serper_status,
-                "请在配置文件中设置 api_settings.serper.api_key",
+                search_defaults[search_provider]["label"],
+                search_status,
+                search_defaults[search_provider]["hint"],
             )
                 
         except Exception as e:
@@ -4767,7 +4829,7 @@ def main():
         # 备注
         st.subheader("📝 备注")
         st.info("""
-        **本系统的分析功能依赖于DeepSeek，联网搜索功能依赖于Serper，系统正在完善中，如有不足请多包涵！欢迎提供改进意见！**
+        **本系统的分析功能依赖于DeepSeek，联网搜索功能依赖于配置的搜索API（默认博查，可回退Serper），系统正在完善中，如有不足请多包涵！欢迎提供改进意见！**
         """)
         
         # 感谢信息

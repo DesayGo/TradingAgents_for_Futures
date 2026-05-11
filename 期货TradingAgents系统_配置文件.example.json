@@ -23,6 +23,13 @@
       "max_tokens": 4000,
       "temperature": 0.1
     },
+    "search": {
+      "provider": "bocha"
+    },
+    "bocha": {
+      "api_key": "YOUR_BOCHA_API_KEY_HERE",
+      "base_url": "https://api.bochaai.com/v1/web-search"
+    },
     "serper": {
       "api_key": "YOUR_SERPER_API_KEY_HERE",
       "base_url": "https://google.serper.dev/search"
