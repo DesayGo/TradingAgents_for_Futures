@@ -35,6 +35,7 @@ import threading
 import os
 import html
 import requests
+from analysis_trace import trace_event
 
 
 def configure_console_encoding() -> None:
@@ -1374,17 +1375,30 @@ class StreamlitAnalysisManager:
                               selected_modules: List[str], analysis_mode: str,
                               debate_rounds: int = 3) -> Dict:
         """运行完整集成分析"""
+        run_id = f"{commodity}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+        trace_event(
+            "run_integrated_analysis_start",
+            run_id,
+            commodity=commodity,
+            analysis_date=analysis_date,
+            selected_modules=selected_modules,
+            analysis_mode=analysis_mode,
+            debate_rounds=debate_rounds,
+        )
         
         if not self.system:
             success, message = self.initialize_system()
             if not success:
+                trace_event("system_initialize_failed", run_id, message=message)
                 return {"status": "error", "message": message}
         
         try:
+            integrator_config = self.config.to_dict()
+            integrator_config["_trace_run_id"] = run_id
             # 创建数据整合器
             integrator = FuturesAnalysisIntegrator(
                 data_root_dir=self.config.get("paths", {}).get("data_root_dir", "qihuo/database"),
-                config=self.config.to_dict()
+                config=integrator_config
             )
             
             # 使用同步方式或线程池执行异步任务，避免事件循环冲突
@@ -1418,10 +1432,16 @@ class StreamlitAnalysisManager:
                 # 完整流程：分析师 + 辩论 + 交易员 + 风控 + CIO决策
                 # 阶段1：执行6大分析模块
                 st.info("🔍 阶段1：执行分析师团队分析...")
+                trace_event("analyst_team_stage_start", run_id, timeout_seconds=900)
                 analysis_state = run_async_in_thread(
                     integrator.collect_all_analyses(commodity, analysis_date, selected_modules),
                     timeout_seconds=900,
                     stage_name="分析师团队分析"
+                )
+                trace_event(
+                    "analyst_team_stage_end",
+                    run_id,
+                    progress=analysis_state.get_analysis_progress() if analysis_state else None,
                 )
                 
                 # 阶段2：执行完整决策流程（含交易员环节）
@@ -1431,10 +1451,18 @@ class StreamlitAnalysisManager:
                 if debate_timeout is None:
                     debate_timeout = max(int(debate_settings.get("debate_timeout_seconds", 300) or 300), 600)
                 debate_timeout = max(1, int(debate_timeout)) + 30
+                trace_event("decision_flow_stage_start", run_id, timeout_seconds=debate_timeout)
                 debate_result = run_async_in_thread(
                     integrator.run_optimized_debate_risk_decision(analysis_state, debate_rounds),
                     timeout_seconds=debate_timeout,
                     stage_name="完整决策流程"
+                )
+                trace_event(
+                    "decision_flow_stage_end",
+                    run_id,
+                    success=debate_result.get("success") if isinstance(debate_result, dict) else None,
+                    final_decision=debate_result.get("decision_section", {}).get("final_decision") if isinstance(debate_result, dict) else None,
+                    error=debate_result.get("error") if isinstance(debate_result, dict) else None,
                 )
                 
                 return {
@@ -1456,10 +1484,16 @@ class StreamlitAnalysisManager:
             else:
                 # 仅执行分析师流程
                 st.info("📊 执行分析师团队分析...")
+                trace_event("analyst_team_stage_start", run_id, timeout_seconds=900)
                 analysis_state = run_async_in_thread(
                     integrator.collect_all_analyses(commodity, analysis_date, selected_modules),
                     timeout_seconds=900,
                     stage_name="分析师团队分析"
+                )
+                trace_event(
+                    "analyst_team_stage_end",
+                    run_id,
+                    progress=analysis_state.get_analysis_progress() if analysis_state else None,
                 )
                 
                 return {
@@ -1476,6 +1510,7 @@ class StreamlitAnalysisManager:
             elif "debate_result" in error_msg:
                 error_msg = "辩论分析失败，API调用异常导致结果为空"
             
+            trace_event("run_integrated_analysis_error", run_id, error=error_msg)
             return {"status": "error", "message": error_msg}
     
     def start_analysis(self, commodities: List[str], analysis_date: str, 
@@ -1493,6 +1528,14 @@ class StreamlitAnalysisManager:
             "current_commodity": None,
             "start_time": datetime.now()
         }
+        trace_event(
+            "start_analysis",
+            commodities=",".join(commodities),
+            analysis_date=analysis_date,
+            modules=",".join(modules),
+            analysis_mode=analysis_mode,
+            config=config,
+        )
         
         # 清空之前的结果
         self.analysis_results = {}
@@ -1505,6 +1548,7 @@ class StreamlitAnalysisManager:
         try:
             # 更新当前分析品种
             self.current_analysis["current_commodity"] = commodity
+            trace_event("commodity_analysis_start", commodity=commodity)
             
             # 执行分析
             result = self.run_integrated_analysis(
@@ -1517,12 +1561,20 @@ class StreamlitAnalysisManager:
             
             # 保存结果
             self.analysis_results[commodity] = result
+            trace_event(
+                "commodity_analysis_end",
+                commodity=commodity,
+                status=result.get("status"),
+                result_type=result.get("type"),
+                message=result.get("message"),
+            )
             
             return result
             
         except Exception as e:
             error_result = {"status": "error", "message": str(e)}
             self.analysis_results[commodity] = error_result
+            trace_event("commodity_analysis_error", commodity=commodity, error=str(e))
             return error_result
     
     def process_all_commodities(self):
@@ -1548,6 +1600,11 @@ class StreamlitAnalysisManager:
             # 确保异常或后续阶段失败时，界面不会一直保持 running 状态。
             if self.current_analysis:
                 self.current_analysis["status"] = "completed"
+                trace_event(
+                    "process_all_commodities_completed",
+                    completed=len(self.analysis_results),
+                    total=len(commodities),
+                )
     
     def is_analysis_running(self) -> bool:
         """检查是否有分析在运行"""
@@ -2112,43 +2169,38 @@ class StreamlitAnalysisManager:
     
     def _display_complete_flow_result_paginated(self, commodity: str, result: Dict):
         """显示完整流程结果 - 标签页版本"""
-        
-        # 创建水平标签页
-        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-            "📊 执行摘要", 
-            "👨‍💼 分析师团队", 
-            "🎭 激烈辩论", 
-            "💼 专业交易员", 
-            "🛡️ 专业风控", 
-            "👔 CIO决策"
-        ])
-        
-        # 在每个标签页中显示对应内容
-        with tab1:
+        pages = [
+            "📊 执行摘要",
+            "👨‍💼 分析师团队",
+            "🎭 激烈辩论",
+            "💼 专业交易员",
+            "🛡️ 专业风控",
+            "👔 CIO决策",
+        ]
+        selected_page = st.radio(
+            "选择结果页面",
+            pages,
+            horizontal=True,
+            key=f"complete_flow_page_{commodity}",
+        )
+        trace_event("display_complete_flow_page_start", commodity=commodity, page=selected_page)
+
+        debate_result = result.get("result", {}).get("debate_result", {})
+
+        if selected_page == "📊 执行摘要":
             self._display_execution_summary(commodity, result)
-        
-        with tab2:
+        elif selected_page == "👨‍💼 分析师团队":
             self._display_analyst_team_page(commodity, result)
-        
-        with tab3:
-            # 传递完整的辩论风控决策结果
-            debate_result = result.get("result", {}).get("debate_result", {})
+        elif selected_page == "🎭 激烈辩论":
             self._display_debate_page(commodity, debate_result)
-        
-        with tab4:
-            # 传递完整的辩论风控决策结果  
-            debate_result = result.get("result", {}).get("debate_result", {})
+        elif selected_page == "💼 专业交易员":
             self._display_trader_page(commodity, debate_result)
-        
-        with tab5:
-            # 传递完整的辩论风控决策结果
-            debate_result = result.get("result", {}).get("debate_result", {})
+        elif selected_page == "🛡️ 专业风控":
             self._display_risk_page(commodity, debate_result)
-        
-        with tab6:
-            # 传递完整的辩论风控决策结果
-            debate_result = result.get("result", {}).get("debate_result", {})
+        elif selected_page == "👔 CIO决策":
             self._display_cio_decision_page(commodity, debate_result)
+
+        trace_event("display_complete_flow_page_end", commodity=commodity, page=selected_page)
     
     def _display_analyst_only_result_paginated(self, commodity: str, result: Dict):
         """显示仅分析师结果 - 标签页版本"""

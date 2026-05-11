@@ -27,6 +27,8 @@ from pathlib import Path
 from enum import Enum
 import os
 import sys
+import time
+from analysis_trace import trace_event
 
 
 def configure_console_encoding() -> None:
@@ -4398,6 +4400,7 @@ class OptimizedDebateSystem:
         self.config = config
         self.api_key = config.get("deepseek_api_key") or config.get("api_settings", {}).get("deepseek", {}).get("api_key")
         self.base_url = config.get("api_settings", {}).get("deepseek", {}).get("base_url", "https://api.deepseek.com/v1")
+        self.trace_run_id = config.get("_trace_run_id", "")
         if not self.api_key:
             raise ValueError("DeepSeek API密钥未配置")
         self.logger = logging.getLogger("OptimizedDebateSystem")
@@ -4407,6 +4410,8 @@ class OptimizedDebateSystem:
         """进行激烈的多空辩论"""
         commodity = analysis_state.commodity
         self.logger.info(f"开始{commodity}激烈辩论，共{debate_rounds}轮")
+        debate_started = time.perf_counter()
+        trace_event("heated_debate_start", self.trace_run_id, commodity=commodity, debate_rounds=debate_rounds)
         
         rounds = []
         bull_total_score = 0.0
@@ -4417,20 +4422,35 @@ class OptimizedDebateSystem:
         
         for round_num in range(1, debate_rounds + 1):
             self.logger.info(f"第{round_num}轮辩论开始...")
+            round_started = time.perf_counter()
+            trace_event("debate_round_start", self.trace_run_id, commodity=commodity, round=round_num)
             
             # 多头发言
+            trace_event("debate_bull_argument_start", self.trace_run_id, commodity=commodity, round=round_num)
             bull_argument = await self._generate_bull_argument(
                 commodity, debate_context, round_num, rounds
             )
+            trace_event("debate_bull_argument_end", self.trace_run_id, commodity=commodity, round=round_num)
             
             # 空头反驳
+            trace_event("debate_bear_argument_start", self.trace_run_id, commodity=commodity, round=round_num)
             bear_argument = await self._generate_bear_argument(
                 commodity, debate_context, bull_argument, round_num, rounds
             )
+            trace_event("debate_bear_argument_end", self.trace_run_id, commodity=commodity, round=round_num)
             
             # 评判本轮结果
+            trace_event("debate_judge_round_start", self.trace_run_id, commodity=commodity, round=round_num)
             round_result = await self._judge_debate_round(
                     commodity, bull_argument, bear_argument, round_num, debate_context
+            )
+            trace_event(
+                "debate_judge_round_end",
+                self.trace_run_id,
+                commodity=commodity,
+                round=round_num,
+                bull_score=round_result.bull_score,
+                bear_score=round_result.bear_score,
             )
             
             rounds.append(round_result)
@@ -4448,6 +4468,15 @@ class OptimizedDebateSystem:
             bear_total_score += bear_score_safe
             
             self.logger.info(f"第{round_num}轮结果: {round_result.round_result}")
+            trace_event(
+                "debate_round_end",
+                self.trace_run_id,
+                commodity=commodity,
+                round=round_num,
+                elapsed_seconds=round(time.perf_counter() - round_started, 3),
+                bull_total_score=bull_total_score,
+                bear_total_score=bear_total_score,
+            )
         
         # 确定最终胜者 - 修复平分逻辑
         if bull_total_score > bear_total_score:
@@ -4459,8 +4488,18 @@ class OptimizedDebateSystem:
             final_winner = DebateStance.BULLISH
         
         # 生成辩论总结
+        trace_event("debate_summary_start", self.trace_run_id, commodity=commodity)
         debate_summary = await self._generate_debate_summary(
             commodity, rounds, final_winner, bull_total_score, bear_total_score
+        )
+        trace_event(
+            "heated_debate_end",
+            self.trace_run_id,
+            commodity=commodity,
+            elapsed_seconds=round(time.perf_counter() - debate_started, 3),
+            final_winner=final_winner.value,
+            bull_total_score=bull_total_score,
+            bear_total_score=bear_total_score,
         )
         
         return DebateResult(
@@ -11270,6 +11309,7 @@ class OptimizedTradingAgentsSystem:
     
     def __init__(self, config: Dict):
         self.config = config
+        self.trace_run_id = config.get("_trace_run_id", "")
         self.debate_system = OptimizedDebateSystem(config)
         self.risk_management = ProfessionalRiskManagement(config)
         self.decision_maker = ExecutiveDecisionMaker(config)
@@ -11285,36 +11325,82 @@ class OptimizedTradingAgentsSystem:
         
         commodity = analysis_state.commodity
         self.logger.info(f"开始{commodity}完整优化分析流程")
+        trace_event(
+            "optimized_complete_analysis_start",
+            self.trace_run_id,
+            commodity=commodity,
+            analysis_date=analysis_state.analysis_date,
+            debate_rounds=debate_rounds,
+        )
         
         # 第一阶段：激烈辩论
         debug_print("DEBUG: 开始第一阶段：多空激烈辩论")
         self.logger.info("第一阶段：多空激烈辩论")
+        stage_started = time.perf_counter()
+        trace_event("optimized_stage_start", self.trace_run_id, commodity=commodity, stage="debate")
         debate_result = await self.debate_system.conduct_heated_debate(
             analysis_state, debate_rounds
+        )
+        trace_event(
+            "optimized_stage_end",
+            self.trace_run_id,
+            commodity=commodity,
+            stage="debate",
+            elapsed_seconds=round(time.perf_counter() - stage_started, 3),
         )
         print(f"DEBUG: 辩论完成，bull_score={debate_result.overall_bull_score} (type: {type(debate_result.overall_bull_score)})")
         
         # 第二阶段：交易员专业决策
         debug_print("DEBUG: 开始第二阶段：交易员专业决策")
         self.logger.info("第二阶段：交易员专业决策")
+        stage_started = time.perf_counter()
+        trace_event("optimized_stage_start", self.trace_run_id, commodity=commodity, stage="trader")
         trading_decision = await self.trader.integrate_debate_and_decide(
             analysis_state, debate_result
+        )
+        trace_event(
+            "optimized_stage_end",
+            self.trace_run_id,
+            commodity=commodity,
+            stage="trader",
+            elapsed_seconds=round(time.perf_counter() - stage_started, 3),
+            strategy_type=getattr(trading_decision.strategy_type, "value", str(trading_decision.strategy_type)),
         )
         print(f"DEBUG: 交易员决策完成，strategy_type={trading_decision.strategy_type}")
         
         # 第三阶段：专业风控评估
         debug_print("DEBUG: 开始第三阶段：风控部门专业评估")
         self.logger.info("第三阶段：风控部门专业评估")
+        stage_started = time.perf_counter()
+        trace_event("optimized_stage_start", self.trace_run_id, commodity=commodity, stage="risk")
         risk_assessment = await self.risk_management.conduct_risk_assessment(
             analysis_state, debate_result, trading_decision
+        )
+        trace_event(
+            "optimized_stage_end",
+            self.trace_run_id,
+            commodity=commodity,
+            stage="risk",
+            elapsed_seconds=round(time.perf_counter() - stage_started, 3),
+            risk_level=getattr(risk_assessment.overall_risk_level, "value", str(risk_assessment.overall_risk_level)),
         )
         print(f"DEBUG: 风控评估完成，risk_level={risk_assessment.overall_risk_level}")
 
         # 第四阶段：CIO最终决策
         debug_print("DEBUG: 开始第四阶段：CIO权威决策")
         self.logger.info("第四阶段：CIO权威决策")
+        stage_started = time.perf_counter()
+        trace_event("optimized_stage_start", self.trace_run_id, commodity=commodity, stage="cio")
         executive_decision = await self.decision_maker.make_executive_decision(
             analysis_state, debate_result, risk_assessment, trading_decision
+        )
+        trace_event(
+            "optimized_stage_end",
+            self.trace_run_id,
+            commodity=commodity,
+            stage="cio",
+            elapsed_seconds=round(time.perf_counter() - stage_started, 3),
+            final_decision=getattr(executive_decision.final_decision, "value", str(executive_decision.final_decision)),
         )
         print(f"DEBUG: CIO决策完成，final_decision={executive_decision.final_decision}")
         print(f"DEBUG: confidence_level={executive_decision.confidence_level} (type: {type(executive_decision.confidence_level)})")
@@ -11408,6 +11494,13 @@ class OptimizedTradingAgentsSystem:
         final_result["decision_section"] = final_result["executive_decision"]
         
         self.logger.info(f"{commodity}完整优化分析完成，最终决策：{executive_decision.final_decision.value}，耗时：{total_execution_time:.2f}秒")
+        trace_event(
+            "optimized_complete_analysis_end",
+            self.trace_run_id,
+            commodity=commodity,
+            elapsed_seconds=round(total_execution_time, 3),
+            final_decision=executive_decision.final_decision.value,
+        )
         
         return final_result
 

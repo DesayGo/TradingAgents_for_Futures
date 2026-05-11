@@ -10,12 +10,14 @@ import asyncio
 import logging
 import os
 import sys
+import time
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any, Union
 from dataclasses import dataclass, field
 from pathlib import Path
 from enum import Enum
 import pandas as pd
+from analysis_trace import trace_event
 
 
 def configure_console_encoding() -> None:
@@ -281,6 +283,7 @@ class FuturesAnalysisIntegrator:
     def __init__(self, data_root_dir: str = None, config: Dict = None):
         self.data_root_dir = Path(data_root_dir or "qihuo/database")
         self.config = config or {}
+        self.trace_run_id = self.config.get("_trace_run_id", "")
         self.logger = logging.getLogger("FuturesAnalysisIntegrator")
         
         # 支持的模块
@@ -306,6 +309,7 @@ class FuturesAnalysisIntegrator:
     async def collect_all_analyses(self, commodity: str, analysis_date: str = None, 
                                  selected_modules: List[str] = None) -> FuturesAnalysisState:
         """收集所有分析模块的结果"""
+        collect_started = time.perf_counter()
         if analysis_date is None:
             analysis_date = datetime.now().strftime('%Y-%m-%d')
         
@@ -317,6 +321,13 @@ class FuturesAnalysisIntegrator:
         
         # 确定要运行的模块
         modules_to_run = selected_modules or list(self.supported_modules.keys())
+        trace_event(
+            "collect_all_analyses_start",
+            self.trace_run_id,
+            commodity=commodity,
+            analysis_date=analysis_date,
+            modules=modules_to_run,
+        )
         
         # 并行运行所有模块
         tasks = []
@@ -327,14 +338,36 @@ class FuturesAnalysisIntegrator:
         
         # 等待所有任务完成
         for module_name, task in tasks:
+            module_started = time.perf_counter()
+            trace_event("module_start", self.trace_run_id, commodity=commodity, module=module_name)
             try:
                 result = await task
                 analysis_state.set_module_result(module_name, result)
+                elapsed = round(time.perf_counter() - module_started, 3)
                 if result.status == AnalysisStatus.COMPLETED:
                     self.logger.info(f"模块 {module_name} 分析完成")
+                    trace_event(
+                        "module_end",
+                        self.trace_run_id,
+                        commodity=commodity,
+                        module=module_name,
+                        status="completed",
+                        elapsed_seconds=elapsed,
+                        confidence_score=result.confidence_score,
+                    )
                 else:
                     self.logger.error(f"模块 {module_name} 分析失败: {result.error_message or '未知错误'}")
+                    trace_event(
+                        "module_end",
+                        self.trace_run_id,
+                        commodity=commodity,
+                        module=module_name,
+                        status="failed",
+                        elapsed_seconds=elapsed,
+                        error=result.error_message or "未知错误",
+                    )
             except Exception as e:
+                elapsed = round(time.perf_counter() - module_started, 3)
                 error_result = ModuleAnalysisResult(
                     module_name=module_name,
                     commodity=commodity,
@@ -344,12 +377,27 @@ class FuturesAnalysisIntegrator:
                 )
                 analysis_state.set_module_result(module_name, error_result)
                 self.logger.error(f"模块 {module_name} 分析失败: {e}")
+                trace_event(
+                    "module_exception",
+                    self.trace_run_id,
+                    commodity=commodity,
+                    module=module_name,
+                    elapsed_seconds=elapsed,
+                    error=str(e),
+                )
         
         # 设置完成时间
         analysis_state.completion_time = datetime.now().isoformat()
         start_time = datetime.fromisoformat(analysis_state.start_time)
         end_time = datetime.fromisoformat(analysis_state.completion_time)
         analysis_state.total_execution_time = (end_time - start_time).total_seconds()
+        trace_event(
+            "collect_all_analyses_end",
+            self.trace_run_id,
+            commodity=commodity,
+            elapsed_seconds=round(time.perf_counter() - collect_started, 3),
+            progress=analysis_state.get_analysis_progress(),
+        )
         
         return analysis_state
     
@@ -745,6 +793,14 @@ class FuturesAnalysisIntegrator:
                                                 debate_rounds: int = 3) -> Dict[str, Any]:
         """运行优化版辩论风控决策分析"""
         complete_flow_timeout = 600
+        decision_started = time.perf_counter()
+        trace_event(
+            "run_optimized_debate_risk_decision_start",
+            self.trace_run_id,
+            commodity=analysis_state.commodity,
+            analysis_date=analysis_state.analysis_date,
+            debate_rounds=debate_rounds,
+        )
         try:
             # 导入优化版辩论风控决策系统（让我的prompt修改生效）
             from 优化版辩论风控决策系统 import OptimizedTradingAgentsSystem
@@ -803,11 +859,26 @@ class FuturesAnalysisIntegrator:
 
             # 转换数据结构以匹配Streamlit界面期望的格式
             converted_result = self._convert_result_for_streamlit(result)
+            trace_event(
+                "run_optimized_debate_risk_decision_end",
+                self.trace_run_id,
+                commodity=analysis_state.commodity,
+                elapsed_seconds=round(time.perf_counter() - decision_started, 3),
+                success=converted_result.get("success") if isinstance(converted_result, dict) else None,
+                final_decision=converted_result.get("decision_section", {}).get("final_decision") if isinstance(converted_result, dict) else None,
+            )
             return converted_result
 
         except asyncio.TimeoutError:
             error_message = f"完整决策流程超过{complete_flow_timeout}秒未完成，请检查DeepSeek API响应速度或减少辩论轮数"
             self.logger.error(f"辩论风控决策分析失败: {error_message}")
+            trace_event(
+                "run_optimized_debate_risk_decision_timeout",
+                self.trace_run_id,
+                commodity=analysis_state.commodity,
+                elapsed_seconds=round(time.perf_counter() - decision_started, 3),
+                error=error_message,
+            )
             return {
                 "success": False,
                 "error": error_message,
@@ -854,6 +925,13 @@ class FuturesAnalysisIntegrator:
 
         except Exception as e:
             self.logger.error(f"辩论风控决策分析失败: {e}")
+            trace_event(
+                "run_optimized_debate_risk_decision_error",
+                self.trace_run_id,
+                commodity=analysis_state.commodity,
+                elapsed_seconds=round(time.perf_counter() - decision_started, 3),
+                error=str(e),
+            )
             return {
                 "success": False,
                 "error": str(e),

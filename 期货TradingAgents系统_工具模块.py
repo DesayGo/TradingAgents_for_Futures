@@ -32,6 +32,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 from dataclasses import asdict
+from analysis_trace import trace_event
 
 # ============================================================================
 # 1. DeepSeek API调用封装
@@ -137,6 +138,16 @@ class DeepSeekAPIClient:
         """聊天补全API调用（带重试机制）"""
 
         url = f"{self.base_url}/chat/completions"
+        prompt_chars = sum(len(str(message.get("content", ""))) for message in messages)
+        trace_event(
+            "deepseek_chat_completion_start",
+            model=model,
+            max_tokens=max_tokens,
+            temperature=temperature,
+            max_retries=max_retries,
+            prompt_chars=prompt_chars,
+            timeout_seconds=self.timeout,
+        )
 
         payload = {
             "model": model,
@@ -148,6 +159,12 @@ class DeepSeekAPIClient:
 
         # 重试机制
         for attempt in range(max_retries):
+            trace_event(
+                "deepseek_chat_completion_attempt_start",
+                model=model,
+                attempt=attempt + 1,
+                max_retries=max_retries,
+            )
             try:
                 # 确保session已初始化
                 await self.ensure_session()
@@ -158,6 +175,14 @@ class DeepSeekAPIClient:
                 try:
                     if response.status == 200:
                         result = await response.json()
+                        trace_event(
+                            "deepseek_chat_completion_attempt_end",
+                            model=model,
+                            attempt=attempt + 1,
+                            status=response.status,
+                            success=True,
+                            usage=result.get("usage", {}),
+                        )
                         return {
                             "success": True,
                             "content": result["choices"][0]["message"]["content"],
@@ -170,6 +195,13 @@ class DeepSeekAPIClient:
 
                         # 如果是最后一次尝试，返回错误
                         if attempt == max_retries - 1:
+                            trace_event(
+                                "deepseek_chat_completion_end",
+                                model=model,
+                                success=False,
+                                status=response.status,
+                                error=error_text,
+                            )
                             return {
                                 "success": False,
                                 "error": f"HTTP {response.status}: {error_text}",
@@ -186,8 +218,21 @@ class DeepSeekAPIClient:
             except asyncio.TimeoutError:
                 error_msg = f"请求超过{self.timeout}秒未响应"
                 self.logger.warning(f"API调用超时 (尝试 {attempt+1}/{max_retries}): {error_msg}")
+                trace_event(
+                    "deepseek_chat_completion_attempt_timeout",
+                    model=model,
+                    attempt=attempt + 1,
+                    max_retries=max_retries,
+                    error=error_msg,
+                )
 
                 if attempt == max_retries - 1:
+                    trace_event(
+                        "deepseek_chat_completion_end",
+                        model=model,
+                        success=False,
+                        error=error_msg,
+                    )
                     return {
                         "success": False,
                         "error": f"API调用失败 (重试{max_retries}次后): {error_msg}",
@@ -200,6 +245,13 @@ class DeepSeekAPIClient:
             except Exception as e:
                 error_msg = str(e) or e.__class__.__name__
                 self.logger.warning(f"API调用异常 (尝试 {attempt+1}/{max_retries}): {error_msg}")
+                trace_event(
+                    "deepseek_chat_completion_attempt_error",
+                    model=model,
+                    attempt=attempt + 1,
+                    max_retries=max_retries,
+                    error=error_msg,
+                )
                 
                 # 对于DNS或连接问题，给出更详细的错误信息
                 if "DNS" in error_msg or "Timeout" in error_msg or "Cannot connect" in error_msg:
@@ -207,6 +259,12 @@ class DeepSeekAPIClient:
 
                 # 如果是最后一次尝试，返回错误
                 if attempt == max_retries - 1:
+                    trace_event(
+                        "deepseek_chat_completion_end",
+                        model=model,
+                        success=False,
+                        error=error_msg,
+                    )
                     return {
                         "success": False,
                         "error": f"API调用失败 (重试{max_retries}次后): {error_msg}",
