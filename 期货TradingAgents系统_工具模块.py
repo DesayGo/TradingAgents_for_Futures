@@ -40,19 +40,23 @@ from dataclasses import asdict
 class DeepSeekAPIClient:
     """DeepSeek API客户端封装"""
     
-    def __init__(self, api_key: str, base_url: str = "https://api.deepseek.com/v1"):
+    def __init__(self, api_key: str, base_url: str = "https://api.deepseek.com/v1", timeout: int = 120):
         self.api_key = api_key
         self.base_url = base_url
+        try:
+            self.timeout = max(30, int(timeout or 120))
+        except (TypeError, ValueError):
+            self.timeout = 120
         self.session = None
         self.logger = logging.getLogger("DeepSeekAPI")
         
     async def __aenter__(self):
         # 增加连接超时和DNS解析超时设置
         timeout = aiohttp.ClientTimeout(
-            total=600,  # 总超时10分钟（增加）
-            connect=30,  # 连接超时30秒
-            sock_read=180,  # 读取超时180秒（增加到3分钟，适应复杂分析）
-            sock_connect=30  # socket连接超时30秒
+            total=self.timeout,
+            connect=min(30, self.timeout),
+            sock_read=min(90, self.timeout),
+            sock_connect=min(30, self.timeout)
         )
         
         # 创建连接器，增加DNS缓存和连接池设置
@@ -84,10 +88,10 @@ class DeepSeekAPIClient:
         if self.session is None or self.session.closed:
             # 使用与__aenter__相同的超时和连接器配置
             timeout = aiohttp.ClientTimeout(
-                total=600,  # 总超时10分钟（增加）
-                connect=30,  # 连接超时30秒
-                sock_read=180,  # 读取超时180秒（增加到3分钟，适应复杂分析）
-                sock_connect=30  # socket连接超时30秒
+                total=self.timeout,
+                connect=min(30, self.timeout),
+                sock_read=min(90, self.timeout),
+                sock_connect=min(30, self.timeout)
             )
             
             connector = aiohttp.TCPConnector(
@@ -129,7 +133,7 @@ class DeepSeekAPIClient:
                 self.logger.warning(f"关闭session时出现异常: {e}")
 
     async def chat_completion(self, messages: List[Dict], model: str = "deepseek-chat",
-                            temperature: float = 0.1, max_tokens: int = 4000, max_retries: int = 5) -> Dict:
+                            temperature: float = 0.1, max_tokens: int = 4000, max_retries: int = 2) -> Dict:
         """聊天补全API调用（带重试机制）"""
 
         url = f"{self.base_url}/chat/completions"
@@ -179,8 +183,22 @@ class DeepSeekAPIClient:
                 delay = min(2 ** attempt, 30)  # 最大延迟30秒
                 await asyncio.sleep(delay)
 
+            except asyncio.TimeoutError:
+                error_msg = f"请求超过{self.timeout}秒未响应"
+                self.logger.warning(f"API调用超时 (尝试 {attempt+1}/{max_retries}): {error_msg}")
+
+                if attempt == max_retries - 1:
+                    return {
+                        "success": False,
+                        "error": f"API调用失败 (重试{max_retries}次后): {error_msg}",
+                        "model": model
+                    }
+
+                delay = min(2 ** attempt, 30)
+                await asyncio.sleep(delay)
+
             except Exception as e:
-                error_msg = str(e)
+                error_msg = str(e) or e.__class__.__name__
                 self.logger.warning(f"API调用异常 (尝试 {attempt+1}/{max_retries}): {error_msg}")
                 
                 # 对于DNS或连接问题，给出更详细的错误信息

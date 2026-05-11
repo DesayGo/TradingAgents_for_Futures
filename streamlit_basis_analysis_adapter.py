@@ -13,8 +13,11 @@ from 专业AI基差分析系统_四维度框架 import ProfessionalBasisAnalysis
 class StreamlitBasisAnalysisAdapter:
     """Streamlit基差分析适配器"""
     
-    def __init__(self):
-        self.basis_system = ProfessionalBasisAnalysisSystem()
+    def __init__(self, deepseek_api_key: str = None, serper_api_key: str = None):
+        self.basis_system = ProfessionalBasisAnalysisSystem(
+            deepseek_api_key=deepseek_api_key,
+            serper_api_key=serper_api_key,
+        )
     
     async def analyze_variety_for_streamlit(self, variety: str, analysis_date: str = None, 
                                           use_reasoner: bool = False) -> Dict[str, Any]:
@@ -199,8 +202,13 @@ class StreamlitBasisAnalysisAdapter:
             return 0.75  # 默认置信度
 
 # 异步包装函数，供Streamlit系统调用
-async def analyze_basis_for_streamlit(variety: str, analysis_date: str = None, 
-                                    use_reasoner: bool = False) -> Dict[str, Any]:
+async def analyze_basis_for_streamlit(
+    variety: str,
+    analysis_date: str = None,
+    use_reasoner: bool = False,
+    deepseek_api_key: str = None,
+    serper_api_key: str = None,
+) -> Dict[str, Any]:
     """
     异步基差分析函数，供Streamlit系统调用
     
@@ -212,7 +220,10 @@ async def analyze_basis_for_streamlit(variety: str, analysis_date: str = None,
     Returns:
         Streamlit系统兼容的分析结果
     """
-    adapter = StreamlitBasisAnalysisAdapter()
+    adapter = StreamlitBasisAnalysisAdapter(
+        deepseek_api_key=deepseek_api_key,
+        serper_api_key=serper_api_key,
+    )
     return await adapter.analyze_variety_for_streamlit(variety, analysis_date, use_reasoner)
 
 # 同步版本（如果需要）

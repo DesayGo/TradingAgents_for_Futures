@@ -51,14 +51,14 @@ plt.rcParams['axes.unicode_minus'] = False
 class UltimatePerfectedInventoryAnalyzer:
     """专业库存仓单AI分析系统 - 终极完善版"""
     
-    def __init__(self):
+    def __init__(self, deepseek_api_key: str = None, serper_api_key: str = None, data_dir: str = None):
         """初始化系统"""
         # API配置
-        self.deepseek_api_key = "sk-293dec7fabb54606b4f8d4f606da3383"
-        self.serper_api_key = "04555ec0f2ce150d1cb628c7a80e2e433e193535"
+        self.deepseek_api_key = deepseek_api_key or ""
+        self.serper_api_key = serper_api_key or ""
         
         # 数据路径配置
-        self.base_path = Path(r"D:\Cursor\cursor项目\TradingAgent\qihuo\database")
+        self.base_path = Path(data_dir or Path(__file__).resolve().parent / "qihuo" / "database")
         self.inventory_dir = self.base_path / "inventory"
         self.receipt_dir = self.base_path / "receipt" 
         self.technical_dir = self.base_path / "technical_analysis"
@@ -101,10 +101,10 @@ class UltimatePerfectedInventoryAnalyzer:
         
         # 交易所仓单接口映射
         self.receipt_apis = {
-            'SHFE': ak.futures_shfe_warehouse_receipt,
-            'CZCE': ak.futures_czce_warehouse_receipt, 
-            'DCE': ak.futures_warehouse_receipt_dce,  # 正确的函数名
-            'GFEX': ak.futures_gfex_warehouse_receipt
+            'SHFE': getattr(ak, 'futures_shfe_warehouse_receipt', None),
+            'CZCE': getattr(ak, 'futures_czce_warehouse_receipt', None),
+            'DCE': getattr(ak, 'futures_warehouse_receipt_dce', None),
+            'GFEX': getattr(ak, 'futures_gfex_warehouse_receipt', None)
         }
         
         # 图表保存目录
@@ -267,9 +267,9 @@ class UltimatePerfectedInventoryAnalyzer:
         online_receipt_df = None
         receipt_success = False
         
-        if exchange in self.receipt_apis:
+        receipt_api = self.receipt_apis.get(exchange)
+        if receipt_api:
             try:
-                receipt_api = self.receipt_apis[exchange]
                 today = datetime.now()
                 
                 # 扩大搜索范围，尝试最近30天

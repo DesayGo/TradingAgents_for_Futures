@@ -9,6 +9,7 @@ streamlit-echarts>=0.4.0
 # 数据处理和分析
 pandas>=1.5.0
 numpy>=1.21.0
+scipy>=1.17.0
 python-dateutil>=2.8.2
 
 # 数据可视化
@@ -67,3 +68,4 @@ nest-asyncio>=1.5.6
 # 其他工具
 pydantic>=2.0.0
 rich>=13.0.0
+IPython>=9.0.0

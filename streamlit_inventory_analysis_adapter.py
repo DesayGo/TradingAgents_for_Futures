@@ -47,7 +47,14 @@ ImprovedAnalyzer = None
 print("ℹ️ 改进版系统已禁用（文件不存在），使用终极完善版或数据增强版")
 
 
-async def analyze_inventory_for_streamlit(variety: str, analysis_date: str = None, use_reasoner: bool = True) -> Dict[str, Any]:
+async def analyze_inventory_for_streamlit(
+    variety: str,
+    analysis_date: str = None,
+    use_reasoner: bool = True,
+    deepseek_api_key: str = None,
+    serper_api_key: str = None,
+    data_dir: str = None,
+) -> Dict[str, Any]:
     """
     异步适配器，用于在Streamlit环境中调用库存分析系统。
     优先使用终极完善版，提供最高质量的分析结果。
@@ -67,7 +74,11 @@ async def analyze_inventory_for_streamlit(variety: str, analysis_date: str = Non
             print(f"🚀 使用终极完善版库存分析: {variety}")
             
             # 创建终极完善版分析系统实例
-            analyzer = UltimateAnalyzer()
+            analyzer = UltimateAnalyzer(
+                deepseek_api_key=deepseek_api_key,
+                serper_api_key=serper_api_key,
+                data_dir=data_dir,
+            )
             
             # 调用终极分析的兼容接口
             result = analyzer.analyze_variety_comprehensive(variety, analysis_date)

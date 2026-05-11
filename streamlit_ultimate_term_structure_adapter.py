@@ -18,8 +18,12 @@ from ultimate_term_structure_analyzer import UltimateTermStructureAnalyzer
 class StreamlitUltimateTermStructureAdapter:
     """Streamlit系统适配器 - 终极版期限结构分析"""
     
-    def __init__(self):
-        self.analyzer = UltimateTermStructureAnalyzer()
+    def __init__(self, deepseek_api_key: str = None, serper_api_key: str = None, data_dir: str = None):
+        self.analyzer = UltimateTermStructureAnalyzer(
+            deepseek_api_key=deepseek_api_key,
+            serper_api_key=serper_api_key,
+            data_dir=data_dir,
+        )
         self.logger = logging.getLogger(__name__)
         
     def analyze_variety_for_streamlit(self, variety: str, analysis_date: str = None, model_mode: str = "chat") -> Dict[str, Any]:

@@ -1,0 +1,16 @@
+Starting TradingAgents for Futures WebUI...
+App: "U:\TradingAgents_for_Futures\期货TradingAgents系统_专业完整版界面.py"
+URL: http://127.0.0.1:8501
+Keep this window open while using the WebUI.
+
+
+      Welcome to Streamlit!
+
+      If you'd like to receive helpful onboarding emails, news, offers, promotions,
+      and the occasional swag, please enter your email address below. Otherwise,
+      leave this field blank.
+
+      Email: [0m2026-05-11 15:36:24.353 
+
+WebUI service stopped.
+Press any key to continue . . . 

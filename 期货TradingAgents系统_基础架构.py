@@ -292,6 +292,16 @@ class FuturesAnalysisIntegrator:
             'basis': self._run_real_time_basis_analysis,
             'news': self._run_real_time_news_analysis
         }
+
+    def _get_deepseek_api_key(self) -> str:
+        return self.config.get("api_settings", {}).get("deepseek", {}).get("api_key", "")
+
+    def _get_serper_api_key(self) -> str:
+        api_settings = self.config.get("api_settings", {})
+        provider = api_settings.get("search", {}).get("provider", "serper")
+        if str(provider).strip().lower() != "serper":
+            return ""
+        return api_settings.get("serper", {}).get("api_key", "")
     
     async def collect_all_analyses(self, commodity: str, analysis_date: str = None, 
                                  selected_modules: List[str] = None) -> FuturesAnalysisState:
@@ -320,7 +330,10 @@ class FuturesAnalysisIntegrator:
             try:
                 result = await task
                 analysis_state.set_module_result(module_name, result)
-                self.logger.info(f"模块 {module_name} 分析完成")
+                if result.status == AnalysisStatus.COMPLETED:
+                    self.logger.info(f"模块 {module_name} 分析完成")
+                else:
+                    self.logger.error(f"模块 {module_name} 分析失败: {result.error_message or '未知错误'}")
             except Exception as e:
                 error_result = ModuleAnalysisResult(
                     module_name=module_name,
@@ -349,7 +362,14 @@ class FuturesAnalysisIntegrator:
             from streamlit_inventory_analysis_adapter import analyze_inventory_for_streamlit
             
             # 调用分析
-            result_data = await analyze_inventory_for_streamlit(commodity, analysis_date, use_reasoner=True)
+            result_data = await analyze_inventory_for_streamlit(
+                commodity,
+                analysis_date,
+                use_reasoner=True,
+                deepseek_api_key=self._get_deepseek_api_key(),
+                serper_api_key=self._get_serper_api_key(),
+                data_dir=str(self.data_root_dir),
+            )
             
             # 计算执行时间
             execution_time = (datetime.now() - start_time).total_seconds()
@@ -446,7 +466,11 @@ class FuturesAnalysisIntegrator:
             from streamlit_ultimate_term_structure_adapter import StreamlitUltimateTermStructureAdapter
             
             # 调用分析（非异步函数）
-            adapter = StreamlitUltimateTermStructureAdapter()
+            adapter = StreamlitUltimateTermStructureAdapter(
+                deepseek_api_key=self._get_deepseek_api_key(),
+                serper_api_key=self._get_serper_api_key(),
+                data_dir=str(self.data_root_dir),
+            )
             result_data = adapter.analyze_variety_for_streamlit(commodity, analysis_date)
             
             # 计算执行时间
@@ -493,7 +517,12 @@ class FuturesAnalysisIntegrator:
             from streamlit_enhanced_technical_adapter import analyze_technical_for_streamlit
             
             # 调用分析
-            result_data = await analyze_technical_for_streamlit(commodity, analysis_date)
+            result_data = await analyze_technical_for_streamlit(
+                commodity,
+                analysis_date,
+                deepseek_key=self._get_deepseek_api_key(),
+                serper_key=self._get_serper_api_key(),
+            )
             
             # 计算执行时间
             execution_time = (datetime.now() - start_time).total_seconds()
@@ -539,7 +568,12 @@ class FuturesAnalysisIntegrator:
             from streamlit_basis_analysis_adapter import analyze_basis_for_streamlit
             
             # 调用分析
-            result_data = await analyze_basis_for_streamlit(commodity, analysis_date)
+            result_data = await analyze_basis_for_streamlit(
+                commodity,
+                analysis_date,
+                deepseek_api_key=self._get_deepseek_api_key(),
+                serper_api_key=self._get_serper_api_key(),
+            )
             
             # 计算执行时间
             execution_time = (datetime.now() - start_time).total_seconds()
@@ -710,6 +744,7 @@ class FuturesAnalysisIntegrator:
     async def run_optimized_debate_risk_decision(self, analysis_state: FuturesAnalysisState,
                                                 debate_rounds: int = 3) -> Dict[str, Any]:
         """运行优化版辩论风控决策分析"""
+        complete_flow_timeout = 600
         try:
             # 导入优化版辩论风控决策系统（让我的prompt修改生效）
             from 优化版辩论风控决策系统 import OptimizedTradingAgentsSystem
@@ -752,11 +787,70 @@ class FuturesAnalysisIntegrator:
             system = OptimizedTradingAgentsSystem(user_config)
 
             # 执行完整分析
-            result = await system.run_complete_analysis(analysis_state, debate_rounds)
+            debate_settings = user_config.get("debate_settings", {})
+            configured_timeout = debate_settings.get("complete_flow_timeout_seconds")
+            if configured_timeout is None:
+                configured_timeout = max(int(debate_settings.get("debate_timeout_seconds", 300) or 300), 600)
+            try:
+                complete_flow_timeout = max(1, int(configured_timeout))
+            except (TypeError, ValueError):
+                complete_flow_timeout = 600
+
+            result = await asyncio.wait_for(
+                system.run_complete_analysis(analysis_state, debate_rounds),
+                timeout=complete_flow_timeout
+            )
 
             # 转换数据结构以匹配Streamlit界面期望的格式
             converted_result = self._convert_result_for_streamlit(result)
             return converted_result
+
+        except asyncio.TimeoutError:
+            error_message = f"完整决策流程超过{complete_flow_timeout}秒未完成，请检查DeepSeek API响应速度或减少辩论轮数"
+            self.logger.error(f"辩论风控决策分析失败: {error_message}")
+            return {
+                "success": False,
+                "error": error_message,
+                "commodity": analysis_state.commodity,
+                "analysis_date": analysis_state.analysis_date,
+                "debate_section": {
+                    "winner": "未知",
+                    "scores": {
+                        "bull": 0.0,
+                        "bear": 0.0
+                    },
+                    "summary": error_message,
+                    "rounds": []
+                },
+                "trading_section": {
+                    "strategy_type": "暂停交易",
+                    "position_size": 0.0,
+                    "risk_reward_ratio": "N/A",
+                    "time_horizon": "短期",
+                    "reasoning": error_message,
+                    "entry_points": ["等待系统恢复后重新分析"],
+                    "exit_points": ["立即停止所有交易活动"],
+                    "specific_contracts": ["暂停所有合约交易"],
+                    "execution_plan": "暂停交易，等待系统恢复",
+                    "market_conditions": error_message
+                },
+                "risk_section": {
+                    "overall_risk": "高风险",
+                    "position_limit": 0.0,
+                    "stop_loss": "立即止损",
+                    "manager_opinion": error_message
+                },
+                "decision_section": {
+                    "final_decision": "持有观望",
+                    "position_size": 0.0,
+                    "confidence": "0%",
+                    "rationale": ["完整决策流程超时"],
+                    "execution_plan": "暂停交易，等待系统恢复",
+                    "monitoring_points": ["DeepSeek API响应速度", "辩论轮数配置"],
+                    "cio_statement": error_message
+                },
+                "process_timestamp": datetime.now().isoformat()
+            }
 
         except Exception as e:
             self.logger.error(f"辩论风控决策分析失败: {e}")

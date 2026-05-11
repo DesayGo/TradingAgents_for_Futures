@@ -37,12 +37,12 @@ warnings.filterwarnings('ignore')
 class UltimateTermStructureAnalyzer:
     """终极期限结构分析器 - 完整专业版本"""
     
-    def __init__(self, deepseek_api_key: str = "sk-293dec7fabb54606b4f8d4f606da3383", 
-                 serper_api_key: str = "04555ec0f2ce150d1cb628c7a80e2e433e193535", 
-                 data_dir: str = r"D:\Cursor\cursor项目\TradingAgent\qihuo\database"):
+    def __init__(self, deepseek_api_key: str = None, 
+                 serper_api_key: str = None, 
+                 data_dir: str = None):
         self.deepseek_api_key = deepseek_api_key
         self.serper_api_key = serper_api_key
-        self.data_dir = Path(data_dir)
+        self.data_dir = Path(data_dir or Path(__file__).resolve().parent / "qihuo" / "database")
         
         # API配置
         self.deepseek_url = "https://api.deepseek.com/v1/chat/completions"

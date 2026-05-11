@@ -33,6 +33,7 @@ import subprocess
 import sys
 import threading
 import os
+import html
 import requests
 
 
@@ -1390,7 +1391,7 @@ class StreamlitAnalysisManager:
             import concurrent.futures
             import threading
             
-            def run_async_in_thread(coro):
+            def run_async_in_thread(coro, timeout_seconds=None, stage_name="异步任务"):
                 """在新线程中运行异步协程"""
                 def thread_target():
                     # 在新线程中创建事件循环
@@ -1402,22 +1403,38 @@ class StreamlitAnalysisManager:
                         loop.close()
                 
                 # 使用线程执行
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future = executor.submit(thread_target)
-                    return future.result()
+                executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+                future = executor.submit(thread_target)
+                try:
+                    return future.result(timeout=timeout_seconds)
+                except concurrent.futures.TimeoutError as exc:
+                    executor.shutdown(wait=False, cancel_futures=True)
+                    raise TimeoutError(f"{stage_name}超过{timeout_seconds}秒未完成") from exc
+                finally:
+                    if future.done():
+                        executor.shutdown(wait=True)
             
             if analysis_mode == "complete_flow":
                 # 完整流程：分析师 + 辩论 + 交易员 + 风控 + CIO决策
                 # 阶段1：执行6大分析模块
                 st.info("🔍 阶段1：执行分析师团队分析...")
                 analysis_state = run_async_in_thread(
-                    integrator.collect_all_analyses(commodity, analysis_date, selected_modules)
+                    integrator.collect_all_analyses(commodity, analysis_date, selected_modules),
+                    timeout_seconds=900,
+                    stage_name="分析师团队分析"
                 )
                 
                 # 阶段2：执行完整决策流程（含交易员环节）
                 st.info(f"🎭 阶段2：执行{debate_rounds}轮完整决策流程（含交易员环节）...")
+                debate_settings = self.config.get("debate_settings", {}) if self.config else {}
+                debate_timeout = debate_settings.get("complete_flow_timeout_seconds")
+                if debate_timeout is None:
+                    debate_timeout = max(int(debate_settings.get("debate_timeout_seconds", 300) or 300), 600)
+                debate_timeout = max(1, int(debate_timeout)) + 30
                 debate_result = run_async_in_thread(
-                    integrator.run_optimized_debate_risk_decision(analysis_state, debate_rounds)
+                    integrator.run_optimized_debate_risk_decision(analysis_state, debate_rounds),
+                    timeout_seconds=debate_timeout,
+                    stage_name="完整决策流程"
                 )
                 
                 return {
@@ -1440,7 +1457,9 @@ class StreamlitAnalysisManager:
                 # 仅执行分析师流程
                 st.info("📊 执行分析师团队分析...")
                 analysis_state = run_async_in_thread(
-                    integrator.collect_all_analyses(commodity, analysis_date, selected_modules)
+                    integrator.collect_all_analyses(commodity, analysis_date, selected_modules),
+                    timeout_seconds=900,
+                    stage_name="分析师团队分析"
                 )
                 
                 return {
@@ -1512,22 +1531,23 @@ class StreamlitAnalysisManager:
             return
         
         commodities = self.current_analysis["commodities"]
-        
-        for commodity in commodities:
-            if self.current_analysis.get("status") != "running":
-                break
-                
-            st.info(f"🔍 正在分析 {commodity}...")
-            result = self.execute_analysis_for_commodity(commodity)
-            
-            if result.get("status") == "success":
-                st.success(f"✅ {commodity} 分析完成")
-            else:
-                st.error(f"❌ {commodity} 分析失败: {result.get('message', '未知错误')}")
-        
-        # 标记分析完成
-        if self.current_analysis:
-            self.current_analysis["status"] = "completed"
+
+        try:
+            for commodity in commodities:
+                if self.current_analysis.get("status") != "running":
+                    break
+
+                st.info(f"🔍 正在分析 {commodity}...")
+                result = self.execute_analysis_for_commodity(commodity)
+
+                if result.get("status") == "success":
+                    st.success(f"✅ {commodity} 分析完成")
+                else:
+                    st.error(f"❌ {commodity} 分析失败: {result.get('message', '未知错误')}")
+        finally:
+            # 确保异常或后续阶段失败时，界面不会一直保持 running 状态。
+            if self.current_analysis:
+                self.current_analysis["status"] = "completed"
     
     def is_analysis_running(self) -> bool:
         """检查是否有分析在运行"""
@@ -3326,6 +3346,11 @@ class StreamlitAnalysisManager:
         
         for attr_name, module_name, description in module_attrs:
             status = module_status.get(attr_name, "missing")
+            module_result = getattr(analysis_state, attr_name, None) if hasattr(analysis_state, attr_name) else None
+            error_message = ""
+            if status == "failed" and module_result:
+                error_message = getattr(module_result, "error_message", "") or "未知错误"
+                error_message = html.escape(str(error_message))
             
             if status == "completed":
                 status_color = "#28a745"
@@ -3340,6 +3365,11 @@ class StreamlitAnalysisManager:
                 status_icon = "⏳"
                 status_text = "等待中"
             
+            error_html = (
+                f'<p style="margin: 8px 0 0; color: #dc3545; font-size: 0.85em;">错误信息: {error_message}</p>'
+                if error_message else ""
+            )
+
             st.markdown(f"""
             <div style="background-color: white; padding: 15px; border-radius: 10px; 
                        margin: 10px 0; border-left: 5px solid {status_color}; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -3349,6 +3379,7 @@ class StreamlitAnalysisManager:
                     <span style="margin-left: auto; color: {status_color}; font-weight: bold;">{status_text}</span>
                 </div>
                 <p style="margin: 0; color: #666; font-size: 0.9em;">{description}</p>
+                {error_html}
             </div>
             """, unsafe_allow_html=True)
         
@@ -5370,15 +5401,23 @@ def main():
 ✅ **角色分工**：各司其职，制衡机制，避免单一视角盲点  
                     """)
                 
+                try:
+                    configured_max_rounds = int(
+                        st.session_state.analysis_manager.config.get("debate_settings", {}).get("max_debate_rounds", 2)
+                    )
+                except Exception:
+                    configured_max_rounds = 2
+                max_debate_rounds = max(1, configured_max_rounds)
+
                 debate_rounds = st.slider(
                     "辩论轮数",
                     min_value=1,
-                    max_value=5,
-                    value=3,
+                    max_value=max_debate_rounds,
+                    value=1,
                     help="设置多空双方的辩论轮数"
                 )
                 
-                st.warning("⚠️ 完整流程需要消耗更多AI资源，预计耗时3-5分钟")
+                st.warning("⚠️ 完整流程会串行调用多次AI接口，建议先使用1轮辩论；若API响应较慢，系统会在超时后返回错误结果并结束运行状态。")
             
             else:
                 st.info("📊 仅执行6大分析模块，不包含辩论和决策")

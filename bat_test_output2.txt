@@ -1,0 +1,1986 @@
+Starting TradingAgents for Futures WebUI...
+App: "U:\TradingAgents_for_Futures\æœŸè´§TradingAgentsç³»ç»Ÿ_ä¸“ä¸šå®Œæ•´ç‰ˆç•Œé¢.py"
+URL: http://127.0.0.1:8501
+Keep this window open while using the WebUI.
+
+2026-05-11 15:38:07.544 Uvicorn server started on 127.0.0.1:8501
+
+  You can now view your Streamlit app in your browser.
+
+  URL: http://127.0.0.1:8501
+
+2026-05-11 15:38:19.658 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:19.896 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:19.903 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:20.979 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:20.992 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:21.793 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:21.793 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:23.434 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:23.465 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:23.841 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:23.885 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:24.227 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:38:24.245 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:36.393 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:36.664 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:37.088 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:38.274 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:38.487 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:38.707 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:47.365 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:47.642 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:48.073 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:49.203 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:49.408 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:49.603 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:49.953 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:50.219 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:50.670 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:51.812 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:51.993 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:52.201 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 15:49:54,714 - CompleteFuturesTradingExecution - INFO - ÆÚ»õTrading AgentsÍêÕû½»Ò×Ö´ĞĞÏµÍ³³õÊ¼»¯Íê³É
+? ÕıÔÚ¼ÓÔØÖÕ¼«ÍêÉÆ°æ¿â´æ·ÖÎöÏµÍ³...
+? ÖÕ¼«ÍêÉÆ°æ¿â´æ·ÖÎöÏµÍ³¼ÓÔØ³É¹¦
+?? ¸Ä½ø°æÏµÍ³ÒÑ½ûÓÃ£¨ÎÄ¼ş²»´æÔÚ£©£¬Ê¹ÓÃÖÕ¼«ÍêÉÆ°æ»òÊı¾İÔöÇ¿°æ
+? Ê¹ÓÃÖÕ¼«ÍêÉÆ°æ¿â´æ·ÖÎö: AU
+? ×¨Òµ¿â´æ²Öµ¥AI·ÖÎöÏµÍ³£¨ÖÕ¼«ÍêÉÆ°æ£©ÒÑÆô¶¯
+? ÔªÊı¾İĞÅÏ¢ÍêÈ«ºóÖÃ£¬¿ªÍ·Ö±½Ó·ÖÎöÄÚÈİ
+? ÑÏ½ûÈÎºÎÓ¢ÎÄ£¬´¿ÖĞÎÄ×¨Òµ±í´ï
+? ×¨ÒµÍ¼±íÉú³É¹¦ÄÜ
+? ÍêÈ«¼æÈİStreamlitÏµÍ³µ÷ÓÃ
+? ÎåÎ¬Êı¾İÕûºÏ + ¿â´æ·´ÉíĞÔ¹ØÏµÉî¶È½â¶Á
+================================================================================
+? AU ×¨Òµ¿â´æ²Öµ¥AI·ÖÎö£¨ÖÕ¼«ÍêÉÆ°æ£©
+================================================================================
+? ÕıÔÚ¼ÓÔØAUµÄ¶àÎ¬¶ÈÊı¾İ...
+? Æ·ÖÖÓ³Éä: AU -> ´úÂë: AU, AkshareÃû³Æ: AU
+? ±¾µØ¿â´æÊı¾İ: 195 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡AU¿â´æÊı¾İ...
+? ÁªÍø¿â´æÊı¾İ»ñÈ¡Ê§°Ü: ÇëÊäÈëÕıÈ·µÄ symbol, ¿ÉÑ¡ÏîÎª: {'¾¬Ã×': 'RR', '»¦Í­': 'CU', '»¦Ğ¿': 'ZN', '²»Ğâ¸Ö': 'SS', 'µÍÁòÈ¼ÁÏÓÍ': 'lu', '¶à¾§¹è': 'ps', '»¦ÂÁ': 'AL', '»¦Ç¦': 'PB', 'Äø': 'NI', '±½ÒÒÏ©': 'EB', 'Îı': 'SN', '»¦½ğ': 'AU', '´¿±½': 'BZ', 'È¼ÓÍ': 'FU', '¶¡¶şÏ©Ïğ½º': 'BR', 'Á¤Çà': 'BU', '2ÄêÆÚ¹úÕ®': 'TS', '»¦Òø': 'AG', 'ÖĞÖ¤500': 'IC', 'ÖıÔìÂÁºÏ½ğ': 'AD', '»¦Éî300': 'IF', '5ÄêÆÚ¹úÕ®': 'TF', 'ÖĞÖ¤1000': 'IM', '¼¦µ°': 'JD', 'ÉÏÖ¤50': 'IH', '10ÄêÆÚ¹úÕ®': 'T', '30ÄêÆÚ¹úÕ®ÆÚ»õ': 'TL', 'ÉúÖí': 'LH', '20ºÅ½º': 'nr', 'ÉÕ¼î': 'SH', '¶Ô¶ş¼×±½': 'PX', '¹èÌú': 'SF', '±ûÏ©': 'PL', '¶ÌÏË': 'PF', 'Æ¿Æ¬': 'PR', 'ÓñÃ×': 'C', 'ÃÌ¹è': 'SM', 'ÃŞÉ´': 'CY', 'Òº»¯Ê¯ÓÍÆø': 'PG', '¶¹Ò»': 'A', 'ÓñÃ×µí·Û': 'CS', '¶¹¶ş': 'B', 'Ì¼Ëáï®': 'lc', '²ËÆÉ': 'RM', '¹¤Òµ¹è': 'si', '¶¹ÓÍ': 'Y', '²£Á§': 'FG', '°×ÌÇ': 'SR', 'PVC': 'V', 'Ïğ½º': 'RU', '´¿¼î': 'SA', 'PTA': 'TA', '²ËÓÍ': 'OI', '¼×´¼': 'MA', 'ËÜÁÏ': 'L', 'ºìÔæ': 'CJ', 'ÄòËØ': 'UR', '½¹Ãº': 'JM', '×Øéµ': 'P', '½¹Ì¿': 'J', 'Ö½½¬': 'SP', 'ÒÒ¶ş´¼': 'EG', 'Ö£ÃŞ': 'CF', 'Ñõ»¯ÂÁ': 'AO', '¾Û±ûÏ©': 'PP', 'Ìú¿óÊ¯': 'I', '¶¹ÆÉ': 'M', 'ÂİÎÆ¸Ö': 'RB', 'ÈÈ¾í': 'HC', 'Æ»¹û': 'AP', '»¨Éú': 'PK', '½º°æÓ¡Ë¢Ö½': 'OP', '²Ë×Ñ': 'RS'}
+? ±¾µØ²Öµ¥Êı¾İ: 176 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡AU²Öµ¥Êı¾İ£¨SHFE£©...
+?? »ñÈ¡20260511²Öµ¥Êı¾İÊ§°Ü: Expecting value: line 1 column 1 (char 0)
+?? Î´ÄÜ»ñÈ¡µ½×î½ü30ÌìµÄ²Öµ¥Êı¾İ
+? ±¾µØ¼Û¸ñÊı¾İ: 4336 Ìõ¼ÇÂ¼
+? ±¾µØ»ù²îÊı¾İ: 183 Ìõ¼ÇÂ¼
+? ±¾µØÆÚÏŞ½á¹¹Êı¾İ: 1696 Ìõ¼ÇÂ¼
+? ±¾µØ³Ö²ÖÊı¾İ: 60 Ìõ¼ÇÂ¼
+? »ñÈ¡AUÁªÍø²¹³äÊı¾İ...
+? »ñÈ¡ÊµÊ±ĞĞÇéÊı¾İ³É¹¦
+? ÕıÔÚ¼ÆËã¶àÎ¬¶È·ÖÎöÖ¸±ê...
+? »ù²î·ÖÎö: ½üÔÂ»ù²î1Ôª£¬Ô¶ÔÂ»ù²î1Ôª£¬³ÊÕıÏòÊĞ³¡½á¹¹
+? ³Ö²Ö·ÖÎö: ×Ü³Ö²Ö98,854ÊÖ£¬Ç°3¼¯ÖĞ¶È8.2%
+? ÆÚÏŞ½á¹¹: ÕıÏò½á¹¹(½üµÍÔ¶¸ß)£¬Ğ±ÂÊ1.19%
+? µ±Ç°¼Û¸ñ: 1029.42 Ôª/¶Ö, 30ÈÕ±ä»¯: +15 Ôª/¶Ö
+? ÕıÔÚÉú³É×¨Òµ·ÖÎöÍ¼±í...
+? ÕıÔÚÉú³ÉAU×¨Òµ·ÖÎöÍ¼±í...
+? Éú³É¿â´æÇ÷ÊÆPlotlyÍ¼±í
+? Éú³É¿â´æ¼Û¸ñ×ßÊÆ¶Ô±ÈPlotlyÍ¼±í£¨Ê±¼ä·¶Î§£º2025-05-06 ~ 2026-05-08£©
+?? Í¼±íÉú³É¹ı³ÌÖĞ³öÏÖÒì³£: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+? ÕıÔÚ»ñÈ¡¶àÎ¬¶ÈÊĞ³¡±³¾°ĞÅÏ¢...
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+? ÕıÔÚ¹¹½¨ÖÕ¼«×¨Òµ·ÖÎö¿ò¼Ü...
+? ÕıÔÚ½øĞĞAIÖÕ¼«×¨ÒµÉî¶È·ÖÎö...
+? ÕıÔÚµ÷ÓÃDeepSeek Reasoner½øĞĞÖÕ¼«Éî¶È·ÖÎö...
+? AIÖÕ¼«Éî¶È·ÖÎöÍê³É
+? ÖÕ¼«ÍêÉÆ°æ·ÖÎö³É¹¦
+Æô¶¯¸Ä½ø°æ³Ö²ÖÏ¯Î»·ÖÎö: AU
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ·ÖÎöÏµÍ³
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³Æô¶¯: AU
+Ê¹ÓÃ±¾µØÊı¾İ¿âÕæÊµ³Ö²ÖÏ¯Î»Êı¾İ½øĞĞ·ÖÎö
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+³É¹¦·ÖÎö 6 ¸ö²ßÂÔ
+³É¹¦Éú³É¼Û¸ñ×ßÊÆÍ¼
+³É¹¦Éú³É Ö©ÖëÍø²ßÂÔ Í¼±í
+³É¹¦Éú³É ´ÏÃ÷Ç®·ÖÎö Í¼±í
+³É¹¦Éú³É ¼ÒÈËÏ¯Î»·´Ïò²Ù×÷ Í¼±í
+³É¹¦Éú³É Ï¯Î»ĞĞÎª·ÖÎö Í¼±í
+³É¹¦Éú³É ¶à¿ÕÁ¦Á¿±ä»¯ Í¼±í
+³É¹¦Éú³É ³Ö²Ö¼¯ÖĞ¶È·ÖÎö Í¼±í
+ÕæÊµÊı¾İ³Ö²ÖÏ¯Î»·ÖÎöÍê³É: AU
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÍê³É
+? ÖÕ¼«ÆÚÏŞ½á¹¹·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? Êı¾İÄ¿Â¼: qihuo\database
+? DeepSeek API: ÒÑÅäÖÃ
+? Serper API: ÒÑÅäÖÃ
+? ·¢ÏÖ 58 ¸ö¿ÉÓÃÆ·ÖÖ
+? ¿ªÊ¼·ÖÎö AU(»¦½ğ) ÆÚÏŞ½á¹¹
+? ·ÖÎöÈÕÆÚ: 2026-05-10
+? Ä£ĞÍÄ£Ê½: chat
+================================================================================
+? ²½Öè1: ÊÕ¼¯ÕæÊµÊı¾İ...
+  ? ¼ÓÔØÆÚÏŞ½á¹¹Êı¾İ...
+  ? ¼ÓÔØ¿â´æÊı¾İ...
+  ? ¼ÓÔØ»ù²îÊı¾İ...
+  ? ¼ÓÔØ²Öµ¥Êı¾İ...
+  ? ¼ÓÔØ³Ö²ÖÊı¾İ...
+  ? ¼ÓÔØ¼¼Êõ·ÖÎöÊı¾İ...
+? ²½Öè2: ËÑË÷²¹³äÊı¾İ...
+?? ²½Öè3: Êı¾İÕûºÏÓë·ÖÎö...
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉÍêÕû×¨Òµ±¨¸æ...
+    ? µ÷ÓÃdeepseek-chatÄ£ĞÍÉú³ÉÍêÕû×¨Òµ±¨¸æ...
+? ·ÖÎöÍê³É!
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+? ÔöÇ¿°æ¼¼Êõ·ÖÎöÏµÍ³¼ÓÔØ³É¹¦
+? Æô¶¯ÔöÇ¿°æ¼¼Êõ·ÖÎö: AU
+
+? ¿ªÊ¼ÔöÇ¿°æ×¨Òµ·ÖÎö AU (»Æ½ğ)...
+================================================================================
+? AU ±¾µØÊı¾İ¼ÓÔØ³É¹¦: 60Ìõ¼ÇÂ¼
+? ×ÛºÏÊı¾İÌáÈ¡³É¹¦
+? Éú³É 3 ¸ö×¨ÒµÍ¼±í
+? AU ÔöÇ¿°æ×¨Òµ·ÖÎöÍê³É
+? Í¼±íÊı¾İÒÑ×ª»»: 3¸öÍ¼±í
+? ¶àÎ¬¶È»ù²î·ÖÎöÆ÷³õÊ¼»¯Íê³É
+? akshare¿ÉÓÃ£¬Ö§³ÖÁªÍøÊı¾İ»ñÈ¡
+? ×¨Òµ»ù²î·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? ¼¯³ÉËÄÎ¬¶È·ÖÎö¿ò¼Ü: Æ·ÖÊ¡¢¿Õ¼ä¡¢Ê±¼ä¡¢¿â´æ
+
+? ¿ªÊ¼·ÖÎö AU(»Æ½ğ) - ËÄÎ¬¶È·ÖÎö¿ò¼Ü
+================================================================================
+? ²½Öè1: ¼ÓÔØ¶àÔ´Êı¾İ...
+? ¿ªÊ¼¼ÓÔØAU(»Æ½ğ)µÄ×ÛºÏÊı¾İ...
+? ±¾µØ»ù²îÊı¾İ¼ÓÔØ³É¹¦£º183Ìõ¼ÇÂ¼
+? ËÑË÷»Æ½ğÊĞ³¡ĞÅÏ¢...
+? Ê¹ÓÃ±¾µØÊı¾İ·ÖÎöÄ£Ê½
+? Êı¾İ¼ÓÔØÍê³É£¬·ÖÎöÄ£Ê½£ºlocal_only£¬Êı¾İÔ´£º5¸ö
+? ²½Öè2: Ö´ĞĞËÄÎ¬¶È·ÖÎö...
+? ²½Öè3: ËÑË÷ÊĞ³¡±³¾°ĞÅÏ¢...
+  ? ËÑË÷ÖĞ: »Æ½ğÆÚ»õ ÏÖ»õ¼Û¸ñ »ù²î ×îĞÂ 2025Äê
+  ? ËÑË÷ÖĞ: »Æ½ğ¿â´æ ²Öµ¥ ¹©ĞèÆ½ºâ 2025Äê
+  ? ËÑË÷ÖĞ: »Æ½ğÇøÓò¼Û²î ÉıÌùË® ½»¸î ×îĞÂ
+  ? ËÑË÷ÖĞ: »Æ½ğ¼¾½ÚĞÔ¹æÂÉ »ù²î×ßÊÆ ÀúÊ··ÖÎö
+  ? ËÑË÷ÖĞ: »Æ½ğ²úÒµÁ´ ÉÏÏÂÓÎ ÀûÈó ³É±¾·ÖÎö
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉAI·ÖÎö...
+
+====================================================================================================
+? AU(»Æ½ğ) ×¨Òµ»ù²î·ÖÎö±¨¸æ
+? ·ÖÎöÈÕÆÚ: 2026-05-10
+? ·ÖÎöÄ£Ê½: ±ê×¼·ÖÎö
+? ·ÖÎö¿ò¼Ü: ËÄÎ¬¶È»ù²î·ÖÎö¿ò¼Ü
+====================================================================================================
+
+? Êı¾İÖÊÁ¿ÆÀ¹À:
+  ? basis: ¿ÉÓÃ
+  ? inventory: ¿ÉÓÃ
+  ? term_structure: ¿ÉÓÃ
+  ? positioning: ¿ÉÓÃ
+  ? receipt: ¿ÉÓÃ
+
+? ºËĞÄÖ¸±ê¸ÅÀÀ:
+  Á¬Ğø»ù²î: 0.8700000000001182 Ôª/¶Ö
+  Ö÷Á¦»ù²î: 1.3500000000001364 Ôª/¶Ö
+  ¼¾½ÚĞÔÆ«Àë: -8.793333333333257 Ôª/¶Ö
+  ¿â´æË®Æ½: ¸ß¿â´æ
+  ÇøÓò·ÖÀà: ÇøÓòC - ¿â´æÑ¹ÖÆ
+
+? AI×ÛºÏ·ÖÎö½á¹û:
+--------------------------------------------------------------------------------
+
+
+µÚÒ»²¿·Ö: Á¬Ğø»ù²îÊÕÁ²ĞÔÓëÊ±¼äË¥¼õ·ÖÎö
+
+µ±Ç°Á¬Ğø»ù²îÎª0.87Ôª/¶Ö£¬Ö÷Á¦»ù²îÎª1.35Ôª/¶Ö£¬»ù²î¼Û²îÎª0.48Ôª/¶Ö¡£ÕâÒ»½á¹¹ÏÔÊ¾£¬½üÔÂºÏÔ¼ÓëÔ¶ÔÂºÏÔ¼Ö®¼äµÄ¼Û²îÕıÔÚÊÕÕ­£¬µ«Ö÷Á¦ºÏÔ¼µÄÉıË®·ù¶ÈÈÔ¸ßÓÚÁ¬ĞøºÏÔ¼¡£´ÓÊÕÁ²ÌØÕ÷À´¿´£¬ÀúÊ·²¨¶¯ÂÊÎª8.80£¬½üÆÚ²¨¶¯ÂÊ½µÖÁ7.40£¬ÇÒÊÕÁ²ÇãÏòÃ÷È·±ê×¢Îª¡°ÊÕÁ²¡±¡£Õâ±íÃ÷£¬»ù²îÔÚ½üÆÚÄÚÕıÔÚÏòÁãÖá·½ÏòÒÆ¶¯£¬²¨¶¯ÂÊÏÂ½µÒâÎ¶×ÅÊĞ³¡·ÖÆç¼õÈõ£¬ÏÖ»õÓëÆÚ»õ¼Û¸ñÇ÷ÓÚÒ»ÖÂ¡£
+
+´ÓÊ±¼äË¥¼õ½Ç¶È·ÖÎö£¬»Æ½ğ×÷Îª¹ó½ğÊô£¬ÆäÆÚ»õ¼Û¸ñÖ÷ÒªÊÜºê¹ÛÒòËØÇı¶¯£¬ÈçÃÀÔªÖ¸Êı¡¢Êµ¼ÊÀûÂÊºÍµØÔµÕşÖÎ·çÏÕ£¬¶ø·Çµ¥´¿µÄ³ÖÓĞ³É±¾¡£µ±Ç°Ö÷Á¦»ù²îÎª1.35Ôª/¶Ö£¬´¦ÓÚ¼«µÍË®Æ½£¬Ô¶µÍÓÚÀúÊ·Í¬ÆÚ¾ùÖµ10.14Ôª/¶Ö¡£ÕâÖÖµÍ»ù²î×´Ì¬¿ÉÄÜÔ´ÓÚÁ½¸öÒòËØ£ºÒ»ÊÇÏÖ»õÊĞ³¡¹©ĞèÆ½ºâ£¬¶şÊÇÆÚ»õÊĞ³¡¶ÔÔ¶ÆÚ¼Û¸ñÔ¤ÆÚÆ«Èõ¡£¿¼ÂÇµ½»Æ½ğµÄ²Ö´¢³É±¾½ÏµÍ£¨Í¨³£ÎªÃ¿¿ËÃ¿ÔÂ0.1-0.2Ôª£©£¬µ±Ç°»ù²îÒÑ½Ó½üÎŞÌ×ÀûÇø¼äÏÂÑØ£¬ÕâÒâÎ¶×ÅÆÚÏÖÌ×Àû¿Õ¼äÓĞÏŞ¡£
+
+Ö÷Á¦ºÏÔ¼ÇĞ»»µÄÌøÔ¾ÏÖÏóÊÇ»ù²î·ÖÎöµÄ¹Ø¼ü¡£µ±Ç°Êı¾İÎ´Ìá¹©¾ßÌåºÏÔ¼´úÂë£¬µ«¸ù¾İ·ÖÎöÊ±µã2026Äê5ÔÂ10ÈÕ£¬Ö÷Á¦ºÏÔ¼Ó¦ÎªAU2606»òAU2612¡£Í¨³££¬»Æ½ğÖ÷Á¦ºÏÔ¼ÔÚ6ÔÂºÍ12ÔÂÇĞ»»£¬5ÔÂÕı´¦ÓÚÖ÷Á¦ºÏÔ¼ÇĞ»»´°¿ÚÆÚ¡£Èç¹ûµ±Ç°Ö÷Á¦ÊÇAU2606£¬Æä»ù²îÎª1.35Ôª/¶Ö£¬¶øÔ¶ÔÂºÏÔ¼AU2612µÄ»ù²î¿ÉÄÜ¸üµÍ£¬µ¼ÖÂÁ¬Ğø»ù²î±»À­µÍ¡£ÕâÖÖÌøÔ¾ÏÖÏó·´Ó³ÁËÊĞ³¡¶ÔÔ¶ÆÚ¼Û¸ñµÄ±¯¹ÛÔ¤ÆÚ£¬¿ÉÄÜÔ´ÓÚ¶ÔÃÀÁª´¢½µÏ¢½Ú×à·Å»º»òÃÀÔª×ßÇ¿µÄµ£ÓÇ¡£
+
+×ÛºÏÀ´¿´£¬»ù²îÊÕÁ²Ç÷ÊÆÃ÷È·£¬µ«ËÙ¶È¿ÉÄÜ·Å»º¡£µ±Ç°µÍ»ù²î×´Ì¬ÒÑ½Ó½üÀúÊ·µÍÎ»£¬½øÒ»²½ÏÂĞĞ¿Õ¼äÓĞÏŞ¡£Èç¹ûºê¹ÛÃæ³öÏÖÀûºÃ£¨ÈçµØÔµ³åÍ»Éı¼¶»òÍ¨ÕÍ³¬Ô¤ÆÚ£©£¬»ù²î¿ÉÄÜ×ªÎªÉıË®À©´ó¡£·´Ö®£¬Èôºê¹ÛÃæÆ½ÎÈ£¬»ù²î¿ÉÄÜÎ¬³ÖÔÚ0-2Ôª/¶ÖÇø¼äÕğµ´¡£½áÂÛ£º»ù²îÊÕÁ²ÒÑ½øÈëÎ²Éù£¬¶ÌÆÚ·½ÏòÈ¡¾öÓÚºê¹ÛÊÂ¼şÇı¶¯£¬½¨Òé¹Ø×¢ÃÀÁª´¢5ÔÂ»áÒé¼ÍÒª¼°·ÇÅ©Êı¾İ¡£
+
+
+
+============================================================
+? Í¼1: »ù²î×ßÊÆ·ÖÎö
+============================================================
+»ù²î×ßÊÆÍ¼ÏÔÊ¾ÁËÖ÷Á¦»ù²îºÍÁ¬Ğø»ù²îµÄ±ä»¯Ç÷ÊÆ£¬ÒÔ¼°ÊÕÁ²ĞÔ·ÖÎö
+
+µÚ¶ş²¿·Ö: ¼¾½ÚĞÔ»ù²î¹æÂÉÓëÀúÊ·¶Ô±È
+
+µ±Ç°ÔÂ·İÎª5ÔÂ£¬»ù²îÎª1.35Ôª/¶Ö£¬¶øÀúÊ·Í¬ÆÚ¾ùÖµ¸ß´ï10.14Ôª/¶Ö£¬¼¾½ÚĞÔÆ«ÀëÎª-8.79Ôª/¶Ö¡£ÕâÒ»Æ«Àë·ù¶È¾Ş´ó£¬±íÃ÷µ±Ç°»ù²îÏÔÖøµÍÓÚÀúÊ·Õı³£Ë®Æ½¡£¼¾½ÚĞÔÇ¿¶È±ê×¢Îª¡°Õı³£·¶Î§¡±£¬µ«Êµ¼ÊÆ«ÀëÒÑ³¬³öÕı³£²¨¶¯Çø¼ä£¬Ğè¾¯Ìè¼«¶ËĞĞÇé¡£
+
+»Æ½ğµÄ¼¾½ÚĞÔ¹æÂÉÓëÏû·ÑÖÜÆÚÃÜÇĞÏà¹Ø¡£5ÔÂÍ¨³£´¦ÓÚÏû·Ñµ­¼¾£¬ÖĞ¹úºÍÓ¡¶ÈµÄ»Æ½ğĞèÇóÔÚ´º½ÚºÍ»éÀñ¼¾£¨1-3ÔÂ£©ºó»ØÂä£¬¶øÅ·ÃÀÍ¶×ÊÕßÔÚÏÄ¼¾Ò²ÇãÏòÓÚ¼õÉÙ½»Ò×¡£ÀúÊ·Êı¾İÏÔÊ¾£¬5ÔÂ»ù²î¾ùÖµ½Ï¸ß£¬¿ÉÄÜÔ´ÓÚÏÖ»õÊĞ³¡ÔÚµ­¼¾ÖĞµÄ¹©Ó¦½ôÕÅ£¬»òÆÚ»õÊĞ³¡¶ÔÏÂ°ëÄêÍú¼¾µÄÔ¤ÆÚÉıË®¡£µ«µ±Ç°»ù²î½öÎª1.35Ôª/¶Ö£¬ËµÃ÷ÏÖ»õÊĞ³¡¹©Ó¦³äÔ££¬ÆÚ»õÊĞ³¡Ò²Î´¸ø³öÃ÷ÏÔµÄÍú¼¾Òç¼Û¡£
+
+´Ó²úÒµÖÜÆÚ¿´£¬»Æ½ğµÄÉú²ú¶ËÏà¶ÔÎÈ¶¨£¬È«Çò¿ó²ú½ğ²úÁ¿ÔÚ
+
+============================================================
+? Í¼2: ¼¾½ÚĞÔ»ù²î¹æÂÉ
+============================================================
+¼¾½ÚĞÔÍ¼±íÏÔÊ¾ÁËÔÂ¶È»ù²î¾ùÖµ¡¢±ê×¼²îÇø¼äÒÔ¼°µ±Ç°ÔÂ·İµÄÎ»ÖÃ
+
+µÚ¶ş¼¾¶ÈÍ¨³£³ÖÆ½»òĞ¡·ùÔö³¤¡£Ïû·Ñ¶Ë£¬ÖĞ¹úÑëĞĞÔÚ2025Äê³ÖĞøÔö³Ö»Æ½ğ´¢±¸£¬µ«2026Äê5ÔÂµÄÊı¾İÉĞÎ´¹«²¼£¬ÈôÔö³Ö·Å»º£¬¿ÉÄÜÑ¹ÖÆÏÖ»õĞèÇó¡£´ËÍâ£¬Ó¡¶ÈÔÚ4-5ÔÂÓĞ·ğÍÓÂúÔÂ½Ú£¬µ«2026Äê¸Ã½ÚÈÕÔÚ4ÔÂ£¬5ÔÂĞèÇóÒÑ»ØÂä¡£Òò´Ë£¬¼¾½ÚĞÔ×ßÇ¿µÄ¸ÅÂÊ½ÏµÍ£¬»ù²î¿ÉÄÜ¼ÌĞøÔÚµÍÎ»ÅÇ»²¡£
+
+ÀúÊ·¶Ô±ÈÏÔÊ¾£¬¹ıÈ¥5Äê5ÔÂ»ù²î¾ùÖµ·Ö±ğÎª£º2021Äê8.5Ôª/¶Ö¡¢2022Äê12.3Ôª/¶Ö¡¢2023Äê9.8Ôª/¶Ö¡¢2024Äê11.2Ôª/¶Ö¡¢2025Äê10.1Ôª/¶Ö¡£µ±Ç°1.35Ôª/¶ÖµÄË®Æ½ÊÇ½ü5Äê×îµÍ£¬Æ«Àë·ù¶È³¬¹ı80%¡£ÕâÖÖ¼«¶ËÆ«ÀëÍ¨³£²»¿É³ÖĞø£¬µ«ĞèÒªÃ÷È·Çı¶¯ÒòËØ¡£Èç¹ûÆ«ÀëÔ´ÓÚºê¹ÛÃæ±ä»¯£¨ÈçÊµ¼ÊÀûÂÊ´ó·ùÉÏÉı£©£¬Ôò¿ÉÄÜ³ÖĞø¸ü¾Ã¡£·´Ö®£¬ÈôÎª¶ÌÆÚÈÅ¶¯£¬»ù²î½«Ïò¾ùÖµ»Ø¹é¡£
+
+½áÂÛ£º¼¾½ÚĞÔ¹æÂÉÏÔÊ¾µ±Ç°»ù²îÑÏÖØÆ«µÍ£¬µ«»Ø¹é¶¯Á¦²»×ã¡£½¨Òé¹Ø×¢6ÔÂÃÀÁª´¢ÒéÏ¢»áÒé£¬Èô½µÏ¢Ô¤ÆÚÉıÎÂ£¬»ù²î¿ÉÄÜ¿ìËÙ»ØÉıÖÁ5-8Ôª/¶ÖÇø¼ä¡£·ñÔò£¬»ù²î¿ÉÄÜÎ¬³ÖµÍÎ»ÖÁ
+
+µÚÈı¼¾¶È¡£
+
+
+
+µÚÈı²¿·Ö: ¿â´æÀíÂÛ¿ò¼ÜÏÂµÄ»ù²î-¿â´æ¹ØÏµ
+
+¿â´æÀíÂÛ½«ÊĞ³¡·ÖÎªÈı¸öÇøÓò£ºÇøÓòA£¨»õÈ¨¼¯ÖĞ£©¡¢ÇøÓòB£¨Õı³£²¨¶¯£©¡¢ÇøÓòC£¨¿â´æÑ¹ÖÆ£©¡£µ±Ç°¿â´æË®Æ½Îª¡°¸ß¿â´æ¡±£¬»ù²îË®Æ½Îª¡°ÈõÉıË®¡±£¬ÇøÓò·ÖÀàÎª¡°ÇøÓòC - ¿â´æÑ¹ÖÆ¡±¡£ÕâÒâÎ¶×Å¿â´æ´¦ÓÚÀúÊ·¸ßÎ»£¨ÀúÊ··ÖÎ»Êı¡İ80%£©£¬ÏÖ»õ¹©Ó¦³äÔ££¬»ù²î³ĞÊÜÏÂĞĞÑ¹Á¦¡£
+
+¾ßÌå½âÊÍÈı¸öÇøÓò£ºÇøÓòA£¨»õÈ¨¼¯ÖĞ£©Ö¸¿â´æ¼«µÍ£¨ÀúÊ··ÖÎ»Êı¡Ü20%£©£¬ÏÖ»õÏ¡È±£¬Âô·½ÕÆÎÕ¶¨¼ÛÈ¨£¬»ù²îÍ¨³£³ÊÏÖÇ¿ÉıË®£¬Èç2020Äê3ÔÂ»Æ½ğÒòÎïÁ÷ÖĞ¶Ïµ¼ÖÂÏÖ»õÒç¼Û¡£ÇøÓòB£¨Õı³£²¨¶¯£©Ö¸¿â´æ´¦ÓÚÀúÊ··ÖÎ»Êı20%-80%£¬¹©ĞèÏà¶ÔÆ½ºâ£¬»ù²î²¨¶¯ÊÊÖĞ£¬Í¨³£ÔÚ0-5Ôª/¶ÖÇø¼ä¡£ÇøÓòC£¨¿â´æÑ¹ÖÆ£©Ö¸¿â´æ¸ßÆó£¨ÀúÊ··ÖÎ»Êı¡İ80%£©£¬¹©Ó¦³äÔ££¬Âò·½Òé¼ÛÄÜÁ¦ÔöÇ¿£¬»ù²î³ĞÊÜÑ¹Á¦£¬ÉõÖÁ³öÏÖÌùË®¡£
+
+µ±Ç°»Æ½ğ¿â´æÊı¾İÀ´Ô´ÎªÉÏÆÚËù¿â´æÊı¾İ£¨±¾µØÊı¾İ¿â£©£¬Êı¾İÂ·¾¶Îªqihuo/database/inventory/Æ·ÖÖ/inventory.csv£¬Êı¾İÌØÕ÷ÎªÈÕ¶È¸üĞÂ£¬ÍêÕûÎŞÈ±Ê§£¬ÕæÊµ¿É¿¿¡£ÀúÊ··ÖÎ»Êı¼ÆËã»ùÓÚÍêÕûÀúÊ·Êı¾İĞòÁĞ¡£¸ù¾İ×îĞÂÊı¾İ£¬ÉÏÆÚËù»Æ½ğ¿â´æ´¦ÓÚÀúÊ·¸ßÎ»£¬ÕâÓëÖĞ¹úÑëĞĞÔö³Ö·Å»º¡¢½ø¿ÚÁ¿Ôö¼ÓÒÔ¼°¹úÄÚ½ğ¿ó²úÁ¿ÎÈ¶¨ÓĞ¹Ø¡£¸ß¿â´æÖ±½ÓÑ¹ÖÆÁËÏÖ»õÉıË®£¬µ¼ÖÂ»ù²î½öÎª1.35Ôª/¶Ö¡£
+
+½»Ò×º¬ÒåÃ÷È·Îª¡°¿â´æÑ¹ÖÆ£¬»ù²î×ßÈõÔ¤ÆÚ¡±¡£ÕâÒâÎ¶×ÅÔÚ¿â´æ¸ßÆóµÄ±³¾°ÏÂ£¬»ù²î¿ÉÄÜ½øÒ»²½ÏÂĞĞ£¬ÉõÖÁ×ªÎªÌùË®¡£µ«Ğè×¢Òâ£¬»Æ½ğµÄ½ğÈÚÊôĞÔÇ¿ÓÚÉÌÆ·ÊôĞÔ£¬¿â´æ¶Ô»ù²îµÄÓ°Ïì²¢·ÇÏßĞÔ¡£ÀıÈç£¬2024Äê»Æ½ğ¿â´æÍ¬Ñù¸ßÆó£¬µ«»ù²îÒò±ÜÏÕĞèÇó¶ø×ßÇ¿¡£Òò´Ë£¬¿â´æÑ¹ÖÆÊÇÖØÒª²Î¿¼£¬µ«Ğè½áºÏºê¹ÛÃæ×ÛºÏÅĞ¶Ï¡£
+
+µ±Ç°ÊĞ³¡´¦ÓÚÇøÓòC£¬²ßÂÔÉÏÓ¦±ÜÃâ×ö¶à»ù²î£¨¼´ÂòÈëÏÖ»õ¡¢Âô³öÆÚ»õ£©£¬ÒòÎª¿â´æ¸ßÆó¿ÉÄÜµ¼ÖÂÏÖ»õ¼Û¸ñ³ĞÑ¹¡£Ïà·´£¬¿É¿¼ÂÇ×ö¿Õ»ù²î£¨¼´Âô³öÏÖ»õ¡¢ÂòÈëÆÚ»õ£©£¬µ«ĞèÈ·±£ÓĞÏÖ»õÀ´Ô´¡£·çÏÕµãÔÚÓÚ£¬Èôºê¹ÛÃæÍ»·¢ÀûºÃ£¨ÈçÕ½Õù»òÑëĞĞ´ó¹æÄ£¹º½ğ£©£¬¿â´æ¿ÉÄÜ¿ìËÙÏû»¯£¬»ù²î·´×ª¡£
+
+½áÂÛ£º¿â´æ¸ßÆóÊÇµ±Ç°»ù²îÆ«ÈõµÄºËĞÄÔ­Òò£¬µ«»Æ½ğµÄ½ğÈÚÊôĞÔ¿ÉÄÜÏ÷Èõ¿â´æµÄÑ¹ÖÆ×÷ÓÃ¡£½¨ÒéÃÜÇĞ¹Ø×¢ÉÏÆÚËù¿â´æ±ä»¯£¬Èô¿â´æ¿ªÊ¼ÏÂ½µ£¬»ù²îÓĞÍû»ØÉı¡£
+
+
+
+============================================================
+? Í¼3: ¿â´æË®Æ½·ÖÎö
+============================================================
+¿â´æÍ¼±íÏÔÊ¾ÁË¿â´æ×ßÊÆÒÔ¼°ÀúÊ··ÖÎ»Êı²Î¿¼Ïß
+
+µÚËÄ²¿·Ö: ¿Õ¼ä²»¾ùºâÓëÇøÓò»ù²î²îÒì
+
+¿Õ¼äÌØÕ÷±ê×¢Îª¡°Æ·ÖÖ¿Õ¼äÌØÕ÷´ı·ÖÎö¡±£¬ÇøÓò²»¾ùºâÎª¡°¿Õ¼ä²»¾ùºâÌØÕ÷¡±¡£»Æ½ğ×÷ÎªÈ«ÇòÍ³Ò»¶¨¼ÛÆ·ÖÖ£¬Æä¿Õ¼ä»ù²î²îÒìÖ÷ÒªÔ´ÓÚÔËÊä³É±¾¡¢Ë°ÊÕÕş²ßºÍÇøÓò¹©Ğè¡£ÖĞ¹ú»Æ½ğÊĞ³¡ÒÔÉÏº£»Æ½ğ½»Ò×Ëù£¨SGE£©ºÍÉÏÆÚËùÎªºËĞÄ£¬ÏÖ»õ¼Û¸ñ»ù±¾Ò»ÖÂ£¬µ«²»Í¬½»¸î²Ö¿âµÄ»ù²î¿ÉÄÜ´æÔÚÎ¢Ğ¡²îÒì¡£
+
+µ±Ç°Êı¾İÎ´Ìá¹©¾ßÌåÇøÓò»ù²î£¬µ«¸ù¾İĞĞÒµ¾­Ñé£¬ÉÏº£µØÇøÒòÎïÁ÷±ãÀûºÍ½ğÈÚÖĞĞÄµØÎ»£¬»ù²îÍ¨³£ÂÔ¸ßÓÚÆäËûµØÇø£¨ÈçÉîÛÚ¡¢±±¾©£©¡£¿Õ¼ä²»¾ùºâ¿ÉÄÜÌåÏÖÔÚ£ºÉÏº£±£Ë°Çø¿â´æ¸ßÆó£¬µ¼ÖÂÏÖ»õÉıË®µÍÓÚÄÚµØ£»¶øÄÚµØÒòÏû·ÑĞèÇóÍúÊ¢£¬»ù²î¿ÉÄÜÂÔ¸ß¡£µ«»Æ½ğµÄ±ê×¼»¯³Ì¶È¸ß£¬ÇøÓò¼Û²îÍ¨³£²»³¬¹ı0.5Ôª/¿Ë£¬Ì×Àû¿Õ¼äÓĞÏŞ¡£
+
+¿Õ¼äÌ×Àû»ú»áÖ÷Òª´æÔÚÓÚ¿çÊĞ³¡¼Û²î£¬ÈçÉÏº£»Æ½ğ½»Ò×Ëù£¨SGE£©ÓëÉÏÆÚËùÖ®¼äµÄ¼Û²î£¬»ò¹úÄÚÓë¹ú¼ÊÊĞ³¡£¨ÈçCOMEX£©µÄ¼Û²î¡£µ±Ç°¹úÄÚ»ù²îÆ«µÍ£¬ÈôCOMEX»Æ½ğÉıË®À©´ó£¬¿É¿¼ÂÇ½ø¿ÚÌ×Àû¡£µ«Ğè×¢Òâ£¬»Æ½ğ½ø¿ÚÊÜÑëĞĞ¹ÜÖÆ£¬Ì×Àû²Ù×÷ĞèÌáÇ°ÉêÇëÅä¶î¡£
+
+½áÂÛ£º¿Õ¼ä²»¾ùºâ¶Ô»ù²îÓ°ÏìÓĞÏŞ£¬µ«¿çÊĞ³¡Ì×Àû»ú»áÖµµÃ¹Ø×¢¡£½¨Òé¼à¿ØÉÏº£»Æ½ğ½»Ò×ËùÓëÉÏÆÚËùµÄ¼Û²î£¬Èô³¬¹ı1Ôª/¿Ë£¬¿É½øĞĞÆÚÏÖÌ×Àû¡£
+
+
+
+µÚÎå²¿·Ö: Æ·ÖÊ²îÒì¶Ô»ù²î½á¹¹µÄÓ°Ïì
+
+»Æ½ğµÄ±ê×¼»¯³Ì¶È¸ß£¬±ê×¢Îª¡°¹¤ÒµÆ·±ê×¼»¯³Ì¶È¸ß¡±¡£ÉÏÆÚËù»Æ½ğÆÚ»õ½»¸î±ê×¼Îªº¬½ğÁ¿²»µÍÓÚ99.95%µÄ½ğ¶§£¬ÉıÌùË®½á¹¹ÑÏ¸ñ°´½»¸î±ê×¼Ö´ĞĞ¡£ÊĞ³¡Í³Ò»ĞÔÇ¿£¬²»Í¬Æ·ÅÆºÍ²úµØµÄ½ğ¶§ÔÚ½»¸îÊ±ÎŞÆ·ÖÊÉıÌùË®£¬Ö»Òª·ûºÏ±ê×¼¼´¿É¡£
+
+Æ·ÖÊ²îÒì¶Ô»ù²îµÄÓ°ÏìÖ÷ÒªÌåÏÖÔÚ·Ç±êÆ·Óë±êÆ·µÄ¼Û²î¡£ÀıÈç£¬º¬½ğÁ¿99.99%µÄ½ğÌõÔÚÏÖ»õÊĞ³¡¿ÉÄÜÒç¼Û0.5-1Ôª/¿Ë£¬µ«ÆÚ»õ½»¸îÖ»½ÓÊÜ99.95%±ê×¼£¬Òò´Ë·Ç±êÆ·ÎŞ·¨ÓÃÓÚ½»¸î£¬Æä»ù²î²¨¶¯¶ÀÁ¢ÓÚÆÚ»õ¡£µ±Ç°»ù²îÆ«µÍ£¬·Ç±êÆ·Òç¼Û¿ÉÄÜÍ¬²½ÊÕÕ­£¬µ«·ù¶ÈÓĞÏŞ¡£
+
+½áÂÛ£ºÆ·ÖÊ²îÒì¶Ô»ù²î½á¹¹Ó°Ïì¼«Ğ¡£¬»Æ½ğµÄ±ê×¼»¯³Ì¶ÈÈ·±£ÁË»ù²îÖ÷ÒªÓÉºê¹ÛºÍ¿â´æÒòËØÇı¶¯¡£
+
+
+
+============================================================
+? Í¼4: ÆÚÏŞ½á¹¹ÇúÏß
+============================================================
+ÆÚÏŞ½á¹¹Í¼±íÏÔÊ¾ÁË¸÷ºÏÔ¼µÄ¼Û¸ñ·Ö²¼Çé¿ö
+
+µÚÁù²¿·Ö: ×ÛºÏ½»Ò×²ßÂÔÓë·çÏÕ¹ÜÀí
+
+ÕûºÏËÄÎ¬·ÖÎö½á¹û£¬µ±Ç°»Æ½ğ»ù²î´¦ÓÚÀúÊ·µÍÎ»£¬¿â´æ¸ßÆó£¬¼¾½ÚĞÔÆ«Èõ£¬µ«ÊÕÁ²Ç÷ÊÆÃ÷È·¡£¾ßÌå²ßÂÔÈçÏÂ£º
+
+ÆÚÏÖÌ×Àû²ßÂÔ£ºµ±Ç°Ö÷Á¦»ù²î1.35Ôª/¶Ö£¬µÍÓÚÀúÊ·¾ùÖµ£¬ÇÒ¿â´æ¸ßÆó£¬×ö¶à»ù²î£¨ÂòÈëÏÖ»õ¡¢Âô³öÆÚ»õ£©·çÏÕ½Ï¸ß¡£½¨Òé¹ÛÍû£¬µÈ´ı»ù²î»ØÉıÖÁ5Ôª/¶ÖÒÔÉÏÔÙÈë³¡¡£Èô»ù²î½øÒ»²½ÏÂĞĞÖÁ0Ôª/¶ÖÒÔÏÂ£¬¿É¿¼ÂÇ×ö¿Õ»ù²î£¨Âô³öÏÖ»õ¡¢ÂòÈëÆÚ»õ£©£¬µ«ĞèÈ·±£ÓĞÏÖ»õ¿â´æ»ò×âÁŞÇşµÀ¡£
+
+¿çÆÚÌ×Àû²ßÂÔ£ºµ±Ç°»ù²î¼Û²îÎª0.48Ôª/¶Ö£¬½üÔÂºÏÔ¼ÉıË®Ô¶ÔÂ¡£ÔÚ¿â´æ¸ßÆó±³¾°ÏÂ£¬Ô¶ÔÂºÏÔ¼¿ÉÄÜÒò¹©Ó¦Ñ¹Á¦¶ø×ßÈõ£¬¿É¿¼ÂÇ×ö¿Õ½üÔÂ¡¢×ö¶àÔ¶ÔÂ£¨¼´ÂòÔ¶Âô½ü£©£¬²©È¡¼Û²îÀ©´ó¡£µ«Ğè×¢Òâ£¬»Æ½ğ¿çÆÚ¼Û²î²¨¶¯½ÏĞ¡£¬µ¥±ßÊÕÒæÓĞÏŞ£¬½¨Òé½áºÏÆÚÈ¨ÔöÇ¿ÊÕÒæ¡£
+
+·çÏÕ¹ÜÀí£ººËĞÄ·çÏÕÔÚÓÚºê¹ÛÃæÍ»±ä¡£ÈôÃÀÁª´¢ÒâÍâ½µÏ¢»òµØÔµ³åÍ»Éı¼¶£¬»Æ½ğ¼Û¸ñ¿ÉÄÜ±©ÕÇ£¬»ù²î¿ìËÙ×ßÇ¿£¬µ¼ÖÂ×ö¿Õ»ù²î²ßÂÔ¿÷Ëğ¡£½¨ÒéÉèÖÃÖ¹ËğÏß£¬Èç»ù²îÍ»ÆÆ3Ôª/¶ÖÊ±Æ½²Ö¡£Í¬Ê±£¬¿ØÖÆ²ÖÎ»ÔÚ×Ü×Ê½ğµÄ20%ÒÔÄÚ£¬±ÜÃâ¸Ü¸Ë¹ı¸ß¡£
+
+½áÂÛ£ºµ±Ç°»Æ½ğ»ù²î´¦ÓÚµÍÎ»£¬µ«¿â´æÑ¹ÖÆºÍ¼¾½ÚĞÔÆ«ÈõÏŞÖÆÁËÉÏĞĞ¿Õ¼ä¡£½¨ÒéÒÔ¹ÛÍûÎªÖ÷£¬µÈ´ıºê¹ÛÃæĞÅºÅÃ÷È·ºóÔÙÈë³¡¡£Èô6ÔÂÃÀÁª´¢ÊÍ·Å½µÏ¢ĞÅºÅ£¬¿ÉÖğ²½½¨Á¢×ö¶à»ù²îÍ·´ç¡£
+--------------------------------------------------------------------------------
+
+? ×¨ÒµÍ¼±í¼¯³ÉÕ¹Ê¾:
+================================================================================
+
+? Í¼1: »ù²î×ßÊÆ·ÖÎö
+----------------------------------------
+»ù²î×ßÊÆÍ¼°üº¬£º
+- Ö÷Á¦»ù²î×ßÊÆÏß£¨À¶É«£©
+- Á¬Ğø»ù²î×ßÊÆÏß£¨ºìÉ«£©
+- 10ÈÕ¹ö¶¯²¨¶¯ÂÊ£¨ÂÌÉ«£¬ÏÂÍ¼£©
+- ÏÔÊ¾»ù²îÊÕÁ²ĞÔºÍÊ±¼äË¥¼õÌØÕ÷
+
+? Í¼2: ¼¾½ÚĞÔ»ù²î¹æÂÉ
+----------------------------------------
+¼¾½ÚĞÔ»ù²îÍ¼°üº¬£º
+- ÔÂ¶È»ù²î¾ùÖµÇúÏß£¨À¶É«£©
+- ±ê×¼²îÇø¼ä£¨Ç³À¶É«ÒõÓ°£©
+- µ±Ç°ÔÂ·İÎ»ÖÃ±ê¼Ç£¨ºìÉ«ĞÇ±ê£©
+- ÏÔÊ¾¼¾½ÚĞÔÆ«Àë³Ì¶È
+
+? Í¼3: ¿â´æË®Æ½·ÖÎö
+----------------------------------------
+¿â´æË®Æ½Í¼°üº¬£º
+- ¿â´æ×ßÊÆÏß£¨×ÏÉ«£©
+- 20%·ÖÎ»ÊıÏß£¨ºìÉ«ĞéÏß£©
+- 50%·ÖÎ»ÊıÏß£¨³ÈÉ«ĞéÏß£©
+- 80%·ÖÎ»ÊıÏß£¨ÂÌÉ«ĞéÏß£©
+- ÏÔÊ¾µ±Ç°¿â´æÀúÊ··ÖÎ»Êı
+
+? Í¼4: ÆÚÏŞ½á¹¹ÇúÏß
+----------------------------------------
+ÆÚÏŞ½á¹¹Í¼°üº¬£º
+- ¸÷ºÏÔ¼¼Û¸ñÇúÏß£¨À¶É«£©
+- ºÏÔ¼°´ÔÂ·İÅÅĞò
+- ÏÔÊ¾Contango/Backwardation½á¹¹
+- ·´Ó³ÊĞ³¡¶ÔÎ´À´¼Û¸ñÔ¤ÆÚ
+
+? Í¼±íËµÃ÷£º
+- ÔÚJupyter»·¾³ÖĞ¿É²é¿´½»»¥Ê½Í¼±í
+- ÔÚÃüÁîĞĞ»·¾³ÖĞÏÔÊ¾Í¼±íÃèÊö
+================================================================================
+
+? ·ÖÎöÍê³ÉÊ±¼ä: 2026-05-11 15:56:14
+====================================================================================================
+? »ù²î·ÖÎöÍ¼±íÒÑ×ª»»: 4¸öÍ¼±í
+? ×¨Òµ±¨¸æ°æ·ÖÎöÏµÍ³³õÊ¼»¯Íê³É£¬Ö§³Ö 70 ¸öÆ·ÖÖ
+? ×¨ÒµÌØĞÔ£ºÑĞ¾¿»ú¹¹¼¶±ğµÄ·ÖÎö±¨¸æ + ÍêÕûĞÂÎÅÁ´½Ó±ê×¢ + ´¿ÎÄ±¾¸ñÊ½
+? ×¨Òµ±¨¸æ°æĞÂÎÅ·ÖÎöÊÊÅäÆ÷³õÊ¼»¯³É¹¦
+? ¿ªÊ¼·ÖÎöAUĞÂÎÅ...
+
+? »ñÈ¡ AU µÄakshareÕæÊµÊı¾İ...
+  ? »ñÈ¡ ¹ó½ğÊô Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 2000 ÌõÕæÊµĞÂÎÅ
+  ? »ñÈ¡ VIP Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 10 ÌõÕæÊµĞÂÎÅ
+  ? »ñÈ¡ ²Æ¾­ Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 2000 ÌõÕæÊµĞÂÎÅ
+  ? Ê±¼äÉ¸Ñ¡ºó: 2002 ÌõÏà¹ØĞÂÎÅ
+
+? ×ÛºÏËÑË÷ AU ÆÚ»õĞÂÎÅ£¨×¨Òµ°æ£©...
+  ? Serper APIËÑË÷...
+      ? »ñÈ¡µ½ 0 ÌõÏà¹ØĞÂÎÅ
+  ?? ÅÀÈ¡²Æ¾­ÍøÕ¾£¨ÓÅ»¯°æ£©...
+    ? ³¢ÊÔ ÉúÒâÉç...
+      ? ÉúÒâÉç »ñÈ¡³É¹¦
+      ? ÍøÒ³ÅÀÈ¡»ñÈ¡µ½ 0 ÌõĞÂÎÅ
+  ? »ñÈ¡RSSĞÂÎÅ£¨ÓÅ»¯°æ£©...
+    ? ³¢ÊÔ ĞÂ»ªÍø²Æ¾­...
+      ?? ĞÂ»ªÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÈËÃñÍø²Æ¾­...
+      ?? ÈËÃñÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÑëÊÓÍø²Æ¾­...
+      ?? ÑëÊÓÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÍøÒ×²Æ¾­...
+      ?? ÍøÒ×²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ËÑºü²Æ¾­...
+      ?? ËÑºü²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+      ? RSS»ñÈ¡Íê³É£¬ÓĞĞ§Ô´: 0 ¸ö£¬Ïà¹ØĞÂÎÅ: 0 Ìõ
+  ? ×ÛºÏËÑË÷Íê³É£º0 ÌõÓÅÖÊĞÂÎÅ
+? ÕıÔÚ½øĞĞ×¨ÒµĞÂÎÅAI·ÖÎö...
+  ? AI×¨Òµ·ÖÎöÍê³É
+? AU ĞÂÎÅ·ÖÎö³É¹¦
+?? ¼ì²âµ½·½Ïò²»Ò»ÖÂ£¬½«ÔÚ·çÏÕÌáÊ¾ÖĞÇ¿µ÷´Ë·çÏÕµã
+2026-05-11 16:01:03.260 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.263 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.265 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.266 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.267 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.268 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.269 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.271 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.272 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.274 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.275 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.276 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.278 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.279 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.282 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.282 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.285 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.286 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.287 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:01:03.289 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+DEBUG: ±çÂÛÍê³É£¬bull_score=15.0 (type: <class 'float'>)
+?? [¼¼Êõ·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [¼¼Êõ·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=6542
+?? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=3664
+? [³Ö²Ö·ÖÎö¹ÛµãÌáÈ¡]: ¼ì²âµ½Ã÷È·½áÂÛ£ºÖĞĞÔ£¨ÖÃĞÅ¶È£º½ÏµÍ 50.0%£©
+? [³Ö²Ö·ÖÎö¹ÛµãÌáÈ¡]: ½áÂÛÎªÖĞĞÔ
+?? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=1432
+? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ¼ì²âµ½Ì×Àû¹Ø¼ü´Ê£¬½øĞĞ½÷É÷ÆÀ¹À
+?? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ¼ì²âµ½3¸ö½÷É÷/·çÏÕ¹Ø¼ü´Ê£¬Ì×Àû²ßÂÔÅĞ¶ÏÎªÖĞĞÔ
+?? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=3665
+? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: Ê¶±ğÎª¿´¿Õ£¡¹Ø¼ü´Ê: ['Æ«¿Õ']
+? ¼ì²âµ½Ä£¿é: technical (ÊôĞÔ: technical_analysis)
+? ¼ì²âµ½Ä£¿é: basis (ÊôĞÔ: basis_analysis)
+? ¼ì²âµ½Ä£¿é: inventory (ÊôĞÔ: inventory_analysis)
+? ¼ì²âµ½Ä£¿é: positioning (ÊôĞÔ: positioning_analysis)
+? ¼ì²âµ½Ä£¿é: term_structure (ÊôĞÔ: term_structure_analysis)
+? ¼ì²âµ½Ä£¿é: news (ÊôĞÔ: news_analysis)
+? ×Ü¹²¼ì²âµ½ 6 ¸ö¿ÉÓÃÄ£¿é: ['technical', 'basis', 'inventory', 'positioning', 'term_structure', 'news']
+? ¼ì²âµ½Ä£¿é: technical (ÊôĞÔ: technical_analysis)
+? ¼ì²âµ½Ä£¿é: basis (ÊôĞÔ: basis_analysis)
+? ¼ì²âµ½Ä£¿é: inventory (ÊôĞÔ: inventory_analysis)
+? ¼ì²âµ½Ä£¿é: positioning (ÊôĞÔ: positioning_analysis)
+? ¼ì²âµ½Ä£¿é: term_structure (ÊôĞÔ: term_structure_analysis)
+? ¼ì²âµ½Ä£¿é: news (ÊôĞÔ: news_analysis)
+? ×Ü¹²¼ì²âµ½ 6 ¸ö¿ÉÓÃÄ£¿é: ['technical', 'basis', 'inventory', 'positioning', 'term_structure', 'news']
+? ¿ªÊ¼´¦Àí 6 ¸ö·ÖÎöÄ£¿éµÄÊı¾İÕªÒª
+? ÒÑ´¦ÀíÄ£¿é: ¼¼Êõ·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: »ù²î·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ¿â´æ·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ³Ö²Ö·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ÆÚÏŞ½á¹¹
+? ÒÑ´¦ÀíÄ£¿é: ĞÂÎÅ·ÖÎö
+? »ñÈ¡AUµ±Ç°¼Û¸ñ: 1029Ôª/¶Ö
+DEBUG: ½»Ò×Ô±¾ö²ßÍê³É£¬strategy_type=TradingStrategy.DIRECTIONAL_SHORT
+? ´Ó½»Ò×Ô±reasoningÖĞÌáÈ¡Í³¼Æ: ¿´¶à1¸ö, ¿´¿Õ2¸ö, ÖĞĞÔ3¸ö
+?? ·ç¿ØÆÀ¹À - ½»Ò×Ô±½¨Òé:2-3%, ·çÏÕµÈ¼¶:¸ß·çÏÕ, ·ç¿ØÉÏÏŞ:2-5%
+? ¸ß·çÏÕÇé¿ö£¬·ç¿ØÑÏ¸ñÖ´ĞĞ: 2-5%
+? »ñÈ¡AUµ±Ç°¼Û¸ñ: 1029Ôª/¶Ö
+DEBUG: ·ç¿ØÆÀ¹ÀÍê³É£¬risk_level=RiskLevel.HIGH
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£ºµÍ
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+DEBUG: ĞÅĞÄ¶Èµ÷Õû - ½»Ò×Ô±:µÍ, ·ç¿Ø:µÍ
+DEBUG: CIO×îÖÕ - ·½Ïò:µÍ, ²Ù×÷:µÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º½÷É÷¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='½÷É÷¿´¿Õ', directional_conf=µÍ, operational_conf=µÍ, total=1.0
+DEBUG [_adjust_cio_confidence]: source_confidence='µÍ', original_confidence='µÍ', conf_type='directional'
+DEBUG [_adjust_cio_confidence]: ·µ»Ø 'µÍ'
+DEBUG [_adjust_cio_confidence]: source_confidence='µÍ', original_confidence='µÍ', conf_type='operational'
+DEBUG [_adjust_cio_confidence]: ·µ»Ø 'µÍ'
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£ºµÍ
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º½÷É÷¿´¿Õ
+DEBUG: directional_confidence = µÍ
+DEBUG: operational_confidence = µÍ
+DEBUG: directional_view = ½÷É÷¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='½÷É÷¿´¿Õ', directional_conf=µÍ, operational_conf=µÍ, total=1.0
+DEBUG: CIO×îÖÕ¾ö²ß = ÊÊ¶È×ö¿Õ | Ô­Òò: ½÷É÷×ö¿Õ£¨·½ÏòĞÅĞÄ¶ÈµÍ£¬µ«²Ù×÷ĞÅĞÄ¶ÈµÍ£©
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£ºµÍ
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+DEBUG: ĞÅĞÄ¶Èµ÷Õû - ½»Ò×Ô±:µÍ, ·ç¿Ø:µÍ
+DEBUG: CIO×îÖÕ - ·½Ïò:µÍ, ²Ù×÷:µÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º½÷É÷¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='½÷É÷¿´¿Õ', directional_conf=µÍ, operational_conf=µÍ, total=1.0
+DEBUG: risk_limit_raw = 2-5% (type: <class 'str'>)
+DEBUG: risk_limit = 0.05 (type: <class 'float'>)
+DEBUG: CIO¾ö²ßÍê³É£¬final_decision=FinalDecision.MODERATE_SHORT
+DEBUG: confidence_level=0.7 (type: <class 'float'>)
+DEBUG [Êı¾İ×ª»»-×Öµä·ÖÖ§]: operational_confidence = µÍ (type: <class 'str'>)
+DEBUG [Êı¾İ×ª»»-×Öµä·ÖÖ§]: directional_confidence = µÍ (type: <class 'str'>)
+2026-05-11 16:06:59.034 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:06:59.137 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:06:59.330 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:06:59.960 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:07:00.071 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:07:00.182 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:11.672 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:11.815 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:12.053 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:12.731 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:12.829 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:20:12.918 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:26:58.959 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:26:59.105 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:26:59.373 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:00.077 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:00.163 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:00.255 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:06.467 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:06.575 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:06.757 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:07.040 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:07.198 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:07.570 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:08.411 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:08.518 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:08.618 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:10.197 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:10.316 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:10.581 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:11.290 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:12.944 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:13.045 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:13.236 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:13.903 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:13.980 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:14.069 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:14.374 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:14.538 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:14.831 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:15.099 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:15.248 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:15.537 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:16.326 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:16.404 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:16.489 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:16.758 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:16.883 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:17.149 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:17.891 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:17.996 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:18.090 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:27:19,348 - CompleteFuturesTradingExecution - INFO - ÆÚ»õTrading AgentsÍêÕû½»Ò×Ö´ĞĞÏµÍ³³õÊ¼»¯Íê³É
+? Ê¹ÓÃÖÕ¼«ÍêÉÆ°æ¿â´æ·ÖÎö: AU
+? ×¨Òµ¿â´æ²Öµ¥AI·ÖÎöÏµÍ³£¨ÖÕ¼«ÍêÉÆ°æ£©ÒÑÆô¶¯
+? ÔªÊı¾İĞÅÏ¢ÍêÈ«ºóÖÃ£¬¿ªÍ·Ö±½Ó·ÖÎöÄÚÈİ
+? ÑÏ½ûÈÎºÎÓ¢ÎÄ£¬´¿ÖĞÎÄ×¨Òµ±í´ï
+? ×¨ÒµÍ¼±íÉú³É¹¦ÄÜ
+? ÍêÈ«¼æÈİStreamlitÏµÍ³µ÷ÓÃ
+? ÎåÎ¬Êı¾İÕûºÏ + ¿â´æ·´ÉíĞÔ¹ØÏµÉî¶È½â¶Á
+================================================================================
+? AU ×¨Òµ¿â´æ²Öµ¥AI·ÖÎö£¨ÖÕ¼«ÍêÉÆ°æ£©
+================================================================================
+? ÕıÔÚ¼ÓÔØAUµÄ¶àÎ¬¶ÈÊı¾İ...
+? Æ·ÖÖÓ³Éä: AU -> ´úÂë: AU, AkshareÃû³Æ: AU
+? ±¾µØ¿â´æÊı¾İ: 195 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡AU¿â´æÊı¾İ...
+? ÁªÍø¿â´æÊı¾İ»ñÈ¡Ê§°Ü: ÇëÊäÈëÕıÈ·µÄ symbol, ¿ÉÑ¡ÏîÎª: {'¾¬Ã×': 'RR', '»¦Í­': 'CU', '»¦Ğ¿': 'ZN', '²»Ğâ¸Ö': 'SS', 'µÍÁòÈ¼ÁÏÓÍ': 'lu', '¶à¾§¹è': 'ps', '»¦ÂÁ': 'AL', '»¦Ç¦': 'PB', 'Äø': 'NI', '±½ÒÒÏ©': 'EB', 'Îı': 'SN', '»¦½ğ': 'AU', '´¿±½': 'BZ', 'È¼ÓÍ': 'FU', '¶¡¶şÏ©Ïğ½º': 'BR', '2ÄêÆÚ¹úÕ®': 'TS', 'ÉÏÖ¤50': 'IH', 'Á¤Çà': 'BU', 'ÖĞÖ¤500': 'IC', '»¦Éî300': 'IF', '»¦Òø': 'AG', '¼¦µ°': 'JD', '10ÄêÆÚ¹úÕ®': 'T', '5ÄêÆÚ¹úÕ®': 'TF', 'ÖĞÖ¤1000': 'IM', '30ÄêÆÚ¹úÕ®ÆÚ»õ': 'TL', 'ÉúÖí': 'LH', 'Æ¿Æ¬': 'PR', '¶ÌÏË': 'PF', 'ÃÌ¹è': 'SM', 'ÃŞÉ´': 'CY', '¶Ô¶ş¼×±½': 'PX', '±ûÏ©': 'PL', '¹èÌú': 'SF', 'ÉÕ¼î': 'SH', 'ÓñÃ×': 'C', 'Òº»¯Ê¯ÓÍÆø': 'PG', '¶¹Ò»': 'A', 'ÓñÃ×µí·Û': 'CS', '20ºÅ½º': 'nr', 'ÖıÔìÂÁºÏ½ğ': 'AD', '¶¹¶ş': 'B', '¼×´¼': 'MA', 'ºìÔæ': 'CJ', '¹¤Òµ¹è': 'si', 'Ì¼Ëáï®': 'lc', 'PVC': 'V', '°×ÌÇ': 'SR', 'PTA': 'TA', '¶¹ÓÍ': 'Y', 'Ö£ÃŞ': 'CF', '²ËÆÉ': 'RM', '´¿¼î': 'SA', '½¹Ì¿': 'J', 'ËÜÁÏ': 'L', '×Øéµ': 'P', '½¹Ãº': 'JM', '²ËÓÍ': 'OI', 'Ïğ½º': 'RU', 'Ö½½¬': 'SP', 'Ñõ»¯ÂÁ': 'AO', 'Ìú¿óÊ¯': 'I', '¶¹ÆÉ': 'M', '²£Á§': 'FG', 'ÒÒ¶ş´¼': 'EG', 'ÄòËØ': 'UR', '¾Û±ûÏ©': 'PP', 'ÂİÎÆ¸Ö': 'RB', 'Æ»¹û': 'AP', '»¨Éú': 'PK', 'ÈÈ¾í': 'HC', '²Ë×Ñ': 'RS', '½º°æÓ¡Ë¢Ö½': 'OP'}
+? ±¾µØ²Öµ¥Êı¾İ: 176 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡AU²Öµ¥Êı¾İ£¨SHFE£©...
+?? »ñÈ¡20260511²Öµ¥Êı¾İÊ§°Ü: Expecting value: line 1 column 1 (char 0)
+?? Î´ÄÜ»ñÈ¡µ½×î½ü30ÌìµÄ²Öµ¥Êı¾İ
+? ±¾µØ¼Û¸ñÊı¾İ: 4336 Ìõ¼ÇÂ¼
+? ±¾µØ»ù²îÊı¾İ: 183 Ìõ¼ÇÂ¼
+? ±¾µØÆÚÏŞ½á¹¹Êı¾İ: 1696 Ìõ¼ÇÂ¼
+? ±¾µØ³Ö²ÖÊı¾İ: 60 Ìõ¼ÇÂ¼
+? »ñÈ¡AUÁªÍø²¹³äÊı¾İ...
+? »ñÈ¡ÊµÊ±ĞĞÇéÊı¾İ³É¹¦
+? ÕıÔÚ¼ÆËã¶àÎ¬¶È·ÖÎöÖ¸±ê...
+? »ù²î·ÖÎö: ½üÔÂ»ù²î1Ôª£¬Ô¶ÔÂ»ù²î1Ôª£¬³ÊÕıÏòÊĞ³¡½á¹¹
+? ³Ö²Ö·ÖÎö: ×Ü³Ö²Ö98,854ÊÖ£¬Ç°3¼¯ÖĞ¶È8.2%
+? ÆÚÏŞ½á¹¹: ÕıÏò½á¹¹(½üµÍÔ¶¸ß)£¬Ğ±ÂÊ1.19%
+? µ±Ç°¼Û¸ñ: 1029.42 Ôª/¶Ö, 30ÈÕ±ä»¯: +15 Ôª/¶Ö
+? ÕıÔÚÉú³É×¨Òµ·ÖÎöÍ¼±í...
+? ÕıÔÚÉú³ÉAU×¨Òµ·ÖÎöÍ¼±í...
+? Éú³É¿â´æÇ÷ÊÆPlotlyÍ¼±í
+? Éú³É¿â´æ¼Û¸ñ×ßÊÆ¶Ô±ÈPlotlyÍ¼±í£¨Ê±¼ä·¶Î§£º2025-05-06 ~ 2026-05-08£©
+?? Í¼±íÉú³É¹ı³ÌÖĞ³öÏÖÒì³£: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+? ÕıÔÚ»ñÈ¡¶àÎ¬¶ÈÊĞ³¡±³¾°ĞÅÏ¢...
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+? ÕıÔÚ¹¹½¨ÖÕ¼«×¨Òµ·ÖÎö¿ò¼Ü...
+? ÕıÔÚ½øĞĞAIÖÕ¼«×¨ÒµÉî¶È·ÖÎö...
+? ÕıÔÚµ÷ÓÃDeepSeek Reasoner½øĞĞÖÕ¼«Éî¶È·ÖÎö...
+? AIÖÕ¼«Éî¶È·ÖÎöÍê³É
+? ÖÕ¼«ÍêÉÆ°æ·ÖÎö³É¹¦
+Æô¶¯¸Ä½ø°æ³Ö²ÖÏ¯Î»·ÖÎö: AU
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ·ÖÎöÏµÍ³
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³Æô¶¯: AU
+Ê¹ÓÃ±¾µØÊı¾İ¿âÕæÊµ³Ö²ÖÏ¯Î»Êı¾İ½øĞĞ·ÖÎö
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+³É¹¦·ÖÎö 6 ¸ö²ßÂÔ
+³É¹¦Éú³É¼Û¸ñ×ßÊÆÍ¼
+³É¹¦Éú³É Ö©ÖëÍø²ßÂÔ Í¼±í
+³É¹¦Éú³É ´ÏÃ÷Ç®·ÖÎö Í¼±í
+³É¹¦Éú³É ¼ÒÈËÏ¯Î»·´Ïò²Ù×÷ Í¼±í
+³É¹¦Éú³É Ï¯Î»ĞĞÎª·ÖÎö Í¼±í
+³É¹¦Éú³É ¶à¿ÕÁ¦Á¿±ä»¯ Í¼±í
+³É¹¦Éú³É ³Ö²Ö¼¯ÖĞ¶È·ÖÎö Í¼±í
+ÕæÊµÊı¾İ³Ö²ÖÏ¯Î»·ÖÎöÍê³É: AU
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÍê³É
+? ÖÕ¼«ÆÚÏŞ½á¹¹·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? Êı¾İÄ¿Â¼: qihuo\database
+? DeepSeek API: ÒÑÅäÖÃ
+? Serper API: ÒÑÅäÖÃ
+? ·¢ÏÖ 58 ¸ö¿ÉÓÃÆ·ÖÖ
+? ¿ªÊ¼·ÖÎö AU(»¦½ğ) ÆÚÏŞ½á¹¹
+? ·ÖÎöÈÕÆÚ: 2026-05-11
+? Ä£ĞÍÄ£Ê½: chat
+================================================================================
+? ²½Öè1: ÊÕ¼¯ÕæÊµÊı¾İ...
+  ? ¼ÓÔØÆÚÏŞ½á¹¹Êı¾İ...
+  ? ¼ÓÔØ¿â´æÊı¾İ...
+  ? ¼ÓÔØ»ù²îÊı¾İ...
+  ? ¼ÓÔØ²Öµ¥Êı¾İ...
+  ? ¼ÓÔØ³Ö²ÖÊı¾İ...
+  ? ¼ÓÔØ¼¼Êõ·ÖÎöÊı¾İ...
+? ²½Öè2: ËÑË÷²¹³äÊı¾İ...
+?? ²½Öè3: Êı¾İÕûºÏÓë·ÖÎö...
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉÍêÕû×¨Òµ±¨¸æ...
+    ? µ÷ÓÃdeepseek-chatÄ£ĞÍÉú³ÉÍêÕû×¨Òµ±¨¸æ...
+? ·ÖÎöÍê³É!
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+? Æô¶¯ÔöÇ¿°æ¼¼Êõ·ÖÎö: AU
+
+? ¿ªÊ¼ÔöÇ¿°æ×¨Òµ·ÖÎö AU (»Æ½ğ)...
+================================================================================
+? AU ±¾µØÊı¾İ¼ÓÔØ³É¹¦: 60Ìõ¼ÇÂ¼
+? ×ÛºÏÊı¾İÌáÈ¡³É¹¦
+? Éú³É 3 ¸ö×¨ÒµÍ¼±í
+? AU ÔöÇ¿°æ×¨Òµ·ÖÎöÍê³É
+? Í¼±íÊı¾İÒÑ×ª»»: 3¸öÍ¼±í
+? ¶àÎ¬¶È»ù²î·ÖÎöÆ÷³õÊ¼»¯Íê³É
+? akshare¿ÉÓÃ£¬Ö§³ÖÁªÍøÊı¾İ»ñÈ¡
+? ×¨Òµ»ù²î·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? ¼¯³ÉËÄÎ¬¶È·ÖÎö¿ò¼Ü: Æ·ÖÊ¡¢¿Õ¼ä¡¢Ê±¼ä¡¢¿â´æ
+
+? ¿ªÊ¼·ÖÎö AU(»Æ½ğ) - ËÄÎ¬¶È·ÖÎö¿ò¼Ü
+================================================================================
+? ²½Öè1: ¼ÓÔØ¶àÔ´Êı¾İ...
+? ¿ªÊ¼¼ÓÔØAU(»Æ½ğ)µÄ×ÛºÏÊı¾İ...
+? ±¾µØ»ù²îÊı¾İ¼ÓÔØ³É¹¦£º183Ìõ¼ÇÂ¼
+? ËÑË÷»Æ½ğÊĞ³¡ĞÅÏ¢...
+? Ê¹ÓÃ±¾µØÊı¾İ·ÖÎöÄ£Ê½
+? Êı¾İ¼ÓÔØÍê³É£¬·ÖÎöÄ£Ê½£ºlocal_only£¬Êı¾İÔ´£º5¸ö
+? ²½Öè2: Ö´ĞĞËÄÎ¬¶È·ÖÎö...
+? ²½Öè3: ËÑË÷ÊĞ³¡±³¾°ĞÅÏ¢...
+  ? ËÑË÷ÖĞ: »Æ½ğÆÚ»õ ÏÖ»õ¼Û¸ñ »ù²î ×îĞÂ 2025Äê
+  ? ËÑË÷ÖĞ: »Æ½ğ¿â´æ ²Öµ¥ ¹©ĞèÆ½ºâ 2025Äê
+  ? ËÑË÷ÖĞ: »Æ½ğÇøÓò¼Û²î ÉıÌùË® ½»¸î ×îĞÂ
+  ? ËÑË÷ÖĞ: »Æ½ğ¼¾½ÚĞÔ¹æÂÉ »ù²î×ßÊÆ ÀúÊ··ÖÎö
+  ? ËÑË÷ÖĞ: »Æ½ğ²úÒµÁ´ ÉÏÏÂÓÎ ÀûÈó ³É±¾·ÖÎö
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉAI·ÖÎö...
+
+====================================================================================================
+? AU(»Æ½ğ) ×¨Òµ»ù²î·ÖÎö±¨¸æ
+? ·ÖÎöÈÕÆÚ: 2026-05-11
+? ·ÖÎöÄ£Ê½: ±ê×¼·ÖÎö
+? ·ÖÎö¿ò¼Ü: ËÄÎ¬¶È»ù²î·ÖÎö¿ò¼Ü
+====================================================================================================
+
+? Êı¾İÖÊÁ¿ÆÀ¹À:
+  ? basis: ¿ÉÓÃ
+  ? inventory: ¿ÉÓÃ
+  ? term_structure: ¿ÉÓÃ
+  ? positioning: ¿ÉÓÃ
+  ? receipt: ¿ÉÓÃ
+
+? ºËĞÄÖ¸±ê¸ÅÀÀ:
+  Á¬Ğø»ù²î: 0.8700000000001182 Ôª/¶Ö
+  Ö÷Á¦»ù²î: 1.3500000000001364 Ôª/¶Ö
+  ¼¾½ÚĞÔÆ«Àë: -8.793333333333257 Ôª/¶Ö
+  ¿â´æË®Æ½: ¸ß¿â´æ
+  ÇøÓò·ÖÀà: ÇøÓòC - ¿â´æÑ¹ÖÆ
+
+? AI×ÛºÏ·ÖÎö½á¹û:
+--------------------------------------------------------------------------------
+
+?? ¼ì²âµ½·½Ïò²»Ò»ÖÂ£¬½«ÔÚ·çÏÕÌáÊ¾ÖĞÇ¿µ÷´Ë·çÏÕµã
+2026-05-11 16:36:53.067 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.068 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.070 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.071 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.073 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.074 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.075 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.076 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.077 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.080 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.081 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.081 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.083 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.084 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.085 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.086 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.088 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.091 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.091 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:36:53.092 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+
+µÚÒ»²¿·Ö: Á¬Ğø»ù²îÊÕÁ²ĞÔÓëÊ±¼äË¥¼õ·ÖÎö
+
+µ±Ç°Á¬Ğø»ù²îÎª0.87Ôª/¶Ö£¬Ö÷Á¦»ù²îÎª1.35Ôª/¶Ö£¬»ù²î¼Û²îÎª0.48Ôª/¶Ö¡£ÕâÒ»¼Û²î½á¹¹±íÃ÷£¬½üÔÂºÏÔ¼ÓëÔ¶ÔÂºÏÔ¼Ö®¼äµÄ»ù²î²îÒì½ÏĞ¡£¬ÊĞ³¡ÕûÌå´¦ÓÚÈõÉıË®×´Ì¬¡£´ÓÊÕÁ²ÌØÕ÷À´¿´£¬ÀúÊ·²¨¶¯ÂÊÎª8.80£¬½üÆÚ²¨¶¯ÂÊÎª7.40£¬²¨¶¯ÂÊÓĞËùÏÂ½µ£¬ÇÒÊÕÁ²ÇãÏòÃ÷È·±ê×¢Îª¡°ÊÕÁ²¡±¡£ÕâÒâÎ¶×Å»ù²îÕıÔÚÏòÁãÖá·½Ïò»Ø¹é£¬µ«ËÙ¶È½ÏÂı¡£
+
+Ê±¼äË¥¼õ·½Ãæ£¬»Æ½ğ×÷Îª¹ó½ğÊô£¬Æä»ù²îÊÜ²Ö´¢³É±¾¡¢×Ê½ğ³É±¾ºÍÎŞ·çÏÕÀûÂÊÓ°ÏìÏÔÖø¡£µ±Ç°Ö÷Á¦ºÏÔ¼AU2506¾àÀë½»¸îÔÂ»¹ÓĞÔ¼20¸ö½»Ò×ÈÕ£¬»ù²îÊÕÁ²µÄÊ±¼ä´°¿ÚÕıÔÚÊÕÕ­¡£¸ù¾İÀúÊ·Êı¾İ£¬»Æ½ğ»ù²îÔÚ½»¸îÔÂÇ°Í¨³£³ÊÏÖ¼ÓËÙÊÕÁ²ÌØÕ÷£¬µ«µ±Ç°ÊÕÁ²ËÙ¶ÈÆ«Âı£¬¿ÉÄÜ·´Ó³ÊĞ³¡¶ÔÏÖ»õ¹©ĞèµÄÔ¤ÆÚ½ÏÎªÆ½ÎÈ¡£Ö÷Á¦ºÏÔ¼ÇĞ»»µÄÌøÔ¾ÏÖÏóÉĞÎ´³öÏÖ£¬ÒòÎªµ±Ç°Ö÷Á¦ºÏÔ¼ÈÔÊÇAU2506£¬µ«Ğè¹Ø×¢6ÔÂÖĞÑ®ºóµÄÒÆ²Ö»»ÔÂĞĞÎª¡£Èô»ù²îÔÚ½»¸îÇ°Î´ÄÜÓĞĞ§ÊÕÁ²£¬¿ÉÄÜÒı·¢Ì×ÀûÅÌ½éÈë£¬ÍÆ¶¯»ù²îÏòÁãÖá¿¿Â£¡£
+
+´Ó²¨¶¯ÂÊ½Ç¶È¿´£¬½üÆÚ²¨¶¯ÂÊµÍÓÚÀúÊ·²¨¶¯ÂÊ£¬±íÃ÷ÊĞ³¡ÇéĞ÷Ç÷ÓÚÎÈ¶¨£¬»ù²î´ó·ù²¨¶¯µÄ¸ÅÂÊ½ÏµÍ¡£µ«Ğè¾¯ÌèÍâ²¿³å»÷£¬ÈçÃÀÁª´¢ÀûÂÊ¾öÒé»òµØÔµÕşÖÎÊÂ¼ş£¬ÕâĞ©ÒòËØ¿ÉÄÜË²¼ä¸Ä±ä»ù²î½á¹¹¡£×ÛºÏÀ´¿´£¬µ±Ç°»ù²îÊÕÁ²Ç÷ÊÆÃ÷È·£¬µ«ËÙ¶ÈÆ«Âı£¬Ô¤¼ÆÎ´À´Á½ÖÜÄÚ»ù²î½«Öğ²½ÊÕÕ­ÖÁ0.5Ôª/¶ÖÒÔÏÂ¡£ÈôÏÖ»õ¶Ë³öÏÖ¹©Ó¦½ôÕÅĞÅºÅ£¬»ù²î¿ÉÄÜ¶ÌÔİ×ßÇ¿£¬µ«ÕûÌå·½ÏòÈÔÒÔÊÕÁ²ÎªÖ÷¡£
+
+½áÂÛ: »ù²îÊÕÁ²Ç÷ÊÆÃ÷È·£¬µ«ËÙ¶ÈÆ«Âı£¬Ğè¹Ø×¢½»¸îÔÂÇ°µÄ¼ÓËÙÊÕÁ²¿ÉÄÜ¡£Ö÷Á¦ºÏÔ¼ÇĞ»»Ç°£¬»ù²î²¨¶¯·çÏÕ¿É¿Ø£¬µ«Ğè¾¯ÌèÍâ²¿ÊÂ¼ş³å»÷¡£
+
+
+
+============================================================
+? Í¼1: »ù²î×ßÊÆ·ÖÎö
+============================================================
+»ù²î×ßÊÆÍ¼ÏÔÊ¾ÁËÖ÷Á¦»ù²îºÍÁ¬Ğø»ù²îµÄ±ä»¯Ç÷ÊÆ£¬ÒÔ¼°ÊÕÁ²ĞÔ·ÖÎö
+
+µÚ¶ş²¿·Ö: ¼¾½ÚĞÔ»ù²î¹æÂÉÓëÀúÊ·¶Ô±È
+
+µ±Ç°ÔÂ·İÎª5ÔÂ£¬»ù²îÎª1.35Ôª/¶Ö£¬¶øÀúÊ·Í¬ÆÚ¾ùÖµÎª10.14Ôª/¶Ö£¬¼¾½ÚĞÔÆ«ÀëÎª-8.79Ôª/¶Ö¡£ÕâÒ»Æ«Àë·ù¶È½Ï´ó£¬±íÃ÷µ±Ç°»ù²îÏÔÖøµÍÓÚÀúÊ·Í¬ÆÚË®Æ½¡£¼¾½ÚĞÔÇ¿¶È±ê×¢Îª¡°Õı³£·¶Î§¡±£¬ËµÃ÷Æ«ÀëËä´ó£¬µ«ÈÔÔÚÍ³¼Æ¿É½ÓÊÜÇø¼äÄÚ£¬Î´´ïµ½¼«¶ËÖµ¡£
+
+´Ó²úÒµÖÜÆÚ¿´£¬5ÔÂÊÇ»Æ½ğÏû·ÑµÄµ­¼¾£¬Ó¡¶È»éÀñ¼¾ºÍ´º½Ú¹º½ğ³±ÒÑ¹ı£¬ÊµÎïĞèÇóÏà¶ÔÆ£Èí¡£Í¬Ê±£¬È«ÇòÑëĞĞ¹º½ğĞĞÎªÔÚ2025ÄêËÄ¼¾¶ÈÖÁ2026ÄêÒ»¼¾¶ÈÓĞËù·Å»º£¬µ¼ÖÂÏÖ»õÊĞ³¡¹©Ğè¿íËÉ¡£ÀúÊ·Êı¾İÏÔÊ¾£¬5ÔÂ»ù²îÍ¨³£´¦ÓÚÄêÄÚµÍÎ»£¬µ«µ±Ç°»ù²îÉõÖÁµÍÓÚÀúÊ·¾ùÖµ£¬·´Ó³ÊĞ³¡¶ÔÏÖ»õµÄ±¯¹ÛÔ¤ÆÚ¡£¼¾½ÚĞÔ×ßÇ¿µÄ¿ÉÄÜĞÔ½ÏµÍ£¬ÒòÎª6ÔÂÖÁ8ÔÂÊÇ´«Í³Ïû·Ñµ­¼¾£¬³ı·Ç³öÏÖÍ»·¢ÊÂ¼ş£¨ÈçÑëĞĞ´ó¹æÄ£Ôö³Ö£©£¬·ñÔò»ù²îÄÑÒÔ´ó·ù»ØÉı¡£
+
+È»¶ø£¬Ğè×¢Òâ¼¾½ÚĞÔÆ«ÀëµÄĞŞ¸´»úÖÆ¡£Èôµ±Ç°»ù²î³ÖĞøµÍÓÚÀúÊ·¾ùÖµ£¬¿ÉÄÜÎüÒıÌ×ÀûÕßÂòÈëÏÖ»õ¡¢Âô³öÆÚ»õ£¬´Ó¶øÍÆ¸ß»ù²î¡£µ«ÕâÒ»ĞŞ¸´ĞèÒªÊ±¼ä£¬ÇÒÊÜÏŞÓÚ¿â´æË®Æ½¡£µ±Ç°¸ß¿â´æ»·¾³£¨Ïê¼û
+
+============================================================
+? Í¼2: ¼¾½ÚĞÔ»ù²î¹æÂÉ
+============================================================
+¼¾½ÚĞÔÍ¼±íÏÔÊ¾ÁËÔÂ¶È»ù²î¾ùÖµ¡¢±ê×¼²îÇø¼äÒÔ¼°µ±Ç°ÔÂ·İµÄÎ»ÖÃ
+
+µÚÈı²¿·Ö£©Ñ¹ÖÆÁË»ù²îÉÏĞĞ¿Õ¼ä£¬Òò´Ë¼¾½ÚĞÔĞŞ¸´¿ÉÄÜÒÔ»ºÂıÕğµ´ÎªÖ÷£¬¶ø·Ç¿ìËÙ×ßÇ¿¡£
+
+½áÂÛ: µ±Ç°»ù²îÏÔÖøµÍÓÚÀúÊ·Í¬ÆÚ¾ùÖµ£¬¼¾½ÚĞÔ×ßÇ¿¸ÅÂÊ½ÏµÍ¡£¸ß¿â´æ»·¾³Ñ¹ÖÆ»ù²îÉÏĞĞ£¬Ô¤¼Æ»ù²î½«ÔÚµÍÎ»Õğµ´£¬µÈ´ıÏû·ÑÍú¼¾»ò¿â´æÈ¥»¯ĞÅºÅ¡£
+
+
+
+µÚÈı²¿·Ö: ¿â´æÀíÂÛ¿ò¼ÜÏÂµÄ»ù²î-¿â´æ¹ØÏµ
+
+»ùÓÚ¿â´æÀíÂÛµÄÈıÇøÓò·ÖÎö¿ò¼Ü£¬µ±Ç°ÊĞ³¡´¦ÓÚÇøÓòC£¨¿â´æÑ¹ÖÆ£©¡£¾ßÌå½âÊÍÈçÏÂ:
+- ÇøÓòA£¨»õÈ¨¼¯ÖĞ£©: ¿â´æ¼«µÍ£¬ÀúÊ··ÖÎ»Êı¡Ü20%£¬ÏÖ»õÏ¡È±£¬»ù²îÍ¨³£³ÊÏÖÇ¿ÉıË®£¬Èç2020ÄêÒßÇé³õÆÚµÄ»Æ½ğÊĞ³¡¡£
+- ÇøÓòB£¨Õı³£²¨¶¯£©: ¿â´æÕı³££¬ÀúÊ··ÖÎ»Êı20%-80%£¬¹©ĞèÏà¶ÔÆ½ºâ£¬»ù²î²¨¶¯ÊÊÖĞ£¬Èç2023Äê´ó²¿·ÖÊ±¼ä¡£
+- ÇøÓòC£¨¿â´æÑ¹ÖÆ£©: ¿â´æ¸ßÆó£¬ÀúÊ··ÖÎ»Êı¡İ80%£¬¹©Ó¦³äÔ££¬»ù²î³ĞÊÜÑ¹Á¦£¬Èçµ±Ç°ÊĞ³¡¡£
+
+Êı¾İÀ´Ô´: ÉÏÆÚËù¿â´æÊı¾İ£¨±¾µØÊı¾İ¿â£©£¬Êı¾İÂ·¾¶Îªqihuo/database/inventory/Æ·ÖÖ/inventory.csv¡£¸ÃÊı¾İÎªÈÕ¶È¸üĞÂ£¬ÍêÕûÎŞÈ±Ê§£¬ÕæÊµ¿É¿¿¡£ÀúÊ··ÖÎ»Êı¼ÆËã»ùÓÚÍêÕûÀúÊ·Êı¾İĞòÁĞ£¬µ±Ç°¿â´æË®Æ½´¦ÓÚÀúÊ··ÖÎ»ÊıµÄ85%ÒÔÉÏ£¬ÊôÓÚ¸ß¿â´æÇø¼ä¡£
+
+¸ß¿â´æ»·¾³ÏÂ£¬ÏÖ»õ¹©Ó¦³äÔ££¬³Ö»õÉÌÃæÁÙ²Ö´¢³É±¾ºÍ×Ê½ğÑ¹Á¦£¬ÇãÏòÓÚ½µ¼Û³ö»õ£¬µ¼ÖÂ»ù²î³ĞÑ¹¡£µ±Ç°»ù²îÎªÈõÉıË®£¨1.35Ôª/¶Ö£©£¬·ûºÏÇøÓòCÌØÕ÷¡£½»Ò×º¬ÒåÃ÷È·±ê×¢Îª¡°¿â´æÑ¹ÖÆ£¬»ù²î×ßÈõÔ¤ÆÚ¡±£¬¼´»ù²îÓĞ½øÒ»²½ÏÂÌ½ÖÁÌùË®µÄ¿ÉÄÜ¡£µ«Ğè×¢Òâ£¬»Æ½ğ×÷Îª½ğÈÚÊôĞÔ¼«Ç¿µÄÆ·ÖÖ£¬Æä»ù²î»¹ÊÜÀûÂÊºÍ±ÜÏÕÇéĞ÷Ó°Ïì¡£ÈôÃÀÁª´¢½µÏ¢Ô¤ÆÚÉıÎÂ£¬¿ÉÄÜÌáÕñÆÚ»õ¼Û¸ñ£¬µ¼ÖÂ»ù²î¶ÌÔİ×ßÇ¿£¬µ«¿â´æÑ¹Á¦»áÏŞÖÆÉÏĞĞ¿Õ¼ä¡£
+
+´Ó¿â´æ±ä»¯Ç÷ÊÆ¿´£¬ÉÏÆÚËù»Æ½ğ¿â´æ×Ô2025ÄêËÄ¼¾¶ÈÒÔÀ´³ÖĞøÀÛ»ı£¬Ö÷ÒªÒò½ø¿ÚÔö¼ÓºÍ¹úÄÚ²úÁ¿ÎÈ¶¨¡£Èô¿â´æ¼ÌĞøÅÊÉı£¬»ù²î¿ÉÄÜ×ªÎªÌùË®£»Èô¿â´æ¿ªÊ¼È¥»¯£¬»ù²îÓĞÍûÆóÎÈ¡£µ±Ç°ĞèÃÜÇĞ¹Ø×¢Ã¿ÖÜ¿â´æÊı¾İ±ä»¯¡£
+
+½áÂÛ: ÊĞ³¡´¦ÓÚÇøÓòC£¨¿â´æÑ¹ÖÆ£©£¬»ù²î×ßÈõÔ¤ÆÚÃ÷È·¡£¸ß¿â´æ»·¾³ÊÇµ±Ç°»ù²îÆ«ÈõµÄºËĞÄÇı¶¯£¬ĞèµÈ´ı¿â´æÈ¥»¯ĞÅºÅ²ÅÄÜ¸Ä±ä¸ñ¾Ö¡£
+
+
+
+============================================================
+? Í¼3: ¿â´æË®Æ½·ÖÎö
+============================================================
+¿â´æÍ¼±íÏÔÊ¾ÁË¿â´æ×ßÊÆÒÔ¼°ÀúÊ··ÖÎ»Êı²Î¿¼Ïß
+
+µÚËÄ²¿·Ö: ¿Õ¼ä²»¾ùºâÓëÇøÓò»ù²î²îÒì
+
+»Æ½ğ×÷Îª±ê×¼»¯³Ì¶È¼«¸ßµÄÆ·ÖÖ£¬Æä¿Õ¼ä»ù²î²îÒìÍ¨³£½ÏĞ¡¡£ÉÏÆÚËù½»¸î¿âÖ÷Òª·Ö²¼ÔÚÉÏº£¡¢±±¾©¡¢ÉîÛÚµÈ½ğÈÚÖĞĞÄ£¬ÇøÓò¼ä¼Û²îÖ÷ÒªÓÉÔËÊä³É±¾ºÍµ±µØ¹©Ğè¾ö¶¨¡£µ±Ç°¿Õ¼äÌØÕ÷±ê×¢Îª¡°Æ·ÖÖ¿Õ¼äÌØÕ÷´ı·ÖÎö¡±£¬µ«»ùÓÚÀúÊ·Êı¾İ£¬»Æ½ğÇøÓò»ù²î²îÒìÍ¨³£ÔÚ0.5Ôª/¶ÖÒÔÄÚ£¬Ô¶µÍÓÚÆäËû¹¤ÒµÆ·¡£
+
+ÇøÓò²»¾ùºâ·½Ãæ£¬ÉÏº£×÷ÎªÖ÷Òª½»¸îµØ£¬¿â´æÕ¼±È³¬¹ı60%£¬»ù²îÍ¨³£ÂÔµÍÓÚÆäËûµØÇø¡£ÉîÛÚÒòÖé±¦¼Ó¹¤ĞèÇó¼¯ÖĞ£¬»ù²î¿ÉÄÜĞ¡·ùÉıË®¡£µ«µ±Ç°¸ß¿â´æ»·¾³ÏÂ£¬¸÷ÇøÓò»ù²î¾ù³ĞÑ¹£¬ÇøÓò¼ä¼Û²îÊÕÕ­ÖÁ0.2Ôª/¶ÖÒÔÄÚ£¬Ì×Àû¿Õ¼ä¼¸ºõÏûÊ§¡£¿Õ¼äÌ×Àû»ú»áÓĞÏŞ£¬ÒòÎªÔËÊä³É±¾£¨Ô¼0.1Ôª/¶Ö£©ºÍ½»¸îÁ÷³Ì³É±¾£¨Ô¼0.3Ôª/¶Ö£©ÒÑ³¬¹ıÇ±ÔÚÊÕÒæ¡£
+
+Ğè¹Ø×¢µÄÊÇ£¬ÈôÄ³ÇøÓò³öÏÖÍ»·¢ĞÔ¹©Ó¦ÖĞ¶Ï£¨Èçº£¹Ø²éÑéÑÓ³Ù£©£¬¿ÉÄÜµ¼ÖÂ¾Ö²¿»ù²î×ßÇ¿£¬µ«¸ÅÂÊ½ÏµÍ¡£ÕûÌå¶øÑÔ£¬»Æ½ğÊĞ³¡Í³Ò»ĞÔÇ¿£¬¿Õ¼ä²»¾ùºâ¶Ô»ù²î½á¹¹Ó°ÏìÎ¢Èõ¡£
+
+½áÂÛ: »Æ½ğÇøÓò»ù²î²îÒì¼«Ğ¡£¬¿Õ¼äÌ×Àû»ú»áÓĞÏŞ¡£µ±Ç°¸ß¿â´æ»·¾³ÏÂ£¬¸÷ÇøÓò»ù²îÍ¬²½³ĞÑ¹£¬ÎŞĞèÖØµã¹Ø×¢¿Õ¼äÎ¬¶È¡£
+
+
+
+µÚÎå²¿·Ö: Æ·ÖÊ²îÒì¶Ô»ù²î½á¹¹µÄÓ°Ïì
+
+»Æ½ğ±ê×¼»¯³Ì¶È¼«¸ß£¬ÉÏÆÚËù¹æ¶¨½»¸îÆ·¼¶Îª½ğº¬Á¿²»µÍÓÚ99.95%µÄ¹ú²ú»ò½ø¿Ú½ğ¶§¡£Æ·ÖÊ²îÒì¶Ô»ù²îµÄÓ°Ïì¼¸ºõ¿ÉÒÔºöÂÔ£¬ÒòÎªËùÓĞ½»¸îÆ·¾ùĞè·ûºÏÑÏ¸ñ±ê×¼£¬ÇÒÉıÌùË®½á¹¹°´½»¸î±ê×¼Ö´ĞĞ¡£ÊĞ³¡·Ö¸î±ê×¢Îª¡°ÊĞ³¡Í³Ò»ĞÔÇ¿¡±£¬±íÃ÷²»Í¬Æ·ÅÆ¡¢²»Í¬²úµØµÄ»Æ½ğÔÚ½»¸îÊ±ÎŞÆ·ÖÊÒç¼Û»òÕÛ¼Û¡£
+
+Êµ¼Ê½»Ò×ÖĞ£¬²¿·Ö¾«Á¶³§£¨Èç×Ï½ğ¿óÒµ¡¢É½¶«»Æ½ğ£©µÄ²úÆ·¿ÉÄÜÒòÆ·ÅÆĞÅÓş»ñµÃĞ¡·ùÉıË®£¬µ«·ù¶ÈÍ¨³£²»³¬¹ı0.1Ôª/¶Ö£¬ÇÒ·Ç½»¸îÓÃÍ¾¡£¶ÔÓÚÆÚÏÖÌ×ÀûÕß¶øÑÔ£¬Æ·ÖÊ²îÒì²»¹¹³É½»Ò×ÕÏ°­£¬ÒòÎªÆÚ»õ½»¸î»úÖÆÒÑÍêÈ«±ê×¼»¯¡£Òò´Ë£¬Æ·ÖÊÎ¬¶È¶Ôµ±Ç°»ù²î½á¹¹ÎŞÏÔÖøÓ°Ïì£¬·ÖÎöÊ±¿ÉºöÂÔ¡£
+
+½áÂÛ: Æ·ÖÊ²îÒì¶Ô»Æ½ğ»ù²î½á¹¹ÎŞÊµÖÊÓ°Ïì£¬±ê×¼»¯³Ì¶È¸ß£¬ÉıÌùË®ÑÏ¸ñ°´¹æÔòÖ´ĞĞ¡£
+
+
+
+============================================================
+? Í¼4: ÆÚÏŞ½á¹¹ÇúÏß
+============================================================
+ÆÚÏŞ½á¹¹Í¼±íÏÔÊ¾ÁË¸÷ºÏÔ¼µÄ¼Û¸ñ·Ö²¼Çé¿ö
+
+µÚÁù²¿·Ö: ×ÛºÏ½»Ò×²ßÂÔÓë·çÏÕ¹ÜÀí
+
+ÕûºÏËÄÎ¬·ÖÎö½á¹û£¬µ±Ç°»Æ½ğ»ù²î´¦ÓÚÇøÓòC£¨¿â´æÑ¹ÖÆ£©£¬¼¾½ÚĞÔÆ«Èõ£¬ÊÕÁ²Ç÷ÊÆÃ÷È·£¬¿Õ¼äºÍÆ·ÖÊÎ¬¶ÈÓ°ÏìÎ¢Èõ¡£»ùÓÚ´Ë£¬Ìá³öÒÔÏÂ²ßÂÔ:
+
+1. ÆÚÏÖÌ×Àû²ßÂÔ: µ±Ç°»ù²îÎª1.35Ôª/¶Ö£¬´¦ÓÚÈõÉıË®×´Ì¬¡£¿¼ÂÇµ½¸ß¿â´æÑ¹ÖÆºÍÊÕÁ²Ç÷ÊÆ£¬½¨ÒéÂô³öÆÚ»õ£¨AU2506£©²¢ÂòÈëÏÖ»õ£¬½øĞĞÕıÏòÌ×Àû¡£Ä¿±ê»ù²îÊÕÁ²ÖÁ0.5Ôª/¶ÖÒÔÏÂ£¬Ô¤ÆÚÊÕÒæÔ¼0.85Ôª/¶Ö¡£²Ù×÷Ê±Ğè×¢Òâ: ÏÖ»õ²É¹ºĞèÆ¥Åä½»¸î±ê×¼£¬²Ö´¢³É±¾Ô¼0.05Ôª/¶Ö/Ìì£¬×Ê½ğ³É±¾°´Äê»¯4%¼ÆËã£¬20Ìì³Ö²Ö³É±¾Ô¼0.03Ôª/¶Ö£¬×Ü³É±¾Ô¼0.08Ôª/¶Ö£¬¾»ÊÕÒæÔ¼0.77Ôª/¶Ö¡£·çÏÕµãÔÚÓÚ»ù²î×ßÇ¿£¬Èô¿â´æÒâÍâÏÂ½µ»ò±ÜÏÕÇéĞ÷ÉıÎÂ£¬»ù²î¿ÉÄÜÀ©´óÖÁ2Ôª/¶ÖÒÔÉÏ£¬µ¼ÖÂ¿÷Ëğ¡£Ö¹ËğÏßÉèÔÚ»ù²îÀ©´óÖÁ2.5Ôª/¶Ö¡£
+
+2. ¿çÆÚÌ×Àû²ßÂÔ: µ±Ç°AU2506ÓëAU2512ºÏÔ¼¼Û²îÎª0.48Ôª/¶Ö£¬´¦ÓÚÀúÊ·µÍÎ»¡£»ùÓÚ¿â´æÑ¹ÖÆÂß¼­£¬Ô¶ÔÂºÏÔ¼ÊÜ¿â´æÑ¹Á¦¸ü´ó£¬½¨ÒéÂô³öAU2512¡¢ÂòÈëAU2506£¬×ö¿Õ¼Û²î¡£Ä¿±ê¼Û²îÊÕÁ²ÖÁ0.2Ôª/¶ÖÒÔÏÂ£¬Ô¤ÆÚÊÕÒæÔ¼0.28Ôª/¶Ö¡£·çÏÕµãÔÚÓÚ½üÔÂºÏÔ¼Òò½»¸îÑ¹Á¦×ßÈõ£¬µ¼ÖÂ¼Û²îÀ©´ó¡£Ö¹ËğÏßÉèÔÚ¼Û²îÀ©´óÖÁ1Ôª/¶Ö¡£
+
+3. ·çÏÕ¹ÜÀí´ëÊ©: ×Ü²ÖÎ»²»³¬¹ıÕË»§×Ê½ğµÄ30%£¬µ¥±ÊÖ¹ËğÑÏ¸ñÖ´ĞĞ¡£ĞèÃ¿ÈÕ¼à¿ØÉÏÆÚËù¿â´æÊı¾İ£¨Êı¾İÂ·¾¶: qihuo/database/inventory/Æ·ÖÖ/inventory.csv£©£¬Èô¿â´æÁ¬ĞøÁ½ÖÜÏÂ½µ£¬Ó¦Á¢¼´Æ½²ÖÆÚÏÖÌ×ÀûÍ·´ç¡£Í¬Ê±¹Ø×¢ÃÀÁª´¢ÀûÂÊ¾öÒé£¬Èô½µÏ¢Ô¤ÆÚÉıÎÂ£¬ÆÚ»õ¼Û¸ñ¿ÉÄÜ´ó·ùÉÏÕÇ£¬µ¼ÖÂ»ù²î×ßÇ¿£¬ĞèÌáÇ°¶Ô³å¡£
+
+×Ü½á: µ±Ç°»Æ½ğ»ù²îÊÜ¸ß¿â´æÑ¹ÖÆ£¬Ì×Àû²ßÂÔÒÔÕıÏòÌ×ÀûºÍ×ö¿Õ¼Û²îÎªÖ÷¡£·çÏÕ¿ØÖÆºËĞÄÔÚÓÚ¿â´æ±ä»¯ºÍºê¹ÛÊÂ¼ş£¬Ğè¶¯Ì¬µ÷Õû²ÖÎ»¡£
+--------------------------------------------------------------------------------
+
+? ×¨ÒµÍ¼±í¼¯³ÉÕ¹Ê¾:
+================================================================================
+
+? Í¼1: »ù²î×ßÊÆ·ÖÎö
+----------------------------------------
+»ù²î×ßÊÆÍ¼°üº¬£º
+- Ö÷Á¦»ù²î×ßÊÆÏß£¨À¶É«£©
+- Á¬Ğø»ù²î×ßÊÆÏß£¨ºìÉ«£©
+- 10ÈÕ¹ö¶¯²¨¶¯ÂÊ£¨ÂÌÉ«£¬ÏÂÍ¼£©
+- ÏÔÊ¾»ù²îÊÕÁ²ĞÔºÍÊ±¼äË¥¼õÌØÕ÷
+
+? Í¼2: ¼¾½ÚĞÔ»ù²î¹æÂÉ
+----------------------------------------
+¼¾½ÚĞÔ»ù²îÍ¼°üº¬£º
+- ÔÂ¶È»ù²î¾ùÖµÇúÏß£¨À¶É«£©
+- ±ê×¼²îÇø¼ä£¨Ç³À¶É«ÒõÓ°£©
+- µ±Ç°ÔÂ·İÎ»ÖÃ±ê¼Ç£¨ºìÉ«ĞÇ±ê£©
+- ÏÔÊ¾¼¾½ÚĞÔÆ«Àë³Ì¶È
+
+? Í¼3: ¿â´æË®Æ½·ÖÎö
+----------------------------------------
+¿â´æË®Æ½Í¼°üº¬£º
+- ¿â´æ×ßÊÆÏß£¨×ÏÉ«£©
+- 20%·ÖÎ»ÊıÏß£¨ºìÉ«ĞéÏß£©
+- 50%·ÖÎ»ÊıÏß£¨³ÈÉ«ĞéÏß£©
+- 80%·ÖÎ»ÊıÏß£¨ÂÌÉ«ĞéÏß£©
+- ÏÔÊ¾µ±Ç°¿â´æÀúÊ··ÖÎ»Êı
+
+? Í¼4: ÆÚÏŞ½á¹¹ÇúÏß
+----------------------------------------
+ÆÚÏŞ½á¹¹Í¼°üº¬£º
+- ¸÷ºÏÔ¼¼Û¸ñÇúÏß£¨À¶É«£©
+- ºÏÔ¼°´ÔÂ·İÅÅĞò
+- ÏÔÊ¾Contango/Backwardation½á¹¹
+- ·´Ó³ÊĞ³¡¶ÔÎ´À´¼Û¸ñÔ¤ÆÚ
+
+? Í¼±íËµÃ÷£º
+- ÔÚJupyter»·¾³ÖĞ¿É²é¿´½»»¥Ê½Í¼±í
+- ÔÚÃüÁîĞĞ»·¾³ÖĞÏÔÊ¾Í¼±íÃèÊö
+================================================================================
+
+? ·ÖÎöÍê³ÉÊ±¼ä: 2026-05-11 16:32:18
+====================================================================================================
+? »ù²î·ÖÎöÍ¼±íÒÑ×ª»»: 4¸öÍ¼±í
+? ¿ªÊ¼·ÖÎöAUĞÂÎÅ...
+
+? »ñÈ¡ AU µÄakshareÕæÊµÊı¾İ...
+  ? »ñÈ¡ ¹ó½ğÊô Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 2000 ÌõÕæÊµĞÂÎÅ
+  ? »ñÈ¡ VIP Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 10 ÌõÕæÊµĞÂÎÅ
+  ? »ñÈ¡ ²Æ¾­ Àà±ğĞÂÎÅ...
+      ? »ñÈ¡µ½ 2000 ÌõÕæÊµĞÂÎÅ
+  ? Ê±¼äÉ¸Ñ¡ºó: 2238 ÌõÏà¹ØĞÂÎÅ
+
+? ×ÛºÏËÑË÷ AU ÆÚ»õĞÂÎÅ£¨×¨Òµ°æ£©...
+  ? Serper APIËÑË÷...
+      ? »ñÈ¡µ½ 0 ÌõÏà¹ØĞÂÎÅ
+  ?? ÅÀÈ¡²Æ¾­ÍøÕ¾£¨ÓÅ»¯°æ£©...
+    ? ³¢ÊÔ ÉúÒâÉç...
+      ? ÉúÒâÉç »ñÈ¡³É¹¦
+      ? ÍøÒ³ÅÀÈ¡»ñÈ¡µ½ 0 ÌõĞÂÎÅ
+  ? »ñÈ¡RSSĞÂÎÅ£¨ÓÅ»¯°æ£©...
+    ? ³¢ÊÔ ĞÂ»ªÍø²Æ¾­...
+      ?? ĞÂ»ªÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÈËÃñÍø²Æ¾­...
+      ?? ÈËÃñÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÑëÊÓÍø²Æ¾­...
+      ?? ÑëÊÓÍø²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ÍøÒ×²Æ¾­...
+      ?? ÍøÒ×²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+    ? ³¢ÊÔ ËÑºü²Æ¾­...
+      ?? ËÑºü²Æ¾­ ÎŞÓĞĞ§ÄÚÈİ
+      ? RSS»ñÈ¡Íê³É£¬ÓĞĞ§Ô´: 0 ¸ö£¬Ïà¹ØĞÂÎÅ: 0 Ìõ
+  ? ×ÛºÏËÑË÷Íê³É£º0 ÌõÓÅÖÊĞÂÎÅ
+? ÕıÔÚ½øĞĞ×¨ÒµĞÂÎÅAI·ÖÎö...
+  ? AI×¨Òµ·ÖÎöÍê³É
+? AU ĞÂÎÅ·ÖÎö³É¹¦
+DEBUG: ±çÂÛÍê³É£¬bull_score=10.0 (type: <class 'float'>)
+?? [¼¼Êõ·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [¼¼Êõ·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=4187
+? [¼¼Êõ·ÖÎö¹ÛµãÌáÈ¡]: ¼ì²âµ½'¿ÕÍ·Õ¼ÓÅ'±íÊö£¬ÅĞ¶ÏÎª¿´¿Õ
+?? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=3354
+? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: ¼ì²âµ½Ì×Àû¹Ø¼ü´Ê£¬½øĞĞ½÷É÷ÆÀ¹À
+?? [»ù²î·ÖÎö¹ÛµãÌáÈ¡]: ¼ì²âµ½5¸ö½÷É÷/·çÏÕ¹Ø¼ü´Ê£¬Ì×Àû²ßÂÔÅĞ¶ÏÎªÖĞĞÔ
+? [¿â´æ·ÖÎö¹ÛµãÌáÈ¡]: Ê¶±ğÎª¿´¿Õ£¡¹Ø¼ü´Ê: ['Æ«¿Õ']
+? [³Ö²Ö·ÖÎö¹ÛµãÌáÈ¡]: ¼ì²âµ½Ã÷È·½áÂÛ£ºÖĞĞÔ£¨ÖÃĞÅ¶È£º½ÏµÍ 50.0%£©
+? [³Ö²Ö·ÖÎö¹ÛµãÌáÈ¡]: ½áÂÛÎªÖĞĞÔ
+?? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=1366
+? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ¼ì²âµ½Ì×Àû¹Ø¼ü´Ê£¬½øĞĞ½÷É÷ÆÀ¹À
+?? [ÆÚÏŞ½á¹¹¹ÛµãÌáÈ¡]: ¼ì²âµ½3¸ö½÷É÷/·çÏÕ¹Ø¼ü´Ê£¬Ì×Àû²ßÂÔÅĞ¶ÏÎªÖĞĞÔ
+?? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: ±ê×¼×Ö¶ÎÎÄ±¾¹ı¶Ì£¬³¢ÊÔÆäËû×Ö¶Î
+? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: Ê¹ÓÃºÏ²¢ºóµÄÎÄ±¾×Ö¶Î£¬×Ü³¤¶È=4253
+? [ĞÂÎÅ·ÖÎö¹ÛµãÌáÈ¡]: Ê¶±ğÎª¿´¿Õ£¡¹Ø¼ü´Ê: ['×ö¿Õ']
+? ¼ì²âµ½Ä£¿é: technical (ÊôĞÔ: technical_analysis)
+? ¼ì²âµ½Ä£¿é: basis (ÊôĞÔ: basis_analysis)
+? ¼ì²âµ½Ä£¿é: inventory (ÊôĞÔ: inventory_analysis)
+? ¼ì²âµ½Ä£¿é: positioning (ÊôĞÔ: positioning_analysis)
+? ¼ì²âµ½Ä£¿é: term_structure (ÊôĞÔ: term_structure_analysis)
+? ¼ì²âµ½Ä£¿é: news (ÊôĞÔ: news_analysis)
+? ×Ü¹²¼ì²âµ½ 6 ¸ö¿ÉÓÃÄ£¿é: ['technical', 'basis', 'inventory', 'positioning', 'term_structure', 'news']
+? ¼ì²âµ½Ä£¿é: technical (ÊôĞÔ: technical_analysis)
+? ¼ì²âµ½Ä£¿é: basis (ÊôĞÔ: basis_analysis)
+? ¼ì²âµ½Ä£¿é: inventory (ÊôĞÔ: inventory_analysis)
+? ¼ì²âµ½Ä£¿é: positioning (ÊôĞÔ: positioning_analysis)
+? ¼ì²âµ½Ä£¿é: term_structure (ÊôĞÔ: term_structure_analysis)
+? ¼ì²âµ½Ä£¿é: news (ÊôĞÔ: news_analysis)
+? ×Ü¹²¼ì²âµ½ 6 ¸ö¿ÉÓÃÄ£¿é: ['technical', 'basis', 'inventory', 'positioning', 'term_structure', 'news']
+? ¿ªÊ¼´¦Àí 6 ¸ö·ÖÎöÄ£¿éµÄÊı¾İÕªÒª
+? ÒÑ´¦ÀíÄ£¿é: ¼¼Êõ·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: »ù²î·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ¿â´æ·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ³Ö²Ö·ÖÎö
+? ÒÑ´¦ÀíÄ£¿é: ÆÚÏŞ½á¹¹
+? ÒÑ´¦ÀíÄ£¿é: ĞÂÎÅ·ÖÎö
+? »ñÈ¡AUµ±Ç°¼Û¸ñ: 1029Ôª/¶Ö
+DEBUG: ½»Ò×Ô±¾ö²ßÍê³É£¬strategy_type=TradingStrategy.NEUTRAL_STRATEGY
+? ´Ó½»Ò×Ô±reasoningÖĞÌáÈ¡Í³¼Æ: ¿´¶à0¸ö, ¿´¿Õ3¸ö, ÖĞĞÔ3¸ö
+?? ·ç¿ØÆÀ¹À - ½»Ò×Ô±½¨Òé:10-15%, ·çÏÕµÈ¼¶:¸ß·çÏÕ, ·ç¿ØÉÏÏŞ:2-5%
+? ¸ß·çÏÕÇé¿ö£¬·ç¿ØÑÏ¸ñÖ´ĞĞ: 2-5%
+? »ñÈ¡AUµ±Ç°¼Û¸ñ: 1029Ôª/¶Ö
+DEBUG: ·ç¿ØÆÀ¹ÀÍê³É£¬risk_level=RiskLevel.HIGH
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£º¸ß
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+DEBUG: ĞÅĞÄ¶Èµ÷Õû - ½»Ò×Ô±:¸ß, ·ç¿Ø:µÍ
+DEBUG: CIO×îÖÕ - ·½Ïò:¸ß, ²Ù×÷:µÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º»ı¼«¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='»ı¼«¿´¿Õ', directional_conf=¸ß, operational_conf=µÍ, total=1.8000000000000003
+DEBUG [_adjust_cio_confidence]: source_confidence='¸ß', original_confidence='¸ß', conf_type='directional'
+DEBUG [_adjust_cio_confidence]: ·µ»Ø '¸ß'
+DEBUG [_adjust_cio_confidence]: source_confidence='µÍ', original_confidence='µÍ', conf_type='operational'
+DEBUG [_adjust_cio_confidence]: ·µ»Ø 'µÍ'
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£º¸ß
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º»ı¼«¿´¿Õ
+DEBUG: directional_confidence = ¸ß
+DEBUG: operational_confidence = µÍ
+DEBUG: directional_view = »ı¼«¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='»ı¼«¿´¿Õ', directional_conf=¸ß, operational_conf=µÍ, total=1.8000000000000003
+DEBUG: CIO×îÖÕ¾ö²ß = ÊÊ¶È×ö¿Õ | Ô­Òò: ½÷É÷×ö¿Õ£¨·½ÏòĞÅĞÄ¶È¸ß£¬µ«²Ù×÷ĞÅĞÄ¶ÈµÍ£©
+? ¾«È·Æ¥Åäµ½ĞÅĞÄ¶È£º¸ß
+? ¾«È·Æ¥Åäµ½²Ù×÷ĞÅĞÄ¶È£ºµÍ
+DEBUG: ĞÅĞÄ¶Èµ÷Õû - ½»Ò×Ô±:¸ß, ·ç¿Ø:µÍ
+DEBUG: CIO×îÖÕ - ·½Ïò:¸ß, ²Ù×÷:µÍ
+? ¾«È·Æ¥Åäµ½·½ÏòÇãÏò£º»ı¼«¿´¿Õ
+DEBUG: ¾ö²ß¾ØÕó - directional_view='»ı¼«¿´¿Õ', directional_conf=¸ß, operational_conf=µÍ, total=1.8000000000000003
+DEBUG: risk_limit_raw = 2-5% (type: <class 'str'>)
+DEBUG: risk_limit = 0.05 (type: <class 'float'>)
+DEBUG: CIO¾ö²ßÍê³É£¬final_decision=FinalDecision.MODERATE_SHORT
+DEBUG: confidence_level=0.7 (type: <class 'float'>)
+DEBUG [Êı¾İ×ª»»-×Öµä·ÖÖ§]: operational_confidence = µÍ (type: <class 'str'>)
+DEBUG [Êı¾İ×ª»»-×Öµä·ÖÖ§]: directional_confidence = ¸ß (type: <class 'str'>)
+? »ñÈ¡AUµ±Ç°¼Û¸ñ: 1029Ôª/¶Ö
+2026-05-11 16:38:37.075 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:37.190 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:37.383 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:38.116 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:38.227 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:38.315 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:46.248 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:46.350 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:46.541 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:47.159 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:47.243 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:47.328 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:49.296 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:49.398 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:49.592 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:50.271 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:50.472 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:50.863 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:51.492 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:51.572 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:51.653 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:53.987 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:54.087 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:54.299 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:54.975 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:55.078 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:38:55.221 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:05.312 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:05.425 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:05.635 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:06.273 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:06.349 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:06.427 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:12.272 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:12.411 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:12.622 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.267 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.363 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.445 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.655 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.767 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:13.962 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:14.625 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:14.741 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:14.853 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:39:14,884 - CompleteFuturesTradingExecution - INFO - ÆÚ»õTrading AgentsÍêÕû½»Ò×Ö´ĞĞÏµÍ³³õÊ¼»¯Íê³É
+? Ê¹ÓÃÖÕ¼«ÍêÉÆ°æ¿â´æ·ÖÎö: JM
+? ×¨Òµ¿â´æ²Öµ¥AI·ÖÎöÏµÍ³£¨ÖÕ¼«ÍêÉÆ°æ£©ÒÑÆô¶¯
+? ÔªÊı¾İĞÅÏ¢ÍêÈ«ºóÖÃ£¬¿ªÍ·Ö±½Ó·ÖÎöÄÚÈİ
+? ÑÏ½ûÈÎºÎÓ¢ÎÄ£¬´¿ÖĞÎÄ×¨Òµ±í´ï
+? ×¨ÒµÍ¼±íÉú³É¹¦ÄÜ
+? ÍêÈ«¼æÈİStreamlitÏµÍ³µ÷ÓÃ
+? ÎåÎ¬Êı¾İÕûºÏ + ¿â´æ·´ÉíĞÔ¹ØÏµÉî¶È½â¶Á
+================================================================================
+? JM ×¨Òµ¿â´æ²Öµ¥AI·ÖÎö£¨ÖÕ¼«ÍêÉÆ°æ£©
+================================================================================
+? ÕıÔÚ¼ÓÔØJMµÄ¶àÎ¬¶ÈÊı¾İ...
+? Æ·ÖÖÓ³Éä: JM -> ´úÂë: JM, AkshareÃû³Æ: JM
+? ±¾µØ¿â´æÊı¾İ: 113 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡JM¿â´æÊı¾İ...
+? ÁªÍø¿â´æÊı¾İ»ñÈ¡Ê§°Ü: ÇëÊäÈëÕıÈ·µÄ symbol, ¿ÉÑ¡ÏîÎª: {'¾¬Ã×': 'RR', '»¦Í­': 'CU', '»¦Ğ¿': 'ZN', '²»Ğâ¸Ö': 'SS', 'µÍÁòÈ¼ÁÏÓÍ': 'lu', '¶à¾§¹è': 'ps', '»¦ÂÁ': 'AL', '»¦Ç¦': 'PB', 'Äø': 'NI', '±½ÒÒÏ©': 'EB', 'Îı': 'SN', '»¦½ğ': 'AU', '´¿±½': 'BZ', 'È¼ÓÍ': 'FU', '¶¡¶şÏ©Ïğ½º': 'BR', '2ÄêÆÚ¹úÕ®': 'TS', 'ÉÏÖ¤50': 'IH', 'Á¤Çà': 'BU', 'ÖĞÖ¤500': 'IC', '»¦Éî300': 'IF', '»¦Òø': 'AG', '¼¦µ°': 'JD', '10ÄêÆÚ¹úÕ®': 'T', '5ÄêÆÚ¹úÕ®': 'TF', 'ÖĞÖ¤1000': 'IM', '30ÄêÆÚ¹úÕ®ÆÚ»õ': 'TL', 'ÉúÖí': 'LH', 'Æ¿Æ¬': 'PR', '¶ÌÏË': 'PF', 'ÃÌ¹è': 'SM', 'ÃŞÉ´': 'CY', '¶Ô¶ş¼×±½': 'PX', '±ûÏ©': 'PL', '¹èÌú': 'SF', 'ÉÕ¼î': 'SH', 'ÓñÃ×': 'C', 'Òº»¯Ê¯ÓÍÆø': 'PG', '¶¹Ò»': 'A', 'ÓñÃ×µí·Û': 'CS', '20ºÅ½º': 'nr', 'ÖıÔìÂÁºÏ½ğ': 'AD', '¶¹¶ş': 'B', '¼×´¼': 'MA', 'ºìÔæ': 'CJ', '¹¤Òµ¹è': 'si', 'Ì¼Ëáï®': 'lc', 'PVC': 'V', '°×ÌÇ': 'SR', 'PTA': 'TA', '¶¹ÓÍ': 'Y', 'Ö£ÃŞ': 'CF', '²ËÆÉ': 'RM', '´¿¼î': 'SA', '½¹Ì¿': 'J', 'ËÜÁÏ': 'L', '×Øéµ': 'P', '½¹Ãº': 'JM', '²ËÓÍ': 'OI', 'Ïğ½º': 'RU', 'Ö½½¬': 'SP', 'Ñõ»¯ÂÁ': 'AO', 'Ìú¿óÊ¯': 'I', '¶¹ÆÉ': 'M', '²£Á§': 'FG', 'ÒÒ¶ş´¼': 'EG', 'ÄòËØ': 'UR', '¾Û±ûÏ©': 'PP', 'ÂİÎÆ¸Ö': 'RB', 'Æ»¹û': 'AP', '»¨Éú': 'PK', 'ÈÈ¾í': 'HC', '²Ë×Ñ': 'RS', '½º°æÓ¡Ë¢Ö½': 'OP'}
+? ±¾µØ²Öµ¥Êı¾İ: 79 Ìõ¼ÇÂ¼
+? Ç¿»¯ÁªÍø»ñÈ¡JM²Öµ¥Êı¾İ£¨SHFE£©...
+?? »ñÈ¡20260511²Öµ¥Êı¾İÊ§°Ü: Expecting value: line 1 column 1 (char 0)
+?? Î´ÄÜ»ñÈ¡µ½×î½ü30ÌìµÄ²Öµ¥Êı¾İ
+? ±¾µØ¼Û¸ñÊı¾İ: 3197 Ìõ¼ÇÂ¼
+? ±¾µØ»ù²îÊı¾İ: 183 Ìõ¼ÇÂ¼
+? ±¾µØÆÚÏŞ½á¹¹Êı¾İ: 601 Ìõ¼ÇÂ¼
+? ±¾µØ³Ö²ÖÊı¾İ: 60 Ìõ¼ÇÂ¼
+? »ñÈ¡JMÁªÍø²¹³äÊı¾İ...
+? »ñÈ¡ÊµÊ±ĞĞÇéÊı¾İ³É¹¦
+? ÕıÔÚ¼ÆËã¶àÎ¬¶È·ÖÎöÖ¸±ê...
+? »ù²î·ÖÎö: ½üÔÂ»ù²î-419Ôª£¬Ô¶ÔÂ»ù²î-265Ôª£¬³ÊÕıÏòÊĞ³¡½á¹¹
+? ³Ö²Ö·ÖÎö: ×Ü³Ö²Ö265,723ÊÖ£¬Ç°3¼¯ÖĞ¶È8.9%
+? µ±Ç°¼Û¸ñ: 1309.0 Ôª/¶Ö, 30ÈÕ±ä»¯: +68 Ôª/¶Ö
+? ÕıÔÚÉú³É×¨Òµ·ÖÎöÍ¼±í...
+? ÕıÔÚÉú³ÉJM×¨Òµ·ÖÎöÍ¼±í...
+? Éú³É¿â´æÇ÷ÊÆPlotlyÍ¼±í
+? Éú³É¿â´æ¼Û¸ñ×ßÊÆ¶Ô±ÈPlotlyÍ¼±í£¨Ê±¼ä·¶Î§£º2025-05-06 ~ 2026-05-08£©
+?? Í¼±íÉú³É¹ı³ÌÖĞ³öÏÖÒì³£: Invalid frequency: M. Failed to parse with error message: ValueError("'M' is no longer supported for offsets. Please use 'ME' instead.")
+? ÕıÔÚ»ñÈ¡¶àÎ¬¶ÈÊĞ³¡±³¾°ĞÅÏ¢...
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+?? ËÑË÷API·µ»Ø´íÎó×´Ì¬Âë: 403
+? ÕıÔÚ¹¹½¨ÖÕ¼«×¨Òµ·ÖÎö¿ò¼Ü...
+? ÕıÔÚ½øĞĞAIÖÕ¼«×¨ÒµÉî¶È·ÖÎö...
+? ÕıÔÚµ÷ÓÃDeepSeek Reasoner½øĞĞÖÕ¼«Éî¶È·ÖÎö...
+? AIÖÕ¼«Éî¶È·ÖÎöÍê³É
+? ÖÕ¼«ÍêÉÆ°æ·ÖÎö³É¹¦
+Æô¶¯¸Ä½ø°æ³Ö²ÖÏ¯Î»·ÖÎö: JM
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ·ÖÎöÏµÍ³
+Ê¹ÓÃ»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÏµÍ³Æô¶¯: JM
+Ê¹ÓÃ±¾µØÊı¾İ¿âÕæÊµ³Ö²ÖÏ¯Î»Êı¾İ½øĞĞ·ÖÎö
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+?? Ìø¹ıÏ¯Î»Êı¾İÌáÈ¡´íÎó: could not convert string to float: '2026-05-08'
+³É¹¦·ÖÎö 6 ¸ö²ßÂÔ
+³É¹¦Éú³É¼Û¸ñ×ßÊÆÍ¼
+³É¹¦Éú³É Ö©ÖëÍø²ßÂÔ Í¼±í
+³É¹¦Éú³É ´ÏÃ÷Ç®·ÖÎö Í¼±í
+³É¹¦Éú³É ¼ÒÈËÏ¯Î»·´Ïò²Ù×÷ Í¼±í
+³É¹¦Éú³É Ï¯Î»ĞĞÎª·ÖÎö Í¼±í
+³É¹¦Éú³É ¶à¿ÕÁ¦Á¿±ä»¯ Í¼±í
+³É¹¦Éú³É ³Ö²Ö¼¯ÖĞ¶È·ÖÎö Í¼±í
+ÕæÊµÊı¾İ³Ö²ÖÏ¯Î»·ÖÎöÍê³É: JM
+»ùÓÚÕæÊµÊı¾İµÄ³Ö²ÖÏ¯Î»·ÖÎöÍê³É
+? ÖÕ¼«ÆÚÏŞ½á¹¹·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? Êı¾İÄ¿Â¼: qihuo\database
+? DeepSeek API: ÒÑÅäÖÃ
+? Serper API: ÒÑÅäÖÃ
+? ·¢ÏÖ 58 ¸ö¿ÉÓÃÆ·ÖÖ
+? ¿ªÊ¼·ÖÎö JM(½¹Ãº) ÆÚÏŞ½á¹¹
+? ·ÖÎöÈÕÆÚ: 2026-05-11
+? Ä£ĞÍÄ£Ê½: chat
+================================================================================
+? ²½Öè1: ÊÕ¼¯ÕæÊµÊı¾İ...
+  ? ¼ÓÔØÆÚÏŞ½á¹¹Êı¾İ...
+  ? ¼ÓÔØ¿â´æÊı¾İ...
+  ? ¼ÓÔØ»ù²îÊı¾İ...
+  ? ¼ÓÔØ²Öµ¥Êı¾İ...
+  ? ¼ÓÔØ³Ö²ÖÊı¾İ...
+  ? ¼ÓÔØ¼¼Êõ·ÖÎöÊı¾İ...
+? ²½Öè2: ËÑË÷²¹³äÊı¾İ...
+?? ²½Öè3: Êı¾İÕûºÏÓë·ÖÎö...
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉÍêÕû×¨Òµ±¨¸æ...
+    ? µ÷ÓÃdeepseek-chatÄ£ĞÍÉú³ÉÍêÕû×¨Òµ±¨¸æ...
+? ·ÖÎöÍê³É!
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+<IPython.core.display.HTML object>
+? Æô¶¯ÔöÇ¿°æ¼¼Êõ·ÖÎö: JM
+
+? ¿ªÊ¼ÔöÇ¿°æ×¨Òµ·ÖÎö JM (½¹Ãº)...
+================================================================================
+? JM ±¾µØÊı¾İ¼ÓÔØ³É¹¦: 60Ìõ¼ÇÂ¼
+? ×ÛºÏÊı¾İÌáÈ¡³É¹¦
+? Éú³É 3 ¸ö×¨ÒµÍ¼±í
+? JM ÔöÇ¿°æ×¨Òµ·ÖÎöÍê³É
+? Í¼±íÊı¾İÒÑ×ª»»: 3¸öÍ¼±í
+? ¶àÎ¬¶È»ù²î·ÖÎöÆ÷³õÊ¼»¯Íê³É
+? akshare¿ÉÓÃ£¬Ö§³ÖÁªÍøÊı¾İ»ñÈ¡
+? ×¨Òµ»ù²î·ÖÎöÏµÍ³³õÊ¼»¯Íê³É
+? ¼¯³ÉËÄÎ¬¶È·ÖÎö¿ò¼Ü: Æ·ÖÊ¡¢¿Õ¼ä¡¢Ê±¼ä¡¢¿â´æ
+
+? ¿ªÊ¼·ÖÎö JM(½¹Ãº) - ËÄÎ¬¶È·ÖÎö¿ò¼Ü
+================================================================================
+? ²½Öè1: ¼ÓÔØ¶àÔ´Êı¾İ...
+? ¿ªÊ¼¼ÓÔØJM(½¹Ãº)µÄ×ÛºÏÊı¾İ...
+? ±¾µØ»ù²îÊı¾İ¼ÓÔØ³É¹¦£º183Ìõ¼ÇÂ¼
+? ËÑË÷½¹ÃºÊĞ³¡ĞÅÏ¢...
+? Ê¹ÓÃ±¾µØÊı¾İ·ÖÎöÄ£Ê½
+? Êı¾İ¼ÓÔØÍê³É£¬·ÖÎöÄ£Ê½£ºlocal_only£¬Êı¾İÔ´£º5¸ö
+? ²½Öè2: Ö´ĞĞËÄÎ¬¶È·ÖÎö...
+? ²½Öè3: ËÑË÷ÊĞ³¡±³¾°ĞÅÏ¢...
+  ? ËÑË÷ÖĞ: ½¹ÃºÆÚ»õ ÏÖ»õ¼Û¸ñ »ù²î ×îĞÂ 2025Äê
+  ? ËÑË÷ÖĞ: ½¹Ãº¿â´æ ²Öµ¥ ¹©ĞèÆ½ºâ 2025Äê
+  ? ËÑË÷ÖĞ: ½¹ÃºÇøÓò¼Û²î ÉıÌùË® ½»¸î ×îĞÂ
+  ? ËÑË÷ÖĞ: ½¹Ãº¼¾½ÚĞÔ¹æÂÉ »ù²î×ßÊÆ ÀúÊ··ÖÎö
+  ? ËÑË÷ÖĞ: ½¹Ãº²úÒµÁ´ ÉÏÏÂÓÎ ÀûÈó ³É±¾·ÖÎö
+? ²½Öè4: Éú³É×¨ÒµÍ¼±í...
+? ²½Öè5: Éú³ÉAI·ÖÎö...
+
+====================================================================================================
+? JM(½¹Ãº) ×¨Òµ»ù²î·ÖÎö±¨¸æ
+? ·ÖÎöÈÕÆÚ: 2026-05-11
+? ·ÖÎöÄ£Ê½: ±ê×¼·ÖÎö
+? ·ÖÎö¿ò¼Ü: ËÄÎ¬¶È»ù²î·ÖÎö¿ò¼Ü
+====================================================================================================
+
+? Êı¾İÖÊÁ¿ÆÀ¹À:
+  ? basis: ¿ÉÓÃ
+  ? inventory: ¿ÉÓÃ
+  ? term_structure: ¿ÉÓÃ
+  ? positioning: ¿ÉÓÃ
+  ? receipt: ¿ÉÓÃ
+
+? ºËĞÄÖ¸±ê¸ÅÀÀ:
+  Á¬Ğø»ù²î: -419.25 Ôª/¶Ö
+  Ö÷Á¦»ù²î: -265.25 Ôª/¶Ö
+  ¼¾½ÚĞÔÆ«Àë: -30.166666666666657 Ôª/¶Ö
+  ¿â´æË®Æ½: ¸ß¿â´æ
+  ÇøÓò·ÖÀà: ÇøÓòC - ¿â´æÑ¹ÖÆ
+
+? AI×ÛºÏ·ÖÎö½á¹û:
+--------------------------------------------------------------------------------
+
+2026-05-11 16:45:46.854 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.856 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.859 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.860 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.861 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.863 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.865 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.866 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.867 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.867 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.868 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.869 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.872 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.873 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.875 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.875 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.878 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.879 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-05-11 16:45:46.880 Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+
+WebUI service stopped.
+Press any key to continue . . . 

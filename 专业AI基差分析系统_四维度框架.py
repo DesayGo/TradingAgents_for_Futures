@@ -25,16 +25,17 @@ from io import BytesIO
 warnings.filterwarnings('ignore')
 
 # 配置参数
-DATA_ROOT = Path(r"D:\Cursor\cursor项目\TradingAgent\qihuo\database")
-OUTPUT_DIR = Path(r"D:\Cursor\cursor项目\TradingAgent\qihuo\output")
+BASE_DIR = Path(__file__).resolve().parent
+DATA_ROOT = BASE_DIR / "qihuo" / "database"
+OUTPUT_DIR = BASE_DIR / "qihuo" / "output"
 
 # 确保输出目录存在
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # API配置
-DEEPSEEK_API_KEY = "sk-293dec7fabb54606b4f8d4f606da3383"
+DEEPSEEK_API_KEY = "YOUR_DEEPSEEK_API_KEY_HERE"
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1/chat/completions"
-SERPER_API_KEY = "04555ec0f2ce150d1cb628c7a80e2e433e193535"
+SERPER_API_KEY = "YOUR_SERPER_API_KEY_HERE"
 SERPER_BASE_URL = "https://google.serper.dev/search"
 
 # 品种中文名称映射（扩展版 - 支持更多品种）
@@ -138,6 +139,9 @@ class SerperSearchClient:
     def search_with_citation(self, query: str, num_results: int = 5) -> Dict:
         """执行搜索并返回带引用标注的结果"""
         try:
+            if not self.api_key or self.api_key.startswith("YOUR_"):
+                return {"error": "未配置Serper API"}
+
             payload = {
                 "q": query,
                 "num": num_results,
@@ -179,8 +183,8 @@ class SerperSearchClient:
 class MultidimensionalBasisAnalyzer:
     """多维度基差分析器（联网增强版）"""
     
-    def __init__(self):
-        self.searcher = SerperSearchClient()
+    def __init__(self, serper_api_key: str = None):
+        self.searcher = SerperSearchClient(serper_api_key or SERPER_API_KEY)
         self.akshare_available = self._check_akshare_availability()
         print("🚀 多维度基差分析器初始化完成")
         if self.akshare_available:
@@ -396,6 +400,7 @@ class MultidimensionalBasisAnalyzer:
         elif has_online_basis:
             analysis_mode = "network_only"
             print(f"✅ 使用纯网络分析模式")
+            basis_data = online_basis_data.copy()
         else:
             analysis_mode = "limited"
             print(f"⚠️ 使用受限分析模式（基差数据获取困难）")
@@ -1200,9 +1205,9 @@ class EnhancedDeepSeekClient:
 class ProfessionalBasisAnalysisSystem:
     """专业基差分析系统 - 四维度分析框架"""
     
-    def __init__(self):
-        self.analyzer = MultidimensionalBasisAnalyzer()
-        self.llm_client = EnhancedDeepSeekClient()
+    def __init__(self, deepseek_api_key: str = None, serper_api_key: str = None):
+        self.analyzer = MultidimensionalBasisAnalyzer(serper_api_key=serper_api_key)
+        self.llm_client = EnhancedDeepSeekClient(deepseek_api_key or DEEPSEEK_API_KEY)
         print("🤖 专业基差分析系统初始化完成")
         print("📊 集成四维度分析框架: 品质、空间、时间、库存")
     

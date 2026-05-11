@@ -34,9 +34,9 @@ OUTPUT_DIR = BASE_DIR / "qihuo" / "output" / "enhanced_technical_analysis"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # API配置
-DEEPSEEK_API_KEY = "sk-293dec7fabb54606b4f8d4f606da3383"
+DEEPSEEK_API_KEY = "YOUR_DEEPSEEK_API_KEY_HERE"
 DEEPSEEK_API_URL = "https://api.deepseek.com"
-SERPER_API_KEY = "04555ec0f2ce150d1cb628c7a80e2e433e193535"
+SERPER_API_KEY = "YOUR_SERPER_API_KEY_HERE"
 SERPER_API_URL = "https://google.serper.dev/search"
 
 # 期货品种配置
@@ -109,6 +109,9 @@ class EnhancedProfessionalTechnicalAnalyzer:
     def search_market_info(self, query: str, max_results: int = 5) -> List[Dict]:
         """搜索市场信息并记录引用"""
         try:
+            if not self.serper_key or self.serper_key.startswith("YOUR_"):
+                return []
+
             headers = {
                 'X-API-KEY': self.serper_key,
                 'Content-Type': 'application/json'

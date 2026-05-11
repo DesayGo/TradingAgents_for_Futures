@@ -22,13 +22,19 @@ except Exception as e:
     print(f"❌ 加载增强版技术分析系统失败: {error_msg}")
     # 提供一个假的类以避免后续错误
     class EnhancedProfessionalTechnicalAnalyzer:
-        def __init__(self):
+        def __init__(self, *args, **kwargs):
             pass
         def analyze_symbol_enhanced(self, symbol: str, include_market_info: bool = True, display_result: bool = False) -> Dict:
             return {"error": f"技术分析系统加载失败: {error_msg}", "success": False}
 
 
-async def analyze_technical_for_streamlit(variety: str, analysis_date: str = None, include_market_info: bool = True) -> Dict[str, Any]:
+async def analyze_technical_for_streamlit(
+    variety: str,
+    analysis_date: str = None,
+    include_market_info: bool = True,
+    deepseek_key: str = None,
+    serper_key: str = None,
+) -> Dict[str, Any]:
     """
     异步适配器，用于在Streamlit环境中调用增强版技术分析系统。
     
@@ -44,7 +50,10 @@ async def analyze_technical_for_streamlit(variety: str, analysis_date: str = Non
         print(f"🚀 启动增强版技术分析: {variety}")
         
         # 创建分析系统实例
-        analyzer = EnhancedProfessionalTechnicalAnalyzer()
+        analyzer = EnhancedProfessionalTechnicalAnalyzer(
+            deepseek_key=deepseek_key,
+            serper_key=serper_key,
+        )
         
         # 执行增强版分析
         result = analyzer.analyze_symbol_enhanced(
