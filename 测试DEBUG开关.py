@@ -27,7 +27,7 @@ def test_with_debug_off():
     
     print(f"当前DEBUG状态: {'开启' if ENABLE_DEBUG else '关闭'}")
     print("执行debug_print测试...")
-    debug_print("🐛 这是一条DEBUG信息 - 如果看到这句话说明DEBUG开关没有生效")
+    debug_print("这是一条DEBUG信息 - 如果看到这句话说明DEBUG开关没有生效")
     debug_print("DEBUG: 另一条DEBUG信息")
     print("✅ 测试完成：如果上面没有看到DEBUG信息，说明开关工作正常\n")
 
@@ -49,7 +49,7 @@ def test_with_debug_on():
     
     print(f"当前DEBUG状态: {'开启' if ENABLE_DEBUG else '关闭'}")
     print("执行debug_print测试...")
-    debug_print("🐛 这是一条DEBUG信息 - 您应该能看到这句话")
+    debug_print("这是一条DEBUG信息 - 您应该能看到这句话")
     debug_print("DEBUG: 另一条DEBUG信息 - 您应该能看到这句话")
     print("✅ 测试完成：如果上面看到了DEBUG信息，说明开关工作正常\n")
 

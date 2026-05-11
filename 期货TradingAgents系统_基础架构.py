@@ -8,12 +8,28 @@
 import json
 import asyncio
 import logging
+import os
+import sys
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any, Union
 from dataclasses import dataclass, field
 from pathlib import Path
 from enum import Enum
 import pandas as pd
+
+
+def configure_console_encoding() -> None:
+    """Avoid Windows console encoding errors from diagnostic output."""
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    for stream in (getattr(sys, "stdout", None), getattr(sys, "stderr", None)):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(errors="replace")
+            except Exception:
+                pass
+
+
+configure_console_encoding()
 
 # ============================================================================
 # 1. 枚举定义
@@ -912,8 +928,8 @@ class FuturesAnalysisIntegrator:
                 operational_confidence = getattr(executive_decision, 'operational_confidence', '中')
                 directional_confidence = getattr(executive_decision, 'directional_confidence', '中')
                 
-                print(f"🐛 DEBUG [数据转换]: operational_confidence原始值 = {operational_confidence} (type: {type(operational_confidence)})")
-                print(f"🐛 DEBUG [数据转换]: directional_confidence原始值 = {directional_confidence} (type: {type(directional_confidence)})")
+                print(f"DEBUG [数据转换]: operational_confidence原始值 = {operational_confidence} (type: {type(operational_confidence)})")
+                print(f"DEBUG [数据转换]: directional_confidence原始值 = {directional_confidence} (type: {type(directional_confidence)})")
                 
                 # 🔥 关键修复：如果不是标准格式，不要使用confidence_level进行转换
                 # 因为confidence_level是整体决策信心度，不等于operational_confidence（操作信心度）
@@ -940,8 +956,8 @@ class FuturesAnalysisIntegrator:
                 operational_confidence = executive_decision.get("operational_confidence", "中")
                 directional_confidence = executive_decision.get("directional_confidence", "中")
                 
-                print(f"🐛 DEBUG [数据转换-字典分支]: operational_confidence = {operational_confidence} (type: {type(operational_confidence)})")
-                print(f"🐛 DEBUG [数据转换-字典分支]: directional_confidence = {directional_confidence} (type: {type(directional_confidence)})")
+                print(f"DEBUG [数据转换-字典分支]: operational_confidence = {operational_confidence} (type: {type(operational_confidence)})")
+                print(f"DEBUG [数据转换-字典分支]: directional_confidence = {directional_confidence} (type: {type(directional_confidence)})")
                 
                 # 验证格式
                 if operational_confidence not in ['高', '中', '低']:

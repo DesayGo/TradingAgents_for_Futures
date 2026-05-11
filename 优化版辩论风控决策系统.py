@@ -26,6 +26,21 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 from enum import Enum
 import os
+import sys
+
+
+def configure_console_encoding() -> None:
+    """Avoid Windows console encoding errors from diagnostic output."""
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    for stream in (getattr(sys, "stdout", None), getattr(sys, "stderr", None)):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(errors="replace")
+            except Exception:
+                pass
+
+
+configure_console_encoding()
 
 # ============================================================================
 # 全局DEBUG开关配置
@@ -988,14 +1003,14 @@ class ProfessionalTrader:
             
             # 🔥 DEBUG: 显示提取到的文本信息
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [{module_name}观点提取]: content长度={len(content)}, recommendation长度={len(recommendation)}, summary长度={len(summary)}")
-                print(f"🐛 DEBUG [{module_name}观点提取]: full_text长度={len(full_text)}, 前200字符='{full_text[:200]}'")
+                print(f"DEBUG [{module_name}观点提取]: content长度={len(content)}, recommendation长度={len(recommendation)}, summary长度={len(summary)}")
+                print(f"DEBUG [{module_name}观点提取]: full_text长度={len(full_text)}, 前200字符='{full_text[:200]}'")
             
             # 🔥 如果标准字段为空，尝试其他可能的字段
             if len(full_text.strip()) < 50:
                 print(f"⚠️ [{module_name}观点提取]: 标准字段文本过短，尝试其他字段")
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [{module_name}观点提取]: result_data所有字段: {list(module_data.result_data.keys())}")
+                    print(f"DEBUG [{module_name}观点提取]: result_data所有字段: {list(module_data.result_data.keys())}")
                 
                 # 尝试获取所有文本字段
                 all_text_fields = []
@@ -1003,7 +1018,7 @@ class ProfessionalTrader:
                     if isinstance(value, str) and len(value) > 100:
                         all_text_fields.append(value)
                         if ENABLE_DEBUG_LOGS:
-                            print(f"🐛 DEBUG [{module_name}观点提取]: 找到文本字段'{key}', 长度={len(value)}")
+                            print(f"DEBUG [{module_name}观点提取]: 找到文本字段'{key}', 长度={len(value)}")
                 
                 if all_text_fields:
                     full_text = " ".join(all_text_fields)
@@ -1095,7 +1110,7 @@ class ProfessionalTrader:
             ]
             
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [{module_name}观点提取]: 开始匹配{len(conclusion_patterns)}个结论性表述模式")
+                print(f"DEBUG [{module_name}观点提取]: 开始匹配{len(conclusion_patterns)}个结论性表述模式")
             
             for idx, pattern in enumerate(conclusion_patterns):
                 match = re.search(pattern, full_text)
@@ -1105,7 +1120,7 @@ class ProfessionalTrader:
                     matched_text = match.group(0)
                     
                     if ENABLE_DEBUG_LOGS:
-                        print(f"🐛 DEBUG [{module_name}观点提取]: 模式{idx+1}匹配成功！匹配文本: {matched_text[:100]}")
+                        print(f"DEBUG [{module_name}观点提取]: 模式{idx+1}匹配成功！匹配文本: {matched_text[:100]}")
                     
                     # 检查是否包含看多/偏多信号
                     all_text = ''.join(str(g) for g in groups if g) + matched_text
@@ -1204,14 +1219,14 @@ class ProfessionalTrader:
                         return "中性", conf_level
             
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [{module_name}观点提取]: 未匹配到结论性表述，继续检查recommendation字段")
+                print(f"DEBUG [{module_name}观点提取]: 未匹配到结论性表述，继续检查recommendation字段")
             
             # ========================================================================
             # 第二级：检查recommendation字段（高优先级）
             # ========================================================================
             if recommendation:
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [{module_name}观点提取]: recommendation字段={recommendation[:100]}")
+                    print(f"DEBUG [{module_name}观点提取]: recommendation字段={recommendation[:100]}")
                 # 注意：不要将"震荡"单独作为中性判断，要看是否有偏向
                 # 🔥 移除"多头"/"空头"，避免误匹配描述性文字
                 if any(kw in recommendation for kw in ['看多', '做多', '买入', '偏多', '偏强', '看涨']):
@@ -1271,7 +1286,7 @@ class ProfessionalTrader:
             bearish_count = sum(1 for kw in bearish_keywords if kw in full_text)
             
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [{module_name}观点提取]: 关键词统计 - 看多词{bullish_count}个，看空词{bearish_count}个")
+                print(f"DEBUG [{module_name}观点提取]: 关键词统计 - 看多词{bullish_count}个，看空词{bearish_count}个")
             
             # ✅ 降低判断阈值，提高敏感度（从3改为2）
             diff = abs(bullish_count - bearish_count)
@@ -4422,8 +4437,8 @@ class OptimizedDebateSystem:
             
             # 🔥 添加类型检查和调试信息
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG: round_result.bull_score = {round_result.bull_score} (type: {type(round_result.bull_score)})")
-                print(f"🐛 DEBUG: round_result.bear_score = {round_result.bear_score} (type: {type(round_result.bear_score)})")
+                print(f"DEBUG: round_result.bull_score = {round_result.bull_score} (type: {type(round_result.bull_score)})")
+                print(f"DEBUG: round_result.bear_score = {round_result.bear_score} (type: {type(round_result.bear_score)})")
             
             # 确保分数是数值类型
             bull_score_safe = safe_convert_to_float(round_result.bull_score, 5.0)
@@ -5592,8 +5607,8 @@ class ProfessionalRiskManagement:
         
         # 🔧 DEBUG: 策略理解调试
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 风控理解的策略类型 = {strategy_enum}")
-            print(f"🐛 DEBUG: 风控提取的方向 = {extracted_direction}")
+            print(f"DEBUG: 风控理解的策略类型 = {strategy_enum}")
+            print(f"DEBUG: 风控提取的方向 = {extracted_direction}")
             
         # 确保策略类型和方向的一致性
         if strategy_enum == TradingStrategy.DIRECTIONAL_LONG:
@@ -5627,7 +5642,7 @@ class ProfessionalRiskManagement:
         )
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 风控意见生成完成，长度={len(risk_opinion)}字符")
+            print(f"DEBUG: 风控意见生成完成，长度={len(risk_opinion)}字符")
         
         # 基于交易员决策确定整体风险等级
         try:
@@ -6176,8 +6191,8 @@ class ProfessionalRiskManagement:
             extracted_direction = self._extract_direction_from_trading_decision(trading_decision)
             
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG: 基础风控分析 - 策略类型 = {actual_strategy}")
-                print(f"🐛 DEBUG: 基础风控分析 - 提取方向 = {extracted_direction}")
+                print(f"DEBUG: 基础风控分析 - 策略类型 = {actual_strategy}")
+                print(f"DEBUG: 基础风控分析 - 提取方向 = {extracted_direction}")
             
             # 🚨 方向一致性检查警告（如果提供）
             direction_warning = ""
@@ -6271,7 +6286,7 @@ class ProfessionalRiskManagement:
             )
             
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG: 基础风控意见生成完成，长度={len(opinion)}字符")
+                print(f"DEBUG: 基础风控意见生成完成，长度={len(opinion)}字符")
             return opinion
             
         except Exception as e:
@@ -7333,67 +7348,67 @@ class ProfessionalRiskManagement:
         # - 低风险：损失<2% AND 概率<40%
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG [风险判定]: 潜在损失={potential_loss:.1%}, 风险概率={risk_probability:.0%}")
+            print(f"DEBUG [风险判定]: 潜在损失={potential_loss:.1%}, 风险概率={risk_probability:.0%}")
         
         # ✅ 极高风险判定（更严格）- 注意4.5%不应该被判定为极高风险
         if potential_loss > 0.05:  # 损失超过5%（严格大于，4.5%不算）
             risk_level = RiskLevel.VERY_HIGH
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.3f}({potential_loss:.1%}) > 0.05(5%)")
+                print(f"DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.3f}({potential_loss:.1%}) > 0.05(5%)")
         elif potential_loss >= 0.045 and risk_probability >= 0.75:  # 损失>=4.5% 且 概率>=75%（提高概率阈值）
             risk_level = RiskLevel.VERY_HIGH
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.3f} >= 0.045 且 概率{risk_probability:.0%} >= 75%")
+                print(f"DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.3f} >= 0.045 且 概率{risk_probability:.0%} >= 75%")
         elif potential_loss > 0.03 and risk_probability > 0.80:  # 损失>3% 且 概率>80%
             risk_level = RiskLevel.VERY_HIGH
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.1%} > 3% 且 概率{risk_probability:.0%} > 80%")
+                print(f"DEBUG [风险判定]: 极高风险 - 原因：损失{potential_loss:.1%} > 3% 且 概率{risk_probability:.0%} > 80%")
         # ✅ 高风险判定
         elif 0.03 <= potential_loss <= 0.05 and 0.60 <= risk_probability <= 0.80:
             risk_level = RiskLevel.HIGH  # 4.5% + 65% 属于这里
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 高风险 - 原因：损失{potential_loss:.1%}在3-5%之间 且 概率{risk_probability:.0%}在60-80%之间")
+                print(f"DEBUG [风险判定]: 高风险 - 原因：损失{potential_loss:.1%}在3-5%之间 且 概率{risk_probability:.0%}在60-80%之间")
         elif potential_loss > 0.05 and risk_probability < 0.60:
             risk_level = RiskLevel.HIGH
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 高风险 - 原因：损失{potential_loss:.1%} > 5% 但 概率{risk_probability:.0%} < 60%")
+                print(f"DEBUG [风险判定]: 高风险 - 原因：损失{potential_loss:.1%} > 5% 但 概率{risk_probability:.0%} < 60%")
         # ✅ 中等风险判定
         elif 0.02 <= potential_loss < 0.03 and 0.40 <= risk_probability <= 0.70:
             risk_level = RiskLevel.MEDIUM
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 中等风险 - 原因：损失{potential_loss:.1%}在2-3%之间")
+                print(f"DEBUG [风险判定]: 中等风险 - 原因：损失{potential_loss:.1%}在2-3%之间")
         elif potential_loss < 0.03 and 0.60 <= risk_probability <= 0.70:
             risk_level = RiskLevel.MEDIUM
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 中等风险 - 原因：损失{potential_loss:.1%} < 3%")
+                print(f"DEBUG [风险判定]: 中等风险 - 原因：损失{potential_loss:.1%} < 3%")
         # ✅ 低风险判定
         elif potential_loss < 0.02 and risk_probability < 0.40:
             risk_level = RiskLevel.LOW
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 低风险 - 原因：损失{potential_loss:.1%} < 2% 且 概率{risk_probability:.0%} < 40%")
+                print(f"DEBUG [风险判定]: 低风险 - 原因：损失{potential_loss:.1%} < 2% 且 概率{risk_probability:.0%} < 40%")
         else:
             # 边界情况，保守处理
             if ENABLE_DEBUG_LOGS:
-                print(f"🐛 DEBUG [风险判定]: 进入边界情况处理")
+                print(f"DEBUG [风险判定]: 进入边界情况处理")
             if potential_loss >= 0.045:
                 risk_level = RiskLevel.HIGH  # 4.5%以上保守处理为高风险
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [风险判定]: 高风险 - 原因：边界情况，损失{potential_loss:.1%} >= 4.5%")
+                    print(f"DEBUG [风险判定]: 高风险 - 原因：边界情况，损失{potential_loss:.1%} >= 4.5%")
             elif potential_loss >= 0.03 or risk_probability >= 0.65:
                 risk_level = RiskLevel.HIGH
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [风险判定]: 高风险 - 原因：边界情况，损失{potential_loss:.1%} >= 3% 或 概率{risk_probability:.0%} >= 65%")
+                    print(f"DEBUG [风险判定]: 高风险 - 原因：边界情况，损失{potential_loss:.1%} >= 3% 或 概率{risk_probability:.0%} >= 65%")
             elif potential_loss >= 0.02 or risk_probability >= 0.50:
                 risk_level = RiskLevel.MEDIUM
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [风险判定]: 中等风险 - 原因：边界情况")
+                    print(f"DEBUG [风险判定]: 中等风险 - 原因：边界情况")
             else:
                 risk_level = RiskLevel.MEDIUM
                 if ENABLE_DEBUG_LOGS:
-                    print(f"🐛 DEBUG [风险判定]: 中等风险 - 原因：边界情况默认值")
+                    print(f"DEBUG [风险判定]: 中等风险 - 原因：边界情况默认值")
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG [风险判定]: 最终判定 = {risk_level.value}")
+            print(f"DEBUG [风险判定]: 最终判定 = {risk_level.value}")
         self.logger.info(f"风险等级判定: {risk_level.value} (损失{potential_loss:.1%}, 概率{risk_probability:.0%})")
         return risk_level
     
@@ -7478,7 +7493,7 @@ class ProfessionalRiskManagement:
         # 这是导致90%概率的根源，已移除
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG [风险概率]: bull_score={bull_score}, bear_score={bear_score}, score_diff={score_diff:.1f}, risk_probability={risk_probability:.0%}")
+            print(f"DEBUG [风险概率]: bull_score={bull_score}, bear_score={bear_score}, score_diff={score_diff:.1f}, risk_probability={risk_probability:.0%}")
         return risk_probability
     
     def _identify_key_risks(self, analysis_state: FuturesAnalysisState,
@@ -8965,12 +8980,12 @@ class ExecutiveDecisionMaker:
         
         commodity = analysis_state.commodity
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: make_executive_decision 开始，commodity={commodity}")
+            print(f"DEBUG: make_executive_decision 开始，commodity={commodity}")
         self.logger.info(f"CIO开始制定{commodity}最终投资决策")
         
         # 🔥 关键修复：CIO必须依赖交易员决策和风控评估
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 检查trading_decision是否存在: {trading_decision is not None}")
+            print(f"DEBUG: 检查trading_decision是否存在: {trading_decision is not None}")
         if not trading_decision:
             self.logger.warning("CIO决策中止：缺少交易员决策，CIO无法制定最终决策")
             return ExecutiveDecision(
@@ -9038,35 +9053,35 @@ class ExecutiveDecisionMaker:
         
         # 🔥 新增：基于交易员分析的统一方向判断
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 开始调用_analyze_unified_directional_view")
+            print(f"DEBUG: 开始调用_analyze_unified_directional_view")
         directional_analysis = self._analyze_unified_directional_view(
             trading_decision, risk_assessment, debate_result
         )
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: _analyze_unified_directional_view完成")
+            print(f"DEBUG: _analyze_unified_directional_view完成")
         
         # 基于最终决策和风控评估设定仓位规模
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 开始调用_determine_position_size_based_on_cio_decision")
+            print(f"DEBUG: 开始调用_determine_position_size_based_on_cio_decision")
         position_size = self._determine_position_size_based_on_cio_decision(
             final_decision, risk_assessment, confidence, trading_decision
         )
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: _determine_position_size_based_on_cio_decision完成，position_size={position_size}")
+            print(f"DEBUG: _determine_position_size_based_on_cio_decision完成，position_size={position_size}")
         
         # 制定执行计划
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 开始调用_create_execution_plan")
+            print(f"DEBUG: 开始调用_create_execution_plan")
         execution_plan = self._create_execution_plan(final_decision, position_size, risk_assessment)
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: _create_execution_plan完成")
+            print(f"DEBUG: _create_execution_plan完成")
         
         # 设定监控要点
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 开始调用_define_monitoring_points")
+            print(f"DEBUG: 开始调用_define_monitoring_points")
         monitoring_points = self._define_monitoring_points(analysis_state, risk_assessment)
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: _define_monitoring_points完成")
+            print(f"DEBUG: _define_monitoring_points完成")
         
         # 🔥 关键改进：确保方向判断与操作决策的逻辑一致性
         consistent_directional_analysis = self._ensure_decision_consistency(
@@ -9074,19 +9089,19 @@ class ExecutiveDecisionMaker:
         )
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: 准备创建ExecutiveDecision")
-            print(f"🐛 DEBUG: final_decision={final_decision}")
-            print(f"🐛 DEBUG: operational_confidence={directional_analysis.get('operational_confidence', '中')}")
-            print(f"🐛 DEBUG: directional_confidence={directional_analysis.get('directional_confidence', '中')}")
-            print(f"🐛 DEBUG: confidence={confidence} (type: {type(confidence)})")
+            print(f"DEBUG: 准备创建ExecutiveDecision")
+            print(f"DEBUG: final_decision={final_decision}")
+            print(f"DEBUG: operational_confidence={directional_analysis.get('operational_confidence', '中')}")
+            print(f"DEBUG: directional_confidence={directional_analysis.get('directional_confidence', '中')}")
+            print(f"DEBUG: confidence={confidence} (type: {type(confidence)})")
         
         # ✅ 修复：直接使用字符串版本的信心度，不要转换为数字
         operational_confidence_text = directional_analysis.get('operational_confidence', '中')
         directional_confidence_text = directional_analysis.get('directional_confidence', '中')
         
         if ENABLE_DEBUG_LOGS:
-            print(f"🐛 DEBUG: operational_confidence_text={operational_confidence_text}")
-            print(f"🐛 DEBUG: directional_confidence_text={directional_confidence_text}")
+            print(f"DEBUG: operational_confidence_text={operational_confidence_text}")
+            print(f"DEBUG: directional_confidence_text={directional_confidence_text}")
         
         return ExecutiveDecision(
             final_decision=final_decision,
@@ -9404,7 +9419,7 @@ class ExecutiveDecisionMaker:
         # 原因：原始值（operational_confidence）已经是从风控正确提取的"低"
         # 不应该被source_confidence（从risk_analysis['confidence']提取的值）覆盖
         
-        print(f"🐛 DEBUG [_adjust_cio_confidence]: source_confidence='{source_confidence}', original_confidence='{original_confidence}', conf_type='{conf_type}'")
+        print(f"DEBUG [_adjust_cio_confidence]: source_confidence='{source_confidence}', original_confidence='{original_confidence}', conf_type='{conf_type}'")
         
         confidence_levels = {'高': 3, '中': 2, '低': 1, '未评估': 1}
         
@@ -9419,10 +9434,10 @@ class ExecutiveDecisionMaker:
         for conf_text, level in confidence_levels.items():
             if level == final_level and conf_text != '未评估':
                 result = conf_text
-                print(f"🐛 DEBUG [_adjust_cio_confidence]: 返回 '{result}'")
+                print(f"DEBUG [_adjust_cio_confidence]: 返回 '{result}'")
                 return result
         
-        print(f"🐛 DEBUG [_adjust_cio_confidence]: 返回默认值 '低'")
+        print(f"DEBUG [_adjust_cio_confidence]: 返回默认值 '低'")
         return '低'  # 默认返回低
     
     def _build_comprehensive_decision_rationale(self, trader_analysis: Dict[str, str], 
@@ -10568,9 +10583,9 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         directional_view = self._extract_clear_directional_view(trader_reasoning)
         
         # 🔧 DEBUG: 信心度体系调试
-        print(f"🐛 DEBUG: directional_confidence = {directional_confidence}")
-        print(f"🐛 DEBUG: operational_confidence = {operational_confidence}")
-        print(f"🐛 DEBUG: directional_view = {directional_view}")
+        print(f"DEBUG: directional_confidence = {directional_confidence}")
+        print(f"DEBUG: operational_confidence = {operational_confidence}")
+        print(f"DEBUG: directional_view = {directional_view}")
         
         # 🔥 新决策矩阵：基于双重信心度确定交易决策
         decision_matrix = self._build_confidence_decision_matrix(
@@ -10580,7 +10595,7 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         final_decision = decision_matrix['decision']
         decision_reason = decision_matrix['reason']
         
-        print(f"🐛 DEBUG: CIO最终决策 = {final_decision.value} | 原因: {decision_reason}")
+        print(f"DEBUG: CIO最终决策 = {final_decision.value} | 原因: {decision_reason}")
         return final_decision
     
     def _extract_directional_confidence_level(self, trader_reasoning: str) -> str:
@@ -10672,7 +10687,7 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         bullish_count = sum(1 for keyword in bullish_keywords if keyword in reasoning_lower)
         bearish_count = sum(1 for keyword in bearish_keywords if keyword in reasoning_lower)
         
-        print(f"🐛 DEBUG: 方向判断 - 多头关键词{bullish_count}个，空头关键词{bearish_count}个")
+        print(f"DEBUG: 方向判断 - 多头关键词{bullish_count}个，空头关键词{bearish_count}个")
         
         if bullish_count > bearish_count:
             # 根据明确的表述确定积极程度
@@ -10702,7 +10717,7 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
                 return "看空"
             else:
                 # 🚨 最后防线：基于技术面倾向强制选择，绝不允许中性
-                debug_print("🐛 DEBUG: 无法明确判断方向，使用默认逻辑")
+                debug_print("DEBUG: 无法明确判断方向，使用默认逻辑")
                 return "谨慎看多"  # 可根据具体市场环境调整
     
     def _build_confidence_decision_matrix(self, directional_confidence: str, 
@@ -10724,7 +10739,7 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         # 操作信心度权重60%，方向信心度40%（风控为先）
         total_confidence = operational_score * 0.6 + directional_score * 0.4
         
-        print(f"🐛 DEBUG: 决策矩阵 - directional_view='{directional_view}', directional_conf={directional_confidence}, operational_conf={operational_confidence}, total={total_confidence}")
+        print(f"DEBUG: 决策矩阵 - directional_view='{directional_view}', directional_conf={directional_confidence}, operational_conf={operational_confidence}, total={total_confidence}")
         
         # ✅ 决策逻辑：根据综合信心度确定操作风格
         if "看多" in directional_view:
@@ -10771,7 +10786,7 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
                 }
         else:
             # 🔥 修复：支持中性观望决策，不再强制改为做多
-            print(f"🐛 DEBUG: 方向判断为中性观望，directional_view='{directional_view}'，执行观望策略")
+            print(f"DEBUG: 方向判断为中性观望，directional_view='{directional_view}'，执行观望策略")
             return {
                 "decision": FinalDecision.HOLD,  # 观望/持有
                 "reason": f"中性观望（方向不明确，信心度{directional_confidence}+{operational_confidence}）",
@@ -10805,8 +10820,8 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         # 操作信心度取决于风控
         operational_confidence = risk_operational_confidence  # CIO操作信心度=风控操作信心度
         
-        print(f"🐛 DEBUG: 信心度调整 - 交易员:{trader_directional_confidence}, 风控:{risk_operational_confidence}")
-        print(f"🐛 DEBUG: CIO最终 - 方向:{directional_confidence}, 操作:{operational_confidence}")
+        print(f"DEBUG: 信心度调整 - 交易员:{trader_directional_confidence}, 风控:{risk_operational_confidence}")
+        print(f"DEBUG: CIO最终 - 方向:{directional_confidence}, 操作:{operational_confidence}")
         
         # 第二步：确定明确的方向判断（看多/看空）
         directional_view = self._extract_clear_directional_view(trader_reasoning)
@@ -11204,11 +11219,11 @@ CIO决策逻辑：严格基于交易员专业分析和辩论量化结果，{winn
         
         # 考虑风控限制
         risk_limit_raw = risk_assessment.position_size_limit if risk_assessment.position_size_limit else 0.05
-        print(f"🐛 DEBUG: risk_limit_raw = {risk_limit_raw} (type: {type(risk_limit_raw)})")
+        print(f"DEBUG: risk_limit_raw = {risk_limit_raw} (type: {type(risk_limit_raw)})")
         
         # 🔧 修复：确保risk_limit是数值类型
         risk_limit = safe_convert_to_float(risk_limit_raw, 0.05)
-        print(f"🐛 DEBUG: risk_limit = {risk_limit} (type: {type(risk_limit)})")
+        print(f"DEBUG: risk_limit = {risk_limit} (type: {type(risk_limit)})")
         
         # 最终仓位 = min(基础仓位 * 信心度倍数, 风控限制)
         final_position = min(base_position * position_multiplier, risk_limit)
@@ -11272,40 +11287,40 @@ class OptimizedTradingAgentsSystem:
         self.logger.info(f"开始{commodity}完整优化分析流程")
         
         # 第一阶段：激烈辩论
-        debug_print("🐛 DEBUG: 开始第一阶段：多空激烈辩论")
+        debug_print("DEBUG: 开始第一阶段：多空激烈辩论")
         self.logger.info("第一阶段：多空激烈辩论")
         debate_result = await self.debate_system.conduct_heated_debate(
             analysis_state, debate_rounds
         )
-        print(f"🐛 DEBUG: 辩论完成，bull_score={debate_result.overall_bull_score} (type: {type(debate_result.overall_bull_score)})")
+        print(f"DEBUG: 辩论完成，bull_score={debate_result.overall_bull_score} (type: {type(debate_result.overall_bull_score)})")
         
         # 第二阶段：交易员专业决策
-        debug_print("🐛 DEBUG: 开始第二阶段：交易员专业决策")
+        debug_print("DEBUG: 开始第二阶段：交易员专业决策")
         self.logger.info("第二阶段：交易员专业决策")
         trading_decision = await self.trader.integrate_debate_and_decide(
             analysis_state, debate_result
         )
-        print(f"🐛 DEBUG: 交易员决策完成，strategy_type={trading_decision.strategy_type}")
+        print(f"DEBUG: 交易员决策完成，strategy_type={trading_decision.strategy_type}")
         
         # 第三阶段：专业风控评估
-        debug_print("🐛 DEBUG: 开始第三阶段：风控部门专业评估")
+        debug_print("DEBUG: 开始第三阶段：风控部门专业评估")
         self.logger.info("第三阶段：风控部门专业评估")
         risk_assessment = await self.risk_management.conduct_risk_assessment(
             analysis_state, debate_result, trading_decision
         )
-        print(f"🐛 DEBUG: 风控评估完成，risk_level={risk_assessment.overall_risk_level}")
+        print(f"DEBUG: 风控评估完成，risk_level={risk_assessment.overall_risk_level}")
 
         # 第四阶段：CIO最终决策
-        debug_print("🐛 DEBUG: 开始第四阶段：CIO权威决策")
+        debug_print("DEBUG: 开始第四阶段：CIO权威决策")
         self.logger.info("第四阶段：CIO权威决策")
         executive_decision = await self.decision_maker.make_executive_decision(
             analysis_state, debate_result, risk_assessment, trading_decision
         )
-        print(f"🐛 DEBUG: CIO决策完成，final_decision={executive_decision.final_decision}")
-        print(f"🐛 DEBUG: confidence_level={executive_decision.confidence_level} (type: {type(executive_decision.confidence_level)})")
+        print(f"DEBUG: CIO决策完成，final_decision={executive_decision.final_decision}")
+        print(f"DEBUG: confidence_level={executive_decision.confidence_level} (type: {type(executive_decision.confidence_level)})")
         
         # 整合最终结果
-        debug_print("🐛 DEBUG: 开始整合最终结果")
+        debug_print("DEBUG: 开始整合最终结果")
         
         # 数据类型检查已完成，移除调试信息
         

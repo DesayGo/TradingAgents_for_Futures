@@ -35,6 +35,20 @@ import threading
 import os
 import requests
 
+
+def configure_console_encoding() -> None:
+    """Avoid Windows console encoding errors from diagnostic output."""
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    for stream in (getattr(sys, "stdout", None), getattr(sys, "stderr", None)):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(errors="replace")
+            except Exception:
+                pass
+
+
+configure_console_encoding()
+
 # Word文档生成相关
 try:
     from docx import Document
