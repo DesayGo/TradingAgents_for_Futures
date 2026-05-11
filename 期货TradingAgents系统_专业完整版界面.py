@@ -665,7 +665,19 @@ class StreamlitDataManager:
             }
         }
     
-    @st.cache_data(ttl=300)
+    def _get_relevant_data_files(self, folder: Path) -> List[Path]:
+        """返回品种目录下会影响数据状态展示的数据文件"""
+        data_suffixes = {".csv", ".json", ".xlsx", ".xls"}
+        try:
+            return [
+                item
+                for item in folder.iterdir()
+                if item.is_file() and item.suffix.lower() in data_suffixes
+            ]
+        except Exception:
+            return []
+
+    @st.cache_data(ttl=5)
     def get_data_status(_self) -> Dict:
         """获取数据状态"""
         status_data = {
@@ -712,10 +724,13 @@ class StreamlitDataManager:
                             if item.is_dir():
                                 commodity = item.name
                                 data_file = item / config["data_file"]
+                                relevant_files = _self._get_relevant_data_files(item)
+                                if relevant_files:
+                                    latest_file_mtime = max(file.stat().st_mtime for file in relevant_files)
+                                    file_update_times.append(datetime.fromtimestamp(latest_file_mtime))
                                 
                                 if data_file.exists():
                                     try:
-                                        file_update_times.append(datetime.fromtimestamp(data_file.stat().st_mtime))
                                         # 支持CSV和JSON格式
                                         if data_file.suffix == '.json':
                                             import json
@@ -4926,6 +4941,10 @@ def main():
     with tab2:
         st.header("🔄 数据更新")
         
+        if st.button("🔄 刷新数据状态", use_container_width=True):
+            st.session_state.data_manager.get_data_status.clear()
+            st.rerun()
+
         st.info("💡 选择需要更新的数据模块，系统将启动对应的更新程序；部分数据源会回溯拉取后自动合并去重")
 
         def get_module_latest_date(module_key: str) -> str:
@@ -4943,6 +4962,8 @@ def main():
                     if result["status"] == "success":
                         st.success(result["message"])
                         st.info(result["details"])
+                        st.session_state.data_manager.get_data_status.clear()
+                        st.caption("更新窗口完成后，点击“刷新数据状态”即可读取最新数据库时间。")
                     else:
                         st.error(result["message"])
             st.caption(
@@ -4957,6 +4978,8 @@ def main():
                     st.success(result["message"])
                     st.info(f"目标日期: {result['target_date']}；将按顺序执行6个模块并更新全部品种，部分数据源会回溯拉取后自动合并去重，窗口完成后自动关闭。")
                     st.write("更新顺序:", " → ".join(result["modules"]))
+                    st.session_state.data_manager.get_data_status.clear()
+                    st.caption("全部更新窗口完成后，点击“刷新数据状态”即可读取最新数据库时间。")
                 else:
                     st.error(result["message"])
                     if result.get("modules"):
