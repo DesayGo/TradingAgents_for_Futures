@@ -59,6 +59,7 @@ jsonschema>=4.17.0
 # Web搜索 (可选，用于新闻搜索)
 beautifulsoup4>=4.11.0
 lxml>=4.9.0
+feedparser>=6.0.0
 
 # 异步处理
 nest-asyncio>=1.5.6
